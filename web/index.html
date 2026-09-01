@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prototipo académico del sistema de citas de Barber 920">
+  <title>Barber 920 | Prototipo de citas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-banner">
+    Prototipo académico con datos simulados. No realiza reservaciones reales.
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" data-view-link="inicio" aria-label="Barber 920, inicio">
+      <span class="brand-mark">920</span>
+      <span>BARBER</span>
+    </a>
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">Menú</button>
+    <nav id="mainNav" class="main-nav" aria-label="Navegación principal">
+      <button data-view-link="inicio" class="nav-link active">Inicio</button>
+      <button data-view-link="sucursales" class="nav-link">Sucursales</button>
+      <button data-view-link="reservar" class="nav-link">Reservar</button>
+      <button data-view-link="administracion" class="nav-link">Administración</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="view active-view">
+      <div class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Estilo, precisión y comodidad</p>
+          <h1>Tu próximo corte comienza con una cita sencilla.</h1>
+          <p class="hero-copy">Consulta nuestras sucursales, selecciona un servicio y aparta un horario desde cualquier dispositivo.</p>
+          <div class="hero-actions">
+            <button class="button primary" data-view-link="reservar">Agendar demostración</button>
+            <button class="button secondary" data-view-link="sucursales">Ver sucursales</button>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Resumen del proceso">
+          <span class="step-number">01</span>
+          <h2>Elige</h2>
+          <p>Sucursal y servicio.</p>
+          <span class="step-number">02</span>
+          <h2>Agenda</h2>
+          <p>Fecha y horario disponible.</p>
+          <span class="step-number">03</span>
+          <h2>Confirma</h2>
+          <p>Registra tus datos.</p>
+        </div>
+      </div>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Servicios de demostración</p>
+          <h2>Opciones para cada estilo</h2>
+        </div>
+        <div id="serviceCards" class="card-grid"></div>
+      </section>
+
+      <section class="status-panel">
+        <div>
+          <p class="eyebrow">Avance de Fase 2</p>
+          <h2>Primera versión navegable</h2>
+          <p>Este prototipo permite revisar el flujo antes de conectar una base de datos y usar información real.</p>
+        </div>
+        <button class="button primary" data-view-link="reservar">Probar reservación</button>
+      </section>
+    </section>
+
+    <section id="sucursales" class="view" hidden>
+      <div class="page-heading">
+        <p class="eyebrow">Tres ubicaciones simuladas</p>
+        <h1>Elige tu sucursal</h1>
+        <p>Las direcciones y horarios definitivos deberán confirmarse con Barber 920.</p>
+      </div>
+      <div id="branchCards" class="branch-grid"></div>
+    </section>
+
+    <section id="reservar" class="view" hidden>
+      <div class="page-heading">
+        <p class="eyebrow">Flujo de demostración</p>
+        <h1>Agenda una cita</h1>
+        <p>Los registros se guardan únicamente en este navegador.</p>
+      </div>
+
+      <div class="booking-layout">
+        <form id="bookingForm" class="panel form-panel">
+          <div class="form-progress"><span>1</span><span>2</span><span>3</span></div>
+
+          <label for="branch">Sucursal</label>
+          <select id="branch" name="branch" required>
+            <option value="">Selecciona una sucursal</option>
+          </select>
+
+          <label for="service">Servicio</label>
+          <select id="service" name="service" required>
+            <option value="">Selecciona un servicio</option>
+          </select>
+
+          <div class="field-row">
+            <div>
+              <label for="date">Fecha</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div>
+              <label for="time">Horario</label>
+              <select id="time" name="time" required>
+                <option value="">Selecciona</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="clientName">Nombre</label>
+          <input id="clientName" name="clientName" type="text" minlength="3" maxlength="80" placeholder="Nombre del cliente" required>
+
+          <label for="phone">Teléfono</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" placeholder="10 dígitos" required>
+
+          <label class="checkbox-label">
+            <input id="demoConsent" type="checkbox" required>
+            Entiendo que esta es una demostración y no una cita real.
+          </label>
+
+          <button type="submit" class="button primary full-width">Registrar cita de demostración</button>
+          <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
+        </form>
+
+        <aside class="panel summary-panel">
+          <p class="eyebrow">Resumen</p>
+          <h2 id="summaryService">Selecciona un servicio</h2>
+          <dl>
+            <div><dt>Sucursal</dt><dd id="summaryBranch">Sin seleccionar</dd></div>
+            <div><dt>Duración</dt><dd id="summaryDuration">-</dd></div>
+            <div><dt>Precio demo</dt><dd id="summaryPrice">-</dd></div>
+          </dl>
+          <p class="small-note">La disponibilidad real deberá calcularse desde el servidor en la versión final.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="confirmacion" class="view" hidden>
+      <div class="confirmation-card">
+        <div class="confirmation-icon">✓</div>
+        <p class="eyebrow">Registro local completado</p>
+        <h1>Cita de demostración guardada</h1>
+        <p id="confirmationText"></p>
+        <div class="hero-actions centered">
+          <button class="button primary" data-view-link="administracion">Ver en administración</button>
+          <button class="button secondary" data-view-link="reservar">Registrar otra</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="administracion" class="view" hidden>
+      <div class="page-heading">
+        <p class="eyebrow">Panel simulado</p>
+        <h1>Administración de citas</h1>
+        <p>No cuenta con autenticación y no debe utilizarse con datos reales.</p>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric"><span id="metricTotal">0</span><p>Total</p></article>
+        <article class="metric"><span id="metricPending">0</span><p>Pendientes</p></article>
+        <article class="metric"><span id="metricConfirmed">0</span><p>Confirmadas</p></article>
+        <article class="metric"><span id="metricCancelled">0</span><p>Canceladas</p></article>
+      </div>
+
+      <div class="panel admin-panel">
+        <div class="admin-toolbar">
+          <div>
+            <label for="filterBranch">Filtrar sucursal</label>
+            <select id="filterBranch"><option value="">Todas</option></select>
+          </div>
+          <div>
+            <label for="filterDate">Filtrar fecha</label>
+            <input id="filterDate" type="date">
+          </div>
+          <button id="loadDemoData" class="button secondary">Cargar citas demo</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Cliente</th><th>Sucursal</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr>
+            </thead>
+            <tbody id="appointmentRows"></tbody>
+          </table>
+          <p id="emptyAppointments" class="empty-state">Todavía no hay citas de demostración.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Barber 920</strong>
+    <span>Prototipo académico · UACJ · Fase 2 · 2026</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
