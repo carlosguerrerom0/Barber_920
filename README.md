@@ -6,9 +6,9 @@ Proyecto académico para analizar, diseñar y desarrollar un sistema web que fac
 
 ## Estado del proyecto
 
-**Fase 2: requerimientos, diseño y primera versión navegable.**
+**Fase 2: requerimientos y prototipos aprobados; desarrollo de la versión conectada pendiente.**
 
-El alcance y los requisitos continúan pendientes de revisión con el representante de Barber 920. El prototipo permite demostrar el flujo y obtener retroalimentación antes de implementar el backend.
+El cliente y el equipo aprobaron los requerimientos, diagramas, arquitectura, flujo de agendamiento, panel de demostración y primera versión navegable. La información operativa real, el backend, la base de datos y la autenticación continúan pendientes.
 
 ## Objetivo general
 
@@ -17,20 +17,21 @@ Desarrollar un sistema web adaptable a computadoras y celulares que permita cons
 ## Avance de la Fase 2
 
 - [x] Creación y organización del repositorio.
-- [x] Borrador de requerimientos funcionales y no funcionales.
-- [x] Guía para entrevista con el cliente.
+- [x] Requerimientos funcionales y no funcionales.
+- [x] Validación y priorización de requerimientos.
 - [x] Backlog inicial en GitHub Issues.
 - [x] Diagrama de casos de uso.
 - [x] Modelo entidad-relación preliminar.
 - [x] Selección tecnológica inicial.
-- [x] Prototipo adaptable de inicio, sucursales y reservación.
+- [x] Prototipo adaptable de inicio y sucursales.
+- [x] Prototipo del flujo de agendamiento.
 - [x] Panel administrativo de demostración.
 - [x] Primera versión navegable con almacenamiento local.
-- [ ] Entrevista de requerimientos con el cliente.
-- [ ] Validación y priorización de requerimientos.
+- [x] Revisión y aprobación del cliente y del equipo.
+- [ ] Entrevista para recopilar información operativa real.
 - [ ] Sustitución de datos simulados por información confirmada.
 - [ ] Backend, base de datos y autenticación.
-- [ ] Pruebas con el cliente.
+- [ ] Pruebas de la versión conectada.
 
 ## Probar la primera versión
 
@@ -63,7 +64,8 @@ Después abra `http://localhost:8000`.
 
 ## Documentación
 
-- [Borrador de requerimientos](docs/requerimientos.md)
+- [Requerimientos validados](docs/requerimientos.md)
+- [Registro de validación](docs/validacion-cliente-equipo.md)
 - [Guía de entrevista](docs/entrevista-cliente.md)
 - [Casos de uso](docs/diagramas/casos-de-uso.md)
 - [Modelo entidad-relación](docs/diagramas/modelo-entidad-relacion.md)
@@ -74,7 +76,7 @@ Después abra `http://localhost:8000`.
 
 ## Organización del trabajo
 
-Las actividades se registran mediante GitHub Issues. Cada tarea indica su propósito, criterios de aceptación y evidencia esperada. Los cambios importantes del alcance o funcionamiento deberán validarse con el cliente antes de considerarse definitivos.
+Las actividades se registran mediante GitHub Issues. Cada tarea indica su propósito, criterios de aceptación y evidencia esperada.
 
 ## Proyecto académico
 
