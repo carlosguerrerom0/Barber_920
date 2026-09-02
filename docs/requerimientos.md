@@ -1,59 +1,60 @@
-# Borrador de requerimientos
+# Requerimientos del sistema
 
-**Estado:** propuesta inicial pendiente de validación con el cliente.
+**Estado:** validados por el cliente y el equipo para el alcance actual de la Fase 2.  
+**Fecha de validación registrada:** 2 de septiembre de 2026.
 
-Este documento convierte el alcance preliminar de la Fase 1 en requerimientos verificables. Los detalles marcados como pendientes deben resolverse durante la entrevista con el representante de Barber 920.
+Este documento define los requerimientos aceptados para el prototipo y orienta la siguiente etapa de desarrollo. Los datos operativos reales de sucursales y servicios se administran por separado en el Issue #5.
 
-## Actores preliminares
+## Actores
 
 | Actor | Descripción |
 |---|---|
 | Cliente | Persona que consulta sucursales, disponibilidad y registra una cita. |
 | Administrador | Personal autorizado que consulta y administra reservaciones. |
 
-## Requerimientos funcionales
+## Requerimientos funcionales validados
 
-| ID | Requerimiento | Prioridad inicial | Estado |
+| ID | Requerimiento | Prioridad | Estado |
 |---|---|---|---|
-| RF-01 | El sistema mostrará información general de Barber 920. | Media | Propuesto |
-| RF-02 | El sistema mostrará las sucursales con su dirección, horario y medios de contacto. | Alta | Propuesto |
-| RF-03 | El cliente podrá seleccionar una sucursal. | Alta | Propuesto |
-| RF-04 | El sistema mostrará los servicios disponibles. | Alta | Propuesto |
-| RF-05 | El cliente podrá seleccionar un servicio, una fecha y un horario disponible. | Alta | Propuesto |
-| RF-06 | El sistema impedirá registrar dos citas incompatibles en el mismo horario. | Alta | Propuesto |
-| RF-07 | El cliente podrá registrar una cita proporcionando los datos requeridos. | Alta | Propuesto |
-| RF-08 | El sistema mostrará una confirmación después de registrar la cita. | Alta | Propuesto |
-| RF-09 | El administrador podrá consultar las reservaciones registradas. | Alta | Propuesto |
-| RF-10 | El administrador podrá filtrar las reservaciones por fecha y sucursal. | Media | Propuesto |
-| RF-11 | El administrador podrá actualizar el estado de una cita. | Media | Propuesto |
-| RF-12 | El administrador podrá cancelar una reservación. | Media | Propuesto |
+| RF-01 | El sistema mostrará información general de Barber 920. | Media | Validado |
+| RF-02 | El sistema mostrará las sucursales con su dirección, horario y medios de contacto. | Alta | Validado |
+| RF-03 | El cliente podrá seleccionar una sucursal. | Alta | Validado |
+| RF-04 | El sistema mostrará los servicios disponibles. | Alta | Validado |
+| RF-05 | El cliente podrá seleccionar un servicio, una fecha y un horario disponible. | Alta | Validado |
+| RF-06 | El sistema impedirá registrar dos citas incompatibles en el mismo horario. | Alta | Validado |
+| RF-07 | El cliente podrá registrar una cita proporcionando nombre y teléfono. | Alta | Validado |
+| RF-08 | El sistema mostrará una confirmación después de registrar la cita. | Alta | Validado |
+| RF-09 | El administrador podrá consultar las reservaciones registradas. | Alta | Validado |
+| RF-10 | El administrador podrá filtrar las reservaciones por fecha y sucursal. | Media | Validado |
+| RF-11 | El administrador podrá actualizar el estado de una cita. | Media | Validado |
+| RF-12 | El administrador podrá cancelar una reservación. | Media | Validado |
 
-## Requerimientos no funcionales
+## Requerimientos no funcionales validados
 
-| ID | Requerimiento | Comprobación preliminar | Estado |
+| ID | Requerimiento | Comprobación | Estado |
 |---|---|---|---|
-| RNF-01 | La interfaz será adaptable a computadora y celular. | Probar las vistas en diferentes anchos de pantalla. | Propuesto |
-| RNF-02 | La navegación utilizará textos claros y pasos sencillos. | Prueba de uso con usuarios y cliente. | Propuesto |
-| RNF-03 | Los datos de administración requerirán acceso autorizado. | Intentar ingresar sin una sesión válida. | Propuesto |
-| RNF-04 | El sistema validará los datos obligatorios antes de registrar una cita. | Probar formularios incompletos o incorrectos. | Propuesto |
-| RNF-05 | El sistema protegerá los datos personales recopilados. | Revisar permisos, exposición de datos y almacenamiento. | Propuesto |
-| RNF-06 | Las funciones principales tendrán tiempos de respuesta aceptables. | Definir y medir el límite con el cliente. | Pendiente de métrica |
-| RNF-07 | El código y la documentación permitirán realizar mantenimiento. | Revisar estructura, nombres y documentación. | Propuesto |
-| RNF-08 | La interfaz considerará contraste, etiquetas y navegación comprensible. | Revisión básica de accesibilidad. | Propuesto |
+| RNF-01 | La interfaz será adaptable a computadora y celular. | Probar las vistas en diferentes anchos de pantalla. | Validado |
+| RNF-02 | La navegación utilizará textos claros y pasos sencillos. | Prueba de uso con usuarios y cliente. | Validado |
+| RNF-03 | Los datos de administración requerirán acceso autorizado. | Intentar ingresar sin una sesión válida en la versión conectada. | Validado |
+| RNF-04 | El sistema validará los datos obligatorios antes de registrar una cita. | Probar formularios incompletos o incorrectos. | Validado |
+| RNF-05 | El sistema protegerá los datos personales recopilados. | Revisar permisos, exposición y almacenamiento. | Validado |
+| RNF-06 | Las funciones principales responderán en un máximo de 3 segundos bajo condiciones normales. | Medir carga de vistas, consulta y registro. | Validado |
+| RNF-07 | El código y la documentación permitirán realizar mantenimiento. | Revisar estructura, nombres y documentación. | Validado |
+| RNF-08 | La interfaz considerará contraste, etiquetas y navegación comprensible. | Revisión básica de accesibilidad. | Validado |
 
-## Información pendiente de confirmar
+## Información operativa pendiente
 
-- Direcciones, teléfonos y horarios de las tres sucursales.
-- Servicios, precios y duración de cada servicio.
-- Si el cliente seleccionará barbero o únicamente sucursal y horario.
-- Datos obligatorios para realizar una reservación.
-- Reglas para cancelaciones, retardos y modificaciones.
-- Intervalos disponibles y tiempo entre citas.
-- Forma de confirmar o recordar una cita.
-- Cantidad y tipo de usuarios administrativos.
-- Días festivos, cierres y bloqueos de horarios.
-- Políticas para el tratamiento de datos personales.
+La aprobación del alcance no sustituye la recopilación de datos reales. Todavía deben confirmarse:
 
-## Criterio para aprobar este documento
+- Direcciones, teléfonos y horarios reales.
+- Servicios, precios y duraciones reales.
+- Nombres y disponibilidad de barberos, si se utilizarán.
+- Reglas definitivas de cancelaciones, retardos y modificaciones.
+- Días festivos, cierres y bloqueos.
+- Material visual autorizado.
 
-El borrador se considerará validado cuando el cliente revise los requerimientos, indique correcciones y confirme mediante una minuta la versión aceptada.
+Estos pendientes se concentran en los Issues #1 y #5.
+
+## Registro de aprobación
+
+El usuario responsable del repositorio confirmó que el cliente y el equipo están de acuerdo con los requerimientos y prototipos existentes. La constancia del alcance aprobado está disponible en [validacion-cliente-equipo.md](validacion-cliente-equipo.md).
