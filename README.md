@@ -1,85 +1,52 @@
-# Sistema Web de Agendamiento y Sucursales - Barber 920
+# Sistema Web de Agendamiento y Sucursales · Barber 920
 
-Proyecto académico para analizar, diseñar y desarrollar un sistema web que facilite la consulta de sucursales y el agendamiento de citas de Barber 920.
+Proyecto académico de la Universidad Autónoma de Ciudad Juárez para consultar sucursales, reservar horarios y administrar citas.
 
-> **Aviso:** la primera versión utiliza datos simulados y almacenamiento local. No registra citas reales.
+> **Demostración:** sucursales, servicios, precios y horarios son simulados. Las reservas se guardan en una base de datos local para probar el flujo; no constituyen citas reales. Use datos ficticios, nunca información personal real.
 
-## Estado del proyecto
+## Estado al 29 de septiembre de 2026
 
-**Fase 2: requerimientos y prototipos aprobados; desarrollo de la versión conectada pendiente.**
+La primera versión navegable y sus documentos fueron aprobados por el cliente y el equipo según el registro de validación de septiembre. El repositorio no tuvo cambios del 2 al 29 de septiembre. Este avance conecta las vistas con una API, SQLite y acceso al panel mediante contraseña. La entrevista de datos operativos y el reemplazo de datos simulados siguen pendientes; este nuevo avance técnico aún requiere una revisión del equipo y del cliente.
 
-El cliente y el equipo aprobaron los requerimientos, diagramas, arquitectura, flujo de agendamiento, panel de demostración y primera versión navegable. La información operativa real, el backend, la base de datos y la autenticación continúan pendientes.
+| Actividad | Estado | Evidencia |
+|---|---|---|
+| Requerimientos, diagramas y flujo del prototipo | Terminada, aprobada en la revisión anterior | [Registro de validación](docs/validacion-cliente-equipo.md) |
+| Interfaz adaptable y navegación | Terminada en prototipo | [Interfaz](web/index.html) |
+| API de disponibilidad y reservas | Implementada para demostración | [Servidor](server/index.js) |
+| Persistencia y panel con sesión | Implementados para demostración | [Pruebas](test/server.test.js) |
+| Datos operativos reales | Pendiente | [Guía de entrevista](docs/entrevista-cliente.md) |
+| Sustituir datos simulados y validar reglas definitivas | Pendiente | [Datos simulados](docs/datos-simulados.md) |
+| Revisión del avance conectado y despliegue | Pendiente | [Seguimiento de septiembre](docs/avance-2026-09-29.md) |
 
-## Objetivo general
+## Ejecutar en local
 
-Desarrollar un sistema web adaptable a computadoras y celulares que permita consultar sucursales, revisar disponibilidad, registrar citas y administrar reservaciones de forma básica.
-
-## Avance de la Fase 2
-
-- [x] Creación y organización del repositorio.
-- [x] Requerimientos funcionales y no funcionales.
-- [x] Validación y priorización de requerimientos.
-- [x] Backlog inicial en GitHub Issues.
-- [x] Diagrama de casos de uso.
-- [x] Modelo entidad-relación preliminar.
-- [x] Selección tecnológica inicial.
-- [x] Prototipo adaptable de inicio y sucursales.
-- [x] Prototipo del flujo de agendamiento.
-- [x] Panel administrativo de demostración.
-- [x] Primera versión navegable con almacenamiento local.
-- [x] Revisión y aprobación del cliente y del equipo.
-- [ ] Entrevista para recopilar información operativa real.
-- [ ] Sustitución de datos simulados por información confirmada.
-- [ ] Backend, base de datos y autenticación.
-- [ ] Pruebas de la versión conectada.
-
-## Probar la primera versión
-
-La aplicación está en la carpeta [web](web/).
-
-1. Descargar o clonar el repositorio.
-2. Abrir `web/index.html` en un navegador.
-3. Registrar una cita de demostración.
-4. Abrir la sección Administración para consultar o cambiar su estado.
-
-También puede servirse localmente:
+Requiere **Node.js 24 o posterior**. No hay dependencias de npm por instalar.
 
 ```bash
-cd web
-python -m http.server 8000
+export BARBER_ADMIN_PASSWORD='una-clave-de-prueba-de-12-caracteres-o-mas'
+npm start
 ```
 
-Después abra `http://localhost:8000`.
+Abra [http://127.0.0.1:3000](http://127.0.0.1:3000). La contraseña se establece al crear la base de datos por primera vez. No la suba a GitHub. El archivo `data/barber.sqlite` queda excluido de Git. Para pruebas automatizadas: `npm test`.
 
-## Funciones implementadas en el prototipo
+El prototipo se sirve desde Node; abrir `web/index.html` directamente ya no permite reservar. La dirección de escucha predeterminada es local. `PORT` y `HOST` permiten cambiarla, aunque todavía no se ha preparado un despliegue público.
 
-- Interfaz adaptable a computadora y celular.
-- Consulta de tres sucursales simuladas.
-- Catálogo de servicios y precios de demostración.
-- Registro local de citas.
-- Validación de domingos y horarios ocupados.
-- Confirmación visual.
-- Panel con filtros, indicadores y cambio de estado.
-- Carga opcional de citas de demostración.
+## Funciones disponibles
+
+- Consulta de tres sucursales y cuatro servicios simulados.
+- Horarios disponibles calculados en el servidor, sin domingos ni citas pasadas.
+- Reserva persistente con validación y bloqueo de horarios ocupados por sucursal.
+- Acceso de administrador con contraseña, sesión y cierre de sesión.
+- Filtros, indicadores y cambios de estado de citas en el panel.
+- Pruebas de creación, colisiones, acceso, cancelación y persistencia.
 
 ## Documentación
 
-- [Requerimientos validados](docs/requerimientos.md)
-- [Registro de validación](docs/validacion-cliente-equipo.md)
-- [Guía de entrevista](docs/entrevista-cliente.md)
-- [Casos de uso](docs/diagramas/casos-de-uso.md)
-- [Modelo entidad-relación](docs/diagramas/modelo-entidad-relacion.md)
-- [Arquitectura preliminar](docs/arquitectura-preliminar.md)
-- [Selección tecnológica](docs/decision-tecnologica.md)
-- [Datos simulados](docs/datos-simulados.md)
-- [Forma de trabajo](CONTRIBUTING.md)
+- [Seguimiento del 29 de septiembre](docs/avance-2026-09-29.md)
+- [Requerimientos](docs/requerimientos.md) · [Validación anterior](docs/validacion-cliente-equipo.md)
+- [Arquitectura](docs/arquitectura-preliminar.md) · [Decisión tecnológica](docs/decision-tecnologica.md)
+- [Casos de uso](docs/diagramas/casos-de-uso.md) · [Modelo preliminar](docs/diagramas/modelo-entidad-relacion.md)
+- [Guía de entrevista](docs/entrevista-cliente.md) · [Datos simulados](docs/datos-simulados.md)
+- [Organización del equipo](CONTRIBUTING.md)
 
-## Organización del trabajo
-
-Las actividades se registran mediante GitHub Issues. Cada tarea indica su propósito, criterios de aceptación y evidencia esperada.
-
-## Proyecto académico
-
-Universidad Autónoma de Ciudad Juárez  
-Materia: Administración y Evaluación de Proyectos de Tecnologías de Información  
-Periodo: agosto-octubre de 2026
+El tablero de trabajo se lleva en [GitHub Issues](https://github.com/carlosguerrerom0/Barber_920/issues).

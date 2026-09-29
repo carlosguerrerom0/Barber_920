@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="demo-banner">
-    Prototipo académico con datos simulados. No realiza reservaciones reales.
+    Prototipo académico con sucursales y precios simulados. No ingreses datos personales reales.
   </div>
 
   <header class="site-header">
@@ -62,8 +62,8 @@
       <section class="status-panel">
         <div>
           <p class="eyebrow">Avance de Fase 2</p>
-          <h2>Primera versión navegable</h2>
-          <p>Este prototipo permite revisar el flujo antes de conectar una base de datos y usar información real.</p>
+          <h2>Reservas y administración conectadas</h2>
+          <p>La demostración guarda citas en SQLite y consulta disponibilidad desde el servidor. Falta validar datos reales con el cliente.</p>
         </div>
         <button class="button primary" data-view-link="reservar">Probar reservación</button>
       </section>
@@ -82,7 +82,7 @@
       <div class="page-heading">
         <p class="eyebrow">Flujo de demostración</p>
         <h1>Agenda una cita</h1>
-        <p>Los registros se guardan únicamente en este navegador.</p>
+        <p>Las citas de demostración se guardan en la base de datos local del servidor.</p>
       </div>
 
       <div class="booking-layout">
@@ -135,7 +135,7 @@
             <div><dt>Duración</dt><dd id="summaryDuration">-</dd></div>
             <div><dt>Precio demo</dt><dd id="summaryPrice">-</dd></div>
           </dl>
-          <p class="small-note">La disponibilidad real deberá calcularse desde el servidor en la versión final.</p>
+          <p class="small-note">Disponibilidad calculada por el servidor para los horarios simulados de cada sucursal.</p>
         </aside>
       </div>
     </section>
@@ -143,7 +143,7 @@
     <section id="confirmacion" class="view" hidden>
       <div class="confirmation-card">
         <div class="confirmation-icon">✓</div>
-        <p class="eyebrow">Registro local completado</p>
+        <p class="eyebrow">Registro de demostración completado</p>
         <h1>Cita de demostración guardada</h1>
         <p id="confirmationText"></p>
         <div class="hero-actions centered">
@@ -155,11 +155,19 @@
 
     <section id="administracion" class="view" hidden>
       <div class="page-heading">
-        <p class="eyebrow">Panel simulado</p>
+        <p class="eyebrow">Panel de demostración</p>
         <h1>Administración de citas</h1>
-        <p>No cuenta con autenticación y no debe utilizarse con datos reales.</p>
+        <p>Acceso protegido con contraseña para administrar citas de prueba.</p>
       </div>
 
+      <form id="loginForm" class="panel login-panel">
+        <label for="adminPassword">Contraseña de administración</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" required>
+        <button type="submit" class="button primary">Ingresar</button>
+        <p id="loginMessage" class="form-message" role="alert" aria-live="polite"></p>
+      </form>
+
+      <div id="adminContent" hidden>
       <div class="metric-grid">
         <article class="metric"><span id="metricTotal">0</span><p>Total</p></article>
         <article class="metric"><span id="metricPending">0</span><p>Pendientes</p></article>
@@ -177,7 +185,7 @@
             <label for="filterDate">Filtrar fecha</label>
             <input id="filterDate" type="date">
           </div>
-          <button id="loadDemoData" class="button secondary">Cargar citas demo</button>
+          <button id="logoutButton" class="button secondary">Cerrar sesión</button>
         </div>
         <div class="table-wrap">
           <table>
@@ -188,6 +196,7 @@
           </table>
           <p id="emptyAppointments" class="empty-state">Todavía no hay citas de demostración.</p>
         </div>
+      </div>
       </div>
     </section>
   </main>

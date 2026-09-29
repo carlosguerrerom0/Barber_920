@@ -1,53 +1,23 @@
-# Arquitectura preliminar
+# Arquitectura del avance de Fase 2
 
-**Estado:** arquitectura por etapas seleccionada para el primer avance. Las reglas del negocio continúan pendientes de validación.
+**Actualizada:** 29 de septiembre de 2026. Las reglas del negocio continúan pendientes de validación con Barber 920.
 
-## Componentes
+## Componentes implementados
 
-1. **Interfaz web:** HTML, CSS y JavaScript para las vistas del cliente y del administrador.
-2. **Almacenamiento del prototipo:** `localStorage`, únicamente para demostración en un navegador.
-3. **Backend propuesto:** Node.js con Express para la segunda etapa.
-4. **Base de datos propuesta:** SQLite durante desarrollo; PostgreSQL si el despliegue requiere varios usuarios simultáneos.
+1. **Interfaz:** HTML, CSS y JavaScript en `web/`.
+2. **API y servidor de archivos:** Node.js 24, módulo `node:http` en `server/index.js`.
+3. **Persistencia local:** SQLite mediante `node:sqlite`, con citas, cuenta administrativa y sesiones en `data/barber.sqlite`. El archivo no se versiona.
+4. **Acceso:** contraseña administrativa con hash scrypt y sal; cookie de sesión HTTP-only, SameSite Strict; cierre de sesión y limitación básica de intentos.
 
-## Flujo principal
+El navegador consulta `/api/config` y `/api/availability`. Al reservar envía `POST /api/appointments`; el servidor valida datos, fecha y horario, y registra la cita en una transacción. El panel inicia sesión y consulta `/api/admin/appointments` para filtrar y modificar estados. Una cita cancelada libera su horario y no se reactiva.
 
-1. El cliente selecciona una sucursal.
-2. El sistema presenta servicios y horarios.
-3. El cliente selecciona servicio, fecha y horario.
-4. El prototipo valida el día y evita duplicar sucursal, fecha y hora en el almacenamiento local.
-5. El cliente proporciona nombre y teléfono de demostración.
-6. El sistema registra y confirma la cita local.
-7. El panel administrativo permite consultar y actualizar el estado.
+El modelo de ocupación de la demostración admite **una cita simultánea por sucursal**. Los horarios comienzan cada hora de lunes a sábado de 10:00 a 19:00, zona `America/Ciudad_Juarez`. Estos supuestos deben confirmarse con el cliente; el diagrama entidad-relación original incluye barberos y otras entidades futuras que aún no se implementan.
 
-## Entidades
+## Pendiente
 
-| Entidad | Propósito |
-|---|---|
-| Sucursal | Guardar datos de cada establecimiento. |
-| Servicio | Representar los servicios disponibles. |
-| Barbero | Representar al personal si el cliente confirma esta función. |
-| Cliente | Guardar los datos mínimos necesarios. |
-| Cita | Relacionar sucursal, servicio, horario y cliente. |
-| Usuario administrativo | Controlar el acceso al panel en la versión conectada. |
+- Entrevista y validación de sucursales, personal, servicios, precios, duración y reglas de cancelación.
+- Sustituir datos simulados y ajustar modelo para capacidad real por barbero.
+- Revisión del nuevo avance con cliente y equipo, pruebas de interfaz en distintos dispositivos y decisión de hospedaje seguro antes de usar datos reales.
+- Confirmaciones y recordatorios, si se aprueban.
 
-Consulte el [modelo entidad-relación](diagramas/modelo-entidad-relacion.md) para conocer los campos y relaciones propuestos.
-
-## Limitaciones actuales
-
-- No existe servidor ni base de datos compartida.
-- No existe autenticación.
-- Las reservaciones permanecen solamente en el navegador.
-- No se envían confirmaciones.
-- Los datos de sucursales, servicios, precios y horarios son simulados.
-
-## Decisiones pendientes de validación
-
-- Selección obligatoria u opcional de barbero.
-- Cuentas para clientes.
-- Recordatorios y canal de envío.
-- Integración con mapas.
-- Reglas exactas de disponibilidad, duración y cancelación.
-- Datos personales autorizados.
-- Hospedaje definitivo y dominio.
-
-La arquitectura se actualizará cuando el cliente valide los requerimientos.
+Consulte el [modelo preliminar](diagramas/modelo-entidad-relacion.md) y el [seguimiento](avance-2026-09-29.md).

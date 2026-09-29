@@ -1,33 +1,14 @@
-# Prototipo web
+# Interfaz web
 
-Primera versión navegable del proyecto Barber 920.
-
-## Ejecutar
-
-No requiere instalar dependencias. Abra `index.html` en un navegador moderno.
-
-Para servirlo localmente desde esta carpeta también puede utilizar:
+La interfaz usa la API del servidor de este repositorio. Desde la raíz del proyecto, ejecute:
 
 ```bash
-python -m http.server 8000
+export BARBER_ADMIN_PASSWORD='una-clave-de-prueba-de-12-caracteres-o-mas'
+npm start
 ```
 
-Después abra `http://localhost:8000`.
+Abra http://127.0.0.1:3000. Requiere Node.js 24 o posterior. La contraseña se define al crear la base de datos por primera vez; use datos ficticios.
 
-## Funciones incluidas
+La aplicación consulta sucursales y servicios simulados, muestra la disponibilidad del servidor, registra reservas en SQLite y permite filtrarlas y cambiar su estado desde el panel protegido. No se pueden reactivar citas canceladas: registre una nueva.
 
-- Navegación adaptable.
-- Consulta de sucursales y servicios simulados.
-- Formulario de reservación.
-- Validación de domingos y horarios duplicados.
-- Guardado local de citas de demostración.
-- Panel administrativo con filtros y cambio de estado.
-- Carga opcional de datos demo.
-
-## Limitaciones
-
-- No existe backend ni base de datos compartida.
-- No hay autenticación.
-- Los datos se guardan en `localStorage`.
-- No se deben introducir datos personales reales.
-- Sucursales, precios, servicios y reglas están pendientes de validación.
+Esta es una demostración local y no acepta citas reales. Abrir `index.html` como archivo o servir esta carpeta con un servidor estático no ofrece las funciones conectadas.

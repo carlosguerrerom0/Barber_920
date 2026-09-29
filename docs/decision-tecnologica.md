@@ -1,7 +1,7 @@
 # Selección tecnológica preliminar
 
 **Fecha:** 1 de septiembre de 2026  
-**Estado:** decisión del equipo para construir el primer avance; puede ajustarse al validar el alcance.
+**Estado:** decisión inicial; implementación revisada el 29 de septiembre de 2026.
 
 ## Alternativas consideradas
 
@@ -12,11 +12,13 @@
 | Base de datos | SQLite | PostgreSQL | SQLite para desarrollo |
 | Despliegue | GitHub Pages para prototipo | Servicio de aplicación completo | GitHub Pages para prototipo |
 
+La versión conectada implementada utiliza **Node.js 24 con `node:http` y `node:sqlite`**, sin dependencias externas. Express se había propuesto inicialmente, pero para este avance local no fue necesario. GitHub Pages puede mostrar una versión estática, pero no puede ejecutar esta API ni la base de datos: el despliegue de la versión conectada sigue pendiente.
+
 ## Justificación
 
 Para la primera versión se eligió HTML, CSS y JavaScript porque permite mostrar un avance navegable sin agregar complejidad innecesaria. El equipo puede validar primero el flujo de sucursales, reservación y administración.
 
-En una etapa posterior se propone Node.js con Express para aplicar reglas de negocio y exponer una API. SQLite permite desarrollar y demostrar el sistema con una configuración sencilla; PostgreSQL sería una alternativa si se requiere un despliegue multiusuario.
+La API ahora aplica reglas de negocio y SQLite permite desarrollar y demostrar el sistema con una configuración sencilla; un diseño de despliegue multiusuario deberá evaluarse cuando se valide el alcance.
 
 ## Arquitectura por etapas
 
@@ -31,13 +33,13 @@ En una etapa posterior se propone Node.js con Express para aplicar reglas de neg
 
 ### Etapa 2: sistema conectado
 
-- API con Node.js y Express.
-- Base de datos.
-- Autenticación administrativa.
-- Disponibilidad calculada desde el servidor.
-- Validaciones para impedir conflictos.
-- Pruebas y despliegue.
+- [x] API con Node.js.
+- [x] Base de datos SQLite.
+- [x] Autenticación administrativa para demostración local.
+- [x] Disponibilidad calculada desde el servidor y validación de conflictos.
+- [x] Pruebas automatizadas del flujo principal.
+- [ ] Despliegue y revisión del avance conectado.
 
 ## Limitación importante
 
-`localStorage` se utilizará solamente en el prototipo. No es adecuado para guardar reservaciones reales porque los datos permanecen en el navegador del usuario y no se comparten entre dispositivos.
+La nueva interfaz usa SQLite en el servidor. Los datos de sucursales, precios y horarios aún son simulados; no se deben utilizar datos personales reales en esta demostración.

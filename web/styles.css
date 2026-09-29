@@ -233,7 +233,7 @@ main { min-height: 75vh; }
   box-shadow: var(--shadow);
 }
 
-.form-panel label, .admin-toolbar label {
+.form-panel label, .admin-toolbar label, .login-panel label {
   display: block;
   margin: 1rem 0 0.35rem;
   font-size: 0.85rem;
@@ -327,6 +327,9 @@ input:focus, select:focus {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
+
+.login-panel { max-width: 480px; }
+.login-panel .button { margin-top: 1rem; }
 
 .metric { padding: 1.4rem; background: var(--ink); color: #fff; }
 
