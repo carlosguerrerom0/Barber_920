@@ -43,6 +43,7 @@ El prototipo se sirve desde Node; abrir `web/index.html` directamente ya no perm
 ## Documentación
 
 - [Seguimiento del 29 de septiembre](docs/avance-2026-09-29.md)
+- [Red PERT propuesta para actividades pendientes](docs/pert-fase2-pendiente.md)
 - [Requerimientos](docs/requerimientos.md) · [Validación anterior](docs/validacion-cliente-equipo.md)
 - [Arquitectura](docs/arquitectura-preliminar.md) · [Decisión tecnológica](docs/decision-tecnologica.md)
 - [Casos de uso](docs/diagramas/casos-de-uso.md) · [Modelo preliminar](docs/diagramas/modelo-entidad-relacion.md)
