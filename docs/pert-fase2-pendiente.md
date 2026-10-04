@@ -28,7 +28,7 @@ La actividad C no significa que ya existan datos reales; depende de la entrevist
 
 ## Red de actividades en flechas
 
-Los cuadros numerados representan eventos y las flechas representan actividades. Las ramas E y F deben terminar antes de G. Las ramas I y J deben terminar antes de cerrar el proyecto. Este arreglo no requiere actividad ficticia.
+La tabla de apoyo del equipo usa once eventos y dos actividades ficticias de duración cero. Se conserva aquí esa numeración para que las tablas del repositorio coincidan con el documento de Fase 2. E y F deben terminar antes de G; I y J deben terminar antes del cierre.
 
 ```mermaid
 flowchart LR
@@ -37,16 +37,18 @@ flowchart LR
     N3 -- "C · 2" --> N4["4"]
     N3 -- "D · 3" --> N5["5"]
     N4 -- "E · 2" --> N6["6"]
-    N5 -- "F · 4" --> N6
-    N6 -- "G · 2" --> N7["7"]
-    N7 -- "H · 1" --> N8["8"]
-    N8 -- "I · 2" --> N9["9"]
-    N7 -- "J · 2" --> N9
+    N6 -. "f1 · 0" .-> N7["7"]
+    N5 -- "F · 4" --> N7
+    N7 -- "G · 2" --> N8["8"]
+    N8 -- "H · 1" --> N9["9"]
+    N8 -- "J · 2" --> N10["10"]
+    N9 -- "I · 2" --> N11["11"]
+    N10 -. "f2 · 0" .-> N11
 ```
 
 ## Tiempos de eventos
 
-El TMC se calcula de izquierda a derecha tomando el máximo cuando confluyen flechas; el TML se calcula de derecha a izquierda tomando el mínimo cuando divergen. Para el último nodo se fija TML = TMC = 15.
+El TMC se calcula de izquierda a derecha tomando el máximo en convergencias; el TML se calcula de derecha a izquierda tomando el mínimo en bifurcaciones. Para el último nodo, TML = TMC = 15.
 
 | Nodo | TMC | TML |
 |---:|---:|---:|
@@ -55,12 +57,14 @@ El TMC se calcula de izquierda a derecha tomando el máximo cuando confluyen fle
 | 3 | 3 | 3 |
 | 4 | 5 | 8 |
 | 5 | 6 | 6 |
-| 6 | 10 | 10 |
-| 7 | 12 | 12 |
-| 8 | 13 | 13 |
-| 9 | 15 | 15 |
+| 6 | 7 | 10 |
+| 7 | 10 | 10 |
+| 8 | 12 | 12 |
+| 9 | 13 | 13 |
+| 10 | 14 | 15 |
+| 11 | 15 | 15 |
 
-Por ejemplo, el TMC del nodo 6 es `max(5 + 2, 6 + 4) = 10`. El TML del nodo 3 es `min(8 - 2, 6 - 3) = 3`.
+Por ejemplo, TMC del nodo 7 = `max(7 + 0, 6 + 4) = 10`. El TML del nodo 10 es **15**, ya que f2 llega al nodo 11 con duración cero. En la hoja del equipo ese TML figuraba como 14; también faltaba identificar la segunda llegada al nodo 7.
 
 ## Holguras y ruta crítica
 
@@ -73,12 +77,14 @@ Con la fórmula usada en clase, `Hᵢⱼ = Lⱼ − (Cᵢ + Tᵢⱼ)`, se obtien
 | C | 3 → 4 | 3 | 2 | 8 | 3 |
 | D | 3 → 5 | 3 | 3 | 6 | 0 |
 | E | 4 → 6 | 5 | 2 | 10 | 3 |
-| F | 5 → 6 | 6 | 4 | 10 | 0 |
-| G | 6 → 7 | 10 | 2 | 12 | 0 |
-| H | 7 → 8 | 12 | 1 | 13 | 0 |
-| I | 8 → 9 | 13 | 2 | 15 | 0 |
-| J | 7 → 9 | 12 | 2 | 15 | 1 |
+| F | 5 → 7 | 6 | 4 | 10 | 0 |
+| f1 | 6 → 7 | 7 | 0 | 10 | 3 |
+| G | 7 → 8 | 10 | 2 | 12 | 0 |
+| H | 8 → 9 | 12 | 1 | 13 | 0 |
+| I | 9 → 11 | 13 | 2 | 15 | 0 |
+| J | 8 → 10 | 12 | 2 | 15 | 1 |
+| f2 | 10 → 11 | 14 | 0 | 15 | 1 |
 
-**Ruta crítica propuesta:** A → B → D → F → G → H → I, con **15 días de trabajo estimados** desde que empieza A. Las actividades C y E tienen tres días de holgura; J tiene uno. La suma de todas las duraciones es 21 días, pero no representa la duración del proyecto porque hay trabajo en paralelo.
+**Ruta crítica propuesta:** A → B → D → F → G → H → I, con **15 días de trabajo estimados** desde que empieza A. Las actividades C, E y f1 tienen tres días de holgura; J y f2 tienen uno. La suma de las duraciones de A a J es 21 días, pero no representa la duración del proyecto porque hay trabajo en paralelo.
 
 Antes de usar esta red como compromiso de entrega, el equipo debe revisar duraciones, disponibilidad del cliente, responsables y la fecha límite. Si se decide incluir despliegue público, habrá que agregar actividades y recalcular la ruta crítica.
