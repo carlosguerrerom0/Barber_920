@@ -56,7 +56,7 @@ Tarifa académica supuesta uniforme de $80 MXN/h, no sueldo acordado ni pago rea
 
 ## Estado y evidencias
 
-Los Issues #1–#17 estaban cerrados al corte del 4 de octubre, aunque varios conservan criterios sin verificar. No se infiere que sus funciones estén implementadas. El seguimiento de continuidad debe conservar los pendientes y adjuntar resultados verificables.
+Los Issues #1–#17 estaban cerrados al corte del 4 de octubre, aunque varios conservan criterios sin verificar. No se infiere que sus funciones estén implementadas. El [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18) conserva los pendientes, responsables y fechas propuestas; requiere adjuntar resultados verificables.
 
 El commit 3e4192d incorpora logo, Anton/Inter, rediseño, mapas y Cómo llegar. Aún faltan verificación de marcadores, datos completos y perfiles; no prueba aceptación del cliente.
 
