@@ -1,16 +1,18 @@
 # Datos simulados para el prototipo
 
-> **Aviso:** la información de este archivo fue creada únicamente para demostrar el funcionamiento. No representa datos confirmados por Barber 920.
+> **Aviso:** los servicios, precios, capacidad y reservas de la aplicación son de demostración. Las direcciones se basan en la corrección enviada por el equipo después de la entrevista; falta validar la versión conectada con el cliente.
 
-**Actualización del 3 de octubre:** la [entrevista al dueño](minuta-entrevista-cliente-2026-10-03.md) confirmó tres direcciones, horarios de lunes a domingo y precios de algunos servicios. La aplicación aún conserva los valores de esta página: sus sucursales, precios y disponibilidad **no coinciden con lo relatado por el cliente**. Se mantendrán identificados como demostración hasta completar el catálogo, confirmar nombres de barberos, descansos, teléfonos y capacidad simultánea, y adaptar las reglas.
+**Actualización:** la [entrevista al dueño](minuta-entrevista-cliente-2026-10-03.md) registró horarios y precios de algunos servicios; después, el equipo precisó las direcciones. La aplicación muestra esas direcciones y horarios, y aplica dos horas mínimas de anticipación. Aún faltan catálogo completo, barberos, descansos, teléfonos, enlaces de mapa y capacidad simultánea.
 
-## Sucursales simuladas
+## Sucursales mostradas en el prototipo
 
-| Sucursal | Horario de demostración | Dirección |
+| Sucursal | Horario informado | Dirección facilitada por el equipo |
 |---|---|---|
-| Sucursal Centro | Lunes a sábado, 10:00-20:00 | Pendiente de confirmar |
-| Sucursal Norte | Lunes a sábado, 10:00-20:00 | Pendiente de confirmar |
-| Sucursal Oriente | Lunes a sábado, 10:00-20:00 | Pendiente de confirmar |
+| SUC 1 | Lunes a sábado, 10:00–19:00; domingo, 10:00–16:00 | C. Durango 920, Morelos II, 32673 Juárez, Chih. |
+| SUC 2 | Lunes a sábado, 10:00–19:00; domingo, 10:00–16:00 | Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih. |
+| SUC 3 | Lunes a sábado, 10:00–19:00; domingo, 10:00–16:00 | Cerro del Crestón #6327; colonia y CP pendientes |
+
+Los identificadores internos `centro`, `norte` y `oriente` se conservan para no invalidar las reservas ya almacenadas; las etiquetas públicas son SUC 1, 2 y 3. Los nombres geográficos de esos identificadores no describen ubicaciones confirmadas.
 
 ## Servicios simulados
 
@@ -23,11 +25,12 @@
 
 ## Reglas simuladas
 
-- Se ofrecen horarios cada hora entre las 10:00 y las 19:00.
+- Se ofrecen inicios cada hora desde las 10:00. La última opción depende de la duración del servicio y de la hora de cierre: 19:00 de lunes a sábado y 16:00 el domingo.
+- Se exige una anticipación mínima de dos horas para reservar el mismo día.
 - Para la demostración se acepta una cita por sucursal y horario.
 - El cliente registra nombre y teléfono.
 - Las citas nuevas comienzan con estado Pendiente.
 - El administrador puede cambiar el estado.
 - No se envían mensajes ni recordatorios reales.
 
-Antes de usar el sistema con clientes, todos estos datos y reglas deberán ser sustituidos por información validada.
+Antes de usar el sistema con clientes, debe completarse la información pendiente y validarse el flujo conectado.

@@ -12,6 +12,12 @@ const futureWeekday = () => {
   while (date.getUTCDay() === 0) date.setUTCDate(date.getUTCDate() + 1);
   return date.toISOString().slice(0, 10);
 };
+const futureSunday = () => {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() + 8);
+  while (date.getUTCDay() !== 0) date.setUTCDate(date.getUTCDate() + 1);
+  return date.toISOString().slice(0, 10);
+};
 
 async function start(dbPath) {
   const server = createApp({ dbPath, adminPassword: password });
@@ -39,7 +45,18 @@ test('reservas, conflictos, sesión de administración y persistencia', async ()
     const config = await request(app.base, '/api/config');
     assert.equal(config.status, 200);
     assert.equal(config.payload.demo, true);
+    assert.equal(config.payload.branches[0].address, 'C. Durango 920, Morelos II, 32673 Juárez, Chih.');
+    assert.equal(config.payload.branches[1].address, 'Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.');
+    assert.match(config.payload.branches[2].address, /Cerro del Crestón #6327/);
     assert.equal((await request(app.base, `/api/availability?branch=centro&service=combo&date=${date}`)).payload.slots.includes('11:00'), true);
+    const weekdaySlots = (await request(app.base, `/api/availability?branch=centro&service=combo&date=${date}`)).payload.slots;
+    assert.equal(weekdaySlots.includes('18:00'), true);
+    assert.equal(weekdaySlots.includes('19:00'), false);
+    const sunday = futureSunday();
+    const sundaySlots = (await request(app.base, `/api/availability?branch=centro&service=combo&date=${sunday}`)).payload.slots;
+    assert.equal(sundaySlots.includes('15:00'), true);
+    assert.equal(sundaySlots.includes('16:00'), false);
+    assert.equal((await request(app.base, '/api/appointments', 'POST', { ...booking, date: sunday, time: '16:00' })).status, 400);
     assert.equal((await request(app.base, '/api/appointments', 'POST', { ...booking, date: '2020-01-01' })).status, 400);
     const created = await request(app.base, '/api/appointments', 'POST', booking);
     assert.equal(created.status, 201);

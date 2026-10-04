@@ -8,9 +8,9 @@ import { DatabaseSync } from 'node:sqlite';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const branches = [
-  { id: 'centro', name: 'Sucursal Centro', schedule: 'Lun-Sáb · 10:00-20:00', address: 'Dirección pendiente de confirmar' },
-  { id: 'norte', name: 'Sucursal Norte', schedule: 'Lun-Sáb · 10:00-20:00', address: 'Dirección pendiente de confirmar' },
-  { id: 'oriente', name: 'Sucursal Oriente', schedule: 'Lun-Sáb · 10:00-20:00', address: 'Dirección pendiente de confirmar' }
+  { id: 'centro', name: 'Sucursal 1', schedule: 'Lun-Sáb · 10:00-19:00 · Dom · 10:00-16:00', address: 'C. Durango 920, Morelos II, 32673 Juárez, Chih.' },
+  { id: 'norte', name: 'Sucursal 2', schedule: 'Lun-Sáb · 10:00-19:00 · Dom · 10:00-16:00', address: 'Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.' },
+  { id: 'oriente', name: 'Sucursal 3', schedule: 'Lun-Sáb · 10:00-19:00 · Dom · 10:00-16:00', address: 'Cerro del Crestón #6327, Juárez, Chih. (colonia y CP pendientes)' }
 ];
 const services = [
   { id: 'clasico', name: 'Corte clásico', duration: 45, price: 250, description: 'Corte personalizado y acabado.' },
@@ -18,7 +18,7 @@ const services = [
   { id: 'combo', name: 'Corte y barba', duration: 60, price: 350, description: 'Servicio completo de corte y barba.' },
   { id: 'infantil', name: 'Corte infantil', duration: 40, price: 200, description: 'Corte para clientes infantiles.' }
 ];
-const slots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+const slots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
 const allowedStatuses = ['Pendiente', 'Confirmada', 'Completada', 'Cancelada'];
 const zone = 'America/Ciudad_Juarez';
 const todayInJuarez = () => new Intl.DateTimeFormat('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
@@ -26,7 +26,7 @@ const timeInJuarez = () => new Intl.DateTimeFormat('en-GB', { timeZone: zone, ho
 const minutes = time => Number(time.slice(0, 2)) * 60 + Number(time.slice(3, 5));
 const hash = token => createHash('sha256').update(token).digest('hex');
 const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
-const validBookingDate = value => validDate(value) && value >= todayInJuarez() && new Date(`${value}T12:00:00Z`).getUTCDay() !== 0;
+const validBookingDate = value => validDate(value) && value >= todayInJuarez();
 const safeText = value => typeof value === 'string' ? value.trim() : '';
 
 function json(res, status, data, headers = {}) {
@@ -79,9 +79,12 @@ function authorized(db, req) {
 function available(db, branch, service, date) {
   const duration = services.find(item => item.id === service)?.duration;
   if (!branches.some(item => item.id === branch) || !duration || !validBookingDate(date)) return null;
+  const sunday = new Date(`${date}T12:00:00Z`).getUTCDay() === 0;
+  const closingMinute = sunday ? 16 * 60 : 19 * 60;
   const bookings = db.prepare("SELECT time, service FROM appointments WHERE branch = ? AND date = ? AND status != 'Cancelada'").all(branch, date);
   return slots.filter(time => {
-    if (date === todayInJuarez() && minutes(time) <= minutes(timeInJuarez())) return false;
+    if (minutes(time) + duration > closingMinute) return false;
+    if (date === todayInJuarez() && minutes(time) < minutes(timeInJuarez()) + 120) return false;
     return !bookings.some(item => minutes(time) < minutes(item.time) + services.find(s => s.id === item.service).duration && minutes(item.time) < minutes(time) + duration);
   });
 }

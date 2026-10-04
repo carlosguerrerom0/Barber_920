@@ -1,6 +1,6 @@
 # Arquitectura del avance de Fase 2
 
-**Actualizada:** 29 de septiembre de 2026. Las reglas del negocio continúan pendientes de validación con Barber 920.
+**Actualizada:** 4 de octubre de 2026. Parte de las reglas del negocio continúan pendientes de validación con Barber 920.
 
 ## Componentes implementados
 
@@ -11,11 +11,11 @@
 
 El navegador consulta `/api/config` y `/api/availability`. Al reservar envía `POST /api/appointments`; el servidor valida datos, fecha y horario, y registra la cita en una transacción. El panel inicia sesión y consulta `/api/admin/appointments` para filtrar y modificar estados. Una cita cancelada libera su horario y no se reactiva.
 
-El modelo de ocupación de la demostración admite **una cita simultánea por sucursal**. Los horarios comienzan cada hora de lunes a sábado de 10:00 a 19:00, zona `America/Ciudad_Juarez`. Estos supuestos deben confirmarse con el cliente; el diagrama entidad-relación original incluye barberos y otras entidades futuras que aún no se implementan.
+El modelo de ocupación de la demostración admite **una cita simultánea por sucursal**. Los inicios comienzan cada hora desde las 10:00, de lunes a domingo, y se filtran según duración y cierre (lunes a sábado 19:00, domingo 16:00), zona `America/Ciudad_Juarez`. Para citas del mismo día se exigen dos horas de anticipación. La capacidad y disponibilidad por barbero siguen pendientes; el diagrama entidad-relación original incluye barberos y otras entidades futuras que aún no se implementan.
 
 ## Pendiente
 
-- Entrevista y validación de sucursales, personal, servicios, precios, duración y reglas de cancelación.
+- Completar información de la tercera sucursal y validar con el cliente el personal, servicios, precios, duración y reglas de cancelación.
 - Sustituir datos simulados y ajustar modelo para capacidad real por barbero.
 - Revisión del nuevo avance con cliente y equipo, pruebas de interfaz en distintos dispositivos y decisión de hospedaje seguro antes de usar datos reales.
 - Confirmaciones y recordatorios, si se aprueban.

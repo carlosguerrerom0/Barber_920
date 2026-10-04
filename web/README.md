@@ -9,6 +9,6 @@ npm start
 
 Abra http://127.0.0.1:3000. Requiere Node.js 24 o posterior. La contraseña se define al crear la base de datos por primera vez; use datos ficticios.
 
-La aplicación consulta sucursales y servicios simulados, muestra la disponibilidad del servidor, registra reservas en SQLite y permite filtrarlas y cambiar su estado desde el panel protegido. No se pueden reactivar citas canceladas: registre una nueva.
+La aplicación muestra las direcciones facilitadas por el equipo, los horarios relatados en la entrevista y servicios y precios simulados. Consulta la disponibilidad del servidor, registra reservas en SQLite y permite filtrarlas y cambiar su estado desde el panel protegido. No se pueden reactivar citas canceladas: registre una nueva.
 
 Esta es una demostración local y no acepta citas reales. Abrir `index.html` como archivo o servir esta carpeta con un servidor estático no ofrece las funciones conectadas.

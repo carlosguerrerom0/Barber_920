@@ -19,7 +19,7 @@
 
 | Tema | Respuesta registrada | Pendiente |
 |---|---|---|
-| Ubicaciones | Tres direcciones mencionadas: Ramón Rayón 1308, Durango 920 y Cerro del Crestón 5327. | Confirmar escritura, colonia, código postal y teléfono de cada sede. |
+| Ubicaciones | Tres sucursales. El integrante del equipo precisó después de la entrevista: SUC 1, C. Durango 920, Morelos II, 32673 Juárez, Chih.; SUC 2, Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.; SUC 3, Cerro del Crestón #6327. Esta corrección sustituye las direcciones inferidas de la transcripción automática. | Confirmar colonia y código postal de SUC 3, teléfonos de las tres sedes y enlaces de mapa. |
 | Atención | Mismo horario en las tres: lunes a sábado 10:00–19:00 y domingo 10:00–16:00. | Confirmar hora del último inicio de cita y cierres festivos. |
 | Servicios | Las tres ofrecen corte de cabello, barba, ceja y diseños. | Catálogo exacto y si un diseño requiere duración variable. |
 | Precios conocidos | Corte natural: $120, unos 20 min. Barba: $100, unos 15–20 min (el apunte dice 15). Desvanecido: $180, unos 30 min. | Precio y duración de ceja y diseños; confirmar rango de barba. |
@@ -48,7 +48,7 @@ El video pregunta por días de cierre y se escucha una referencia a Navidad que 
 
 | Acción | Responsable propuesto | Estado |
 |---|---|---|
-| Compartir datos exactos de sedes, teléfonos, logotipo y material autorizado | Dueño | Pendiente |
+| Completar colonia y CP de SUC 3, teléfonos, enlaces de mapa, logotipo y material autorizado | Dueño | Parcial: direcciones precisadas por el equipo después de la entrevista |
 | Enviar catálogo completo, precios y duraciones, incluidos ceja y diseños | Dueño | Pendiente |
 | Confirmar barberos por sucursal, descansos, capacidad simultánea y bloqueos | Dueño y equipo | Pendiente |
 | Precisar cancelaciones, recordatorios, datos del cliente y permisos | Dueño y equipo | Pendiente |

@@ -2,11 +2,11 @@
 
 Proyecto académico de la Universidad Autónoma de Ciudad Juárez para consultar sucursales, reservar horarios y administrar citas.
 
-> **Demostración:** sucursales, servicios, precios y horarios son simulados. Las reservas se guardan en una base de datos local para probar el flujo; no constituyen citas reales. Use datos ficticios, nunca información personal real.
+> **Demostración:** las direcciones fueron precisadas por el equipo y los horarios se basan en la entrevista. Servicios, precios, capacidad y reservas siguen siendo de prueba; no constituyen citas reales. Use datos ficticios, nunca información personal real.
 
-## Estado al 3 de octubre de 2026
+## Estado al 4 de octubre de 2026
 
-La primera versión navegable y sus documentos fueron aprobados por el cliente y el equipo según el registro de validación de septiembre. El avance del 29 de septiembre conectó las vistas con una API, SQLite y acceso al panel mediante contraseña. El 3 de octubre se entrevistó al dueño y se registraron datos y necesidades en una [minuta](docs/minuta-entrevista-cliente-2026-10-03.md). El código aún usa datos y reglas simuladas: la sustitución requiere confirmar detalles pendientes y revisar la versión conectada con el cliente.
+La primera versión navegable y sus documentos fueron aprobados por el cliente y el equipo según el registro de validación de septiembre. El avance del 29 de septiembre conectó las vistas con una API, SQLite y acceso al panel mediante contraseña. El 3 de octubre se entrevistó al dueño y se registraron datos y necesidades en una [minuta](docs/minuta-entrevista-cliente-2026-10-03.md). Después el equipo precisó las direcciones de las tres sucursales: están incorporadas junto con los horarios y la anticipación mínima. Quedan por completar los datos de SUC 3, servicios y disponibilidad por barbero, y por revisar la versión conectada con el cliente.
 
 | Actividad | Estado | Evidencia |
 |---|---|---|
@@ -15,7 +15,7 @@ La primera versión navegable y sus documentos fueron aprobados por el cliente y
 | API de disponibilidad y reservas | Implementada para demostración | [Servidor](server/index.js) |
 | Persistencia y panel con sesión | Implementados para demostración | [Pruebas](test/server.test.js) |
 | Entrevista de operación | Realizada y documentada; respuestas incompletas identificadas | [Minuta y evidencia](docs/minuta-entrevista-cliente-2026-10-03.md) |
-| Sustituir datos simulados y validar reglas definitivas | Pendiente | [Datos simulados](docs/datos-simulados.md) |
+| Completar catálogo, personal y reglas definitivas | En progreso; sedes y horarios incorporados | [Datos de demostración](docs/datos-simulados.md) |
 | Revisión del avance conectado y despliegue | Pendiente | [Seguimiento de septiembre](docs/avance-2026-09-29.md) |
 
 ## Ejecutar en local
@@ -33,8 +33,8 @@ El prototipo se sirve desde Node; abrir `web/index.html` directamente ya no perm
 
 ## Funciones disponibles
 
-- Consulta de tres sucursales y cuatro servicios simulados.
-- Horarios disponibles calculados en el servidor, sin domingos ni citas pasadas.
+- Consulta de tres sucursales informadas por el equipo y cuatro servicios simulados.
+- Horarios disponibles calculados en el servidor, incluidos domingos y dos horas mínimas de anticipación.
 - Reserva persistente con validación y bloqueo de horarios ocupados por sucursal.
 - Acceso de administrador con contraseña, sesión y cierre de sesión.
 - Filtros, indicadores y cambios de estado de citas en el panel.
