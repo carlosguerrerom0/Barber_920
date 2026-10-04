@@ -1,36 +1,24 @@
-# Registro de validación del cliente y del equipo
+# Estado del boceto inicial y datos pendientes
 
-**Proyecto:** Sistema Web de Agendamiento y Sucursales - Barber 920  
-**Fecha de registro:** 2 de septiembre de 2026  
-**Estado:** aprobado para continuar con la siguiente etapa.
+**Proyecto:** Sistema Web de Agendamiento y Sucursales · Barber 920  
+**Fecha del registro inicial:** 2 de septiembre de 2026
 
-## Confirmación registrada
+## Situación
 
-El equipo responsable informó que el representante de Barber 920 y los cinco integrantes están de acuerdo con los entregables desarrollados hasta este momento.
+El cliente ya conocía el boceto inicial y no dio retroalimentación sobre él. El equipo consideró terminada esa propuesta visual y el flujo de demostración. La falta de observaciones no equivale a aprobación de reglas operativas, datos simulados ni versiones posteriores.
 
-## Entregables aprobados
+En ese momento seguía pendiente la entrevista para obtener direcciones, horarios, servicios, precios, personal y reglas reales. La entrevista se realizó el **3 de octubre de 2026** y quedó en la [minuta](minuta-entrevista-cliente-2026-10-03.md).
 
-- Requerimientos funcionales y no funcionales del alcance actual.
-- Diagrama de casos de uso.
-- Modelo entidad-relación preliminar.
-- Selección tecnológica y arquitectura por etapas.
-- Diseño de inicio y consulta de sucursales.
-- Flujo de agendamiento.
-- Panel administrativo de demostración.
-- Primera versión navegable y adaptable.
+## Entregables iniciales del equipo
 
-## Acuerdos
+- Requerimientos funcionales y no funcionales preliminares.
+- Diagramas de casos de uso y modelo de datos preliminar.
+- Decisión tecnológica inicial.
+- Boceto de inicio, sucursales y flujo de reserva.
+- Primera versión navegable y adaptable con datos simulados y panel de demostración.
 
-- Los datos utilizados actualmente son simulados y sirven únicamente para demostrar el funcionamiento.
-- La sustitución por direcciones, horarios, servicios y precios reales se manejará como una actividad posterior.
-- El prototipo con `localStorage` es aceptado como evidencia de avance, no como versión de producción.
-- La autenticación, el backend y la base de datos compartida permanecen pendientes.
-- Los entregables aprobados pueden marcarse como terminados en el dashboard de GitHub.
+Estos artefactos pueden darse por terminados **como trabajo inicial del equipo**. Las actividades de confirmar datos reales y revisar la versión conectada permanecen abiertas en #5 y #11.
 
-## Pendientes que no forman parte de esta aprobación
+## Límites de esta constancia
 
-- Información operativa real de las sucursales.
-- Autenticación administrativa.
-- Backend y base de datos.
-- Despliegue para uso real.
-- Pruebas de la versión conectada.
+El prototipo inicial usaba datos de prueba y almacenamiento local. El servidor, la API, SQLite y las sesiones se incorporaron el 29 de septiembre y no fueron revisados por el cliente en la entrevista del 3 de octubre. Las necesidades nuevas están pendientes en #14–#17. No se registra una aprobación formal de esa versión conectada.
