@@ -3,6 +3,8 @@
 **Fecha de preparación:** 29 de septiembre de 2026  
 **Estado:** propuesta de planeación, pendiente de revisión por el equipo y el profesor. Las duraciones son estimaciones, no trabajo ya realizado ni fechas acordadas con el cliente.
 
+**Seguimiento del 3 de octubre:** la actividad A (entrevista) ocurrió y quedó documentada en la [minuta](minuta-entrevista-cliente-2026-10-03.md). La duración de dos días en esta tabla era un supuesto inicial, no el tiempo real transcurrido. Las respuestas incompletas pueden cambiar B, C, D y la ruta crítica; el equipo debe actualizar los tiempos antes de utilizar la red como calendario.
+
 El repositorio ya contiene un prototipo conectado con API, SQLite y panel administrativo. Esta red comienza con las actividades que faltan para adaptar esa demostración a información real y revisarla para la entrega de octubre. La fecha exacta de entrega no está registrada, por lo que se usan **días de trabajo relativos**, con el día 0 como inicio de la entrevista. La espera para conseguir cita con el cliente no está incluida.
 
 ## Actividades y precedencias

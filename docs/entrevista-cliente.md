@@ -2,6 +2,8 @@
 
 **Objetivo:** obtener la información necesaria para validar el alcance y convertir el borrador en requerimientos definitivos.
 
+**Entrevista realizada el 3 de octubre de 2026:** respuestas y preguntas pendientes en la [minuta](minuta-entrevista-cliente-2026-10-03.md). Esta guía se conserva como cuestionario original.
+
 ## Situación actual
 
 1. ¿Cómo reciben y registran actualmente las citas?

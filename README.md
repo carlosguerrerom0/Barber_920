@@ -4,9 +4,9 @@ Proyecto académico de la Universidad Autónoma de Ciudad Juárez para consultar
 
 > **Demostración:** sucursales, servicios, precios y horarios son simulados. Las reservas se guardan en una base de datos local para probar el flujo; no constituyen citas reales. Use datos ficticios, nunca información personal real.
 
-## Estado al 29 de septiembre de 2026
+## Estado al 3 de octubre de 2026
 
-La primera versión navegable y sus documentos fueron aprobados por el cliente y el equipo según el registro de validación de septiembre. El repositorio no tuvo cambios del 2 al 29 de septiembre. Este avance conecta las vistas con una API, SQLite y acceso al panel mediante contraseña. La entrevista de datos operativos y el reemplazo de datos simulados siguen pendientes; este nuevo avance técnico aún requiere una revisión del equipo y del cliente.
+La primera versión navegable y sus documentos fueron aprobados por el cliente y el equipo según el registro de validación de septiembre. El avance del 29 de septiembre conectó las vistas con una API, SQLite y acceso al panel mediante contraseña. El 3 de octubre se entrevistó al dueño y se registraron datos y necesidades en una [minuta](docs/minuta-entrevista-cliente-2026-10-03.md). El código aún usa datos y reglas simuladas: la sustitución requiere confirmar detalles pendientes y revisar la versión conectada con el cliente.
 
 | Actividad | Estado | Evidencia |
 |---|---|---|
@@ -14,7 +14,7 @@ La primera versión navegable y sus documentos fueron aprobados por el cliente y
 | Interfaz adaptable y navegación | Terminada en prototipo | [Interfaz](web/index.html) |
 | API de disponibilidad y reservas | Implementada para demostración | [Servidor](server/index.js) |
 | Persistencia y panel con sesión | Implementados para demostración | [Pruebas](test/server.test.js) |
-| Datos operativos reales | Pendiente | [Guía de entrevista](docs/entrevista-cliente.md) |
+| Entrevista de operación | Realizada y documentada; respuestas incompletas identificadas | [Minuta y evidencia](docs/minuta-entrevista-cliente-2026-10-03.md) |
 | Sustituir datos simulados y validar reglas definitivas | Pendiente | [Datos simulados](docs/datos-simulados.md) |
 | Revisión del avance conectado y despliegue | Pendiente | [Seguimiento de septiembre](docs/avance-2026-09-29.md) |
 
@@ -43,6 +43,7 @@ El prototipo se sirve desde Node; abrir `web/index.html` directamente ya no perm
 ## Documentación
 
 - [Seguimiento del 29 de septiembre](docs/avance-2026-09-29.md)
+- [Minuta de entrevista del 3 de octubre](docs/minuta-entrevista-cliente-2026-10-03.md)
 - [Red PERT propuesta para actividades pendientes](docs/pert-fase2-pendiente.md)
 - [Requerimientos](docs/requerimientos.md) · [Validación anterior](docs/validacion-cliente-equipo.md)
 - [Arquitectura](docs/arquitectura-preliminar.md) · [Decisión tecnológica](docs/decision-tecnologica.md)

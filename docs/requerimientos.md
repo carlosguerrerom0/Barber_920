@@ -1,9 +1,11 @@
 # Requerimientos del sistema
 
-**Estado:** validados por el cliente y el equipo para el alcance actual de la Fase 2.  
+**Estado:** alcance del prototipo validado el 2 de septiembre; entrevista operativa realizada el 3 de octubre. Los cambios derivados de esta entrevista están pendientes de validación en la versión conectada.
 **Fecha de validación registrada:** 2 de septiembre de 2026.
 
 Este documento define los requerimientos aceptados para el prototipo y orienta la siguiente etapa de desarrollo. Los datos operativos reales de sucursales y servicios se administran por separado en el Issue #5.
+
+La [minuta de entrevista](minuta-entrevista-cliente-2026-10-03.md) documenta las respuestas del dueño, sus fuentes y las dudas. El video no constituye una aceptación de la versión conectada.
 
 ## Actores
 
@@ -44,16 +46,34 @@ Este documento define los requerimientos aceptados para el prototipo y orienta l
 
 ## Información operativa pendiente
 
-La aprobación del alcance no sustituye la recopilación de datos reales. Todavía deben confirmarse:
+La entrevista aportó tres direcciones, horarios generales y precios de algunos servicios. Todavía deben confirmarse:
 
-- Direcciones, teléfonos y horarios reales.
-- Servicios, precios y duraciones reales.
-- Nombres y disponibilidad de barberos, si se utilizarán.
-- Reglas definitivas de cancelaciones, retardos y modificaciones.
-- Días festivos, cierres y bloqueos.
-- Material visual autorizado.
+- Escritura completa de direcciones, teléfonos, mapas y hora de última cita.
+- Catálogo completo, precio y duración de ceja y diseños, y duración de barba.
+- Barberos por sucursal, descansos y capacidad de citas simultáneas.
+- Plazo exacto para cancelar o modificar y procedimiento de inasistencia.
+- Días festivos, cierres y permisos para bloquear horarios.
+- Datos personales mínimos, canal de avisos y material visual autorizado.
 
-Estos pendientes se concentran en los Issues #1 y #5.
+Estos datos pendientes se concentran en el Issue #5 y las nuevas funciones se desglosan en el tablero.
+
+## Necesidades registradas en la entrevista del 3 de octubre
+
+Estas necesidades se agregan al backlog para análisis e implementación. Las reglas que dependen de datos faltantes no se consideran listas para producción.
+
+| ID | Necesidad registrada | Estado |
+|---|---|---|
+| RF-13 | Permitir seleccionar barbero y consultar su disponibilidad, respetando su día de descanso. | Pendiente de nombres, sucursales y descansos |
+| RF-14 | Aplicar un mínimo de dos horas entre la reserva y el inicio de la cita. | Registrado; pendiente de implementación |
+| RF-15 | Mostrar horarios de lunes a sábado 10:00–19:00 y domingo 10:00–16:00 para las tres sedes. | Registrado; confirmar último horario reservable |
+| RF-16 | Permitir reservación como invitado y, si se define su alcance, mediante cuenta de cliente. | Pendiente de definir datos y flujo de cuenta |
+| RF-17 | Enviar confirmaciones y recordatorios a cliente y negocio. | Pendiente de canal, datos de contacto y momento |
+| RF-18 | Permitir al cliente modificar o cancelar con anticipación. | Pendiente de plazo exacto |
+| RF-19 | Permitir al personal aceptar o rechazar citas y administrar precios y horarios según permisos. | Pendiente de roles y flujo |
+| RF-20 | Generar resúmenes diarios, semanales y mensuales. | Pendiente de métricas |
+| RF-21 | Mostrar mapa, experiencia de barberos y contemplar calificaciones. | Pendiente de contenido y reglas de valoración |
+
+**Regla operativa adicional:** tolerancia de cinco minutos y recomendación de llegar diez minutos antes. Su efecto exacto sobre estados y reasignación de turnos requiere confirmación. La respuesta de “15–20 citas al día” no permite inferir capacidad simultánea.
 
 ## Registro de aprobación
 

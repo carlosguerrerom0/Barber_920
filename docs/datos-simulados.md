@@ -2,6 +2,8 @@
 
 > **Aviso:** la información de este archivo fue creada únicamente para demostrar el funcionamiento. No representa datos confirmados por Barber 920.
 
+**Actualización del 3 de octubre:** la [entrevista al dueño](minuta-entrevista-cliente-2026-10-03.md) confirmó tres direcciones, horarios de lunes a domingo y precios de algunos servicios. La aplicación aún conserva los valores de esta página: sus sucursales, precios y disponibilidad **no coinciden con lo relatado por el cliente**. Se mantendrán identificados como demostración hasta completar el catálogo, confirmar nombres de barberos, descansos, teléfonos y capacidad simultánea, y adaptar las reglas.
+
 ## Sucursales simuladas
 
 | Sucursal | Horario de demostración | Dirección |
