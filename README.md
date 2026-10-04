@@ -4,14 +4,14 @@ Proyecto académico de la Universidad Autónoma de Ciudad Juárez para consultar
 
 > **Demostración:** las direcciones fueron precisadas por el equipo y los horarios se basan en la entrevista. Servicios, precios, capacidad y reservas siguen siendo de prueba; no constituyen citas reales. Use datos ficticios, nunca información personal real.
 
-## Estado al 4 de octubre de 2026
+## Estado al 3 de octubre de 2026
 
-La primera versión navegable y sus documentos fueron aprobados por el cliente y el equipo según el registro de validación de septiembre. El avance del 29 de septiembre conectó las vistas con una API, SQLite y acceso al panel mediante contraseña. El 3 de octubre se entrevistó al dueño y se registraron datos y necesidades en una [minuta](docs/minuta-entrevista-cliente-2026-10-03.md). Después el equipo precisó las direcciones de las tres sucursales: están incorporadas junto con los horarios y la anticipación mínima. Quedan por completar los datos de SUC 3, servicios y disponibilidad por barbero, y por revisar la versión conectada con el cliente.
+El cliente ya conocía el boceto inicial y no comunicó observaciones; el equipo dio por terminada esa propuesta visual. Aún faltaba la entrevista para obtener los datos reales. El avance del 29 de septiembre conectó las vistas con una API, SQLite y acceso al panel mediante contraseña. El 3 de octubre se entrevistó al dueño y se registraron datos y necesidades en una [minuta](docs/minuta-entrevista-cliente-2026-10-03.md). Después el equipo precisó las direcciones de las tres sucursales: están incorporadas junto con los horarios y la anticipación mínima. Quedan por completar los datos de SUC 3, servicios y disponibilidad por barbero, y por revisar la versión conectada con el cliente.
 
 | Actividad | Estado | Evidencia |
 |---|---|---|
-| Requerimientos, diagramas y flujo del prototipo | Terminada, aprobada en la revisión anterior | [Registro de validación](docs/validacion-cliente-equipo.md) |
-| Interfaz adaptable y navegación | Terminada en prototipo | [Interfaz](web/index.html) |
+| Requerimientos y diagramas iniciales | Documentados; datos reales pendientes | [Estado del boceto](docs/validacion-cliente-equipo.md) |
+| Boceto, interfaz adaptable y flujo inicial | Terminados por el equipo; cliente enterado sin observaciones | [Interfaz](web/index.html) |
 | API de disponibilidad y reservas | Implementada para demostración | [Servidor](server/index.js) |
 | Persistencia y panel con sesión | Implementados para demostración | [Pruebas](test/server.test.js) |
 | Entrevista de operación | Realizada y documentada; respuestas incompletas identificadas | [Minuta y evidencia](docs/minuta-entrevista-cliente-2026-10-03.md) |
@@ -49,6 +49,6 @@ El prototipo se sirve desde Node; abrir `web/index.html` directamente ya no perm
 - [Arquitectura](docs/arquitectura-preliminar.md) · [Decisión tecnológica](docs/decision-tecnologica.md)
 - [Casos de uso](docs/diagramas/casos-de-uso.md) · [Modelo preliminar](docs/diagramas/modelo-entidad-relacion.md)
 - [Guía de entrevista](docs/entrevista-cliente.md) · [Datos simulados](docs/datos-simulados.md)
-- [Organización del equipo](CONTRIBUTING.md)
+- [Organización del equipo](CONTRIBUTING.md) · [Roles y asignaciones de Fase 2](docs/roles-fase2.md) · [FODA y Porter](docs/analisis-fase2.md)
 
 El tablero de trabajo se lleva en [GitHub Issues](https://github.com/carlosguerrerom0/Barber_920/issues).
