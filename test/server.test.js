@@ -48,6 +48,13 @@ test('reservas, conflictos, sesión de administración y persistencia', async ()
     assert.equal(config.payload.branches[0].address, 'C. Durango 920, Morelos II, 32673 Juárez, Chih.');
     assert.equal(config.payload.branches[1].address, 'Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.');
     assert.match(config.payload.branches[2].address, /Cerro del Crestón #6327/);
+    for (const [asset, type] of [['/assets/logo920.jpg', 'image/jpeg'], ['/assets/anton-latin-400-normal.woff2', 'font/woff2'], ['/assets/inter-latin-wght-normal.woff2', 'font/woff2']]) {
+      const response = await fetch(app.base + asset);
+      assert.equal(response.status, 200);
+      assert.equal(response.headers.get('content-type'), type);
+    }
+    assert.equal((await fetch(`${app.base}/assets/OFL-Anton.txt`)).status, 404);
+    assert.match((await fetch(app.base + '/')).headers.get('content-security-policy'), /frame-src https:\/\/www\.google\.com;/);
     assert.equal((await request(app.base, `/api/availability?branch=centro&service=combo&date=${date}`)).payload.slots.includes('11:00'), true);
     const weekdaySlots = (await request(app.base, `/api/availability?branch=centro&service=combo&date=${date}`)).payload.slots;
     assert.equal(weekdaySlots.includes('18:00'), true);

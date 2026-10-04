@@ -20,6 +20,13 @@ const services = [
 ];
 const slots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
 const allowedStatuses = ['Pendiente', 'Confirmada', 'Completada', 'Cancelada'];
+const staticPaths = new Map([
+  ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'],
+  ['/assets/logo920.jpg', 'assets/logo920.jpg'],
+  ['/assets/anton-latin-400-normal.woff2', 'assets/anton-latin-400-normal.woff2'],
+  ['/assets/inter-latin-wght-normal.woff2', 'assets/inter-latin-wght-normal.woff2']
+]);
+const contentTypes = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' };
 const zone = 'America/Ciudad_Juarez';
 const todayInJuarez = () => new Intl.DateTimeFormat('en-CA', { timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 const timeInJuarez = () => new Intl.DateTimeFormat('en-GB', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
@@ -102,7 +109,7 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
   const server = createServer(async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Referrer-Policy', 'no-referrer');
-    res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; frame-ancestors 'none'");
+    res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; frame-src https://www.google.com; base-uri 'none'; frame-ancestors 'none'");
     res.setHeader('Cache-Control', 'no-store');
     try {
       const url = new URL(req.url, 'http://localhost');
@@ -179,11 +186,10 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
         return json(res, 200, { updated: true });
       }
       if (url.pathname.startsWith('/api/')) return json(res, 404, { error: 'Ruta no encontrada.' });
-      const staticPaths = new Map([['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js']]);
       const file = staticPaths.get(url.pathname);
       if (req.method !== 'GET' || !file) return json(res, 404, { error: 'Página no encontrada.' });
       const content = await readFile(path.join(root, 'web', file));
-      res.writeHead(200, { 'content-type': file.endsWith('.html') ? 'text/html; charset=utf-8' : file.endsWith('.css') ? 'text/css; charset=utf-8' : 'text/javascript; charset=utf-8' });
+      res.writeHead(200, { 'content-type': contentTypes[path.extname(file)] });
       res.end(content);
     } catch (error) {
       const isInputError = error instanceof SyntaxError || /formulario|JSON inválido/.test(error.message);

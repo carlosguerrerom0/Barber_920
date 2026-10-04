@@ -8,6 +8,9 @@ const $$ = selector => [...document.querySelectorAll(selector)];
 const money = value => new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(value);
 const branchName = id => branches.find(item => item.id === id)?.name || id;
 const serviceName = id => services.find(item => item.id === id)?.name || id;
+const mapsQuery = branch => encodeURIComponent(branch.address.replace(/\s*\(.*?\)/g, ''));
+const mapEmbedUrl = branch => `https://www.google.com/maps?output=embed&hl=es&q=${mapsQuery(branch)}`;
+const directionsUrl = branch => `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery(branch)}`;
 
 async function api(path, options) {
   const response = await fetch(path, {
@@ -29,7 +32,18 @@ function showView(id) {
   $('#mainNav').classList.remove('open');
   $('#menuButton').setAttribute('aria-expanded', 'false');
   if (id === 'administracion') refreshAdmin();
+  if (id === 'sucursales') loadMaps();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function loadMaps() {
+  for (const map of $$('.branch-map:not([src])')) map.src = map.dataset.src;
+}
+
+function directionsLink(link, branch) {
+  link.href = directionsUrl(branch);
+  link.setAttribute('aria-label', `Cómo llegar a ${branch.name} en Google Maps (se abre en otra pestaña)`);
+  return link;
 }
 
 function option(value, label) {
@@ -47,21 +61,17 @@ function populateContent(config) {
   for (const service of services) {
     const card = document.createElement('article');
     card.className = 'service-card';
-    const eyebrow = document.createElement('p');
-    eyebrow.className = 'eyebrow';
-    eyebrow.textContent = 'Servicio demo';
     const title = document.createElement('h3');
     title.textContent = service.name;
+    const price = document.createElement('p');
+    price.className = 'service-price';
+    price.textContent = money(service.price);
     const description = document.createElement('p');
     description.textContent = service.description;
-    const meta = document.createElement('div');
+    const meta = document.createElement('p');
     meta.className = 'service-meta';
-    const duration = document.createElement('span');
-    duration.textContent = `${service.duration} min`;
-    const price = document.createElement('span');
-    price.textContent = money(service.price);
-    meta.append(duration, price);
-    card.append(eyebrow, title, description, meta);
+    meta.textContent = `${service.duration} min · Servicio demo`;
+    card.append(title, price, description, meta);
     $('#serviceCards').append(card);
     $('#service').append(option(service.id, `${service.name} · ${service.duration} min · ${money(service.price)}`));
   }
@@ -80,10 +90,23 @@ function populateContent(config) {
       list.append(item);
     }
     const button = document.createElement('button');
-    button.className = 'button primary choose-branch';
+    button.className = 'button secondary choose-branch';
     button.dataset.branch = branch.id;
     button.textContent = 'Elegir esta sucursal';
-    card.append(number, title, list, button);
+    button.setAttribute('aria-label', `Elegir ${branch.name}`);
+    const directions = document.createElement('a');
+    directions.className = 'button secondary';
+    directions.target = '_blank';
+    directions.rel = 'noopener';
+    directions.textContent = 'Cómo llegar';
+    const actions = document.createElement('div');
+    actions.className = 'branch-actions';
+    actions.append(button, directionsLink(directions, branch));
+    const map = document.createElement('iframe');
+    map.className = 'branch-map';
+    map.title = `Mapa de ${branch.name} en Google Maps`;
+    map.dataset.src = mapEmbedUrl(branch);
+    card.append(number, map, title, list, actions);
     $('#branchCards').append(card);
     $('#branch').append(option(branch.id, branch.name));
     $('#filterBranch').append(option(branch.id, branch.name));
@@ -131,6 +154,7 @@ async function submitBooking(event) {
   try {
     await api('/api/appointments', { method: 'POST', body: JSON.stringify(data) });
     $('#confirmationText').textContent = `${data.clientName}: ${serviceName(data.service)} en ${branchName(data.branch)}, ${data.date} a las ${data.time}.`;
+    directionsLink($('#confirmationDirections'), branches.find(item => item.id === data.branch));
     event.currentTarget.reset();
     updateSummary();
     refreshAvailability();
@@ -170,6 +194,8 @@ function renderAppointments() {
       row.append(cell);
     }
     const statusCell = document.createElement('td');
+    statusCell.className = 'status-cell';
+    statusCell.dataset.status = item.status;
     const select = document.createElement('select');
     select.className = 'status-select';
     select.dataset.id = item.id;

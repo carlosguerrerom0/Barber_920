@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Prototipo académico del sistema de citas de Barber 920">
+  <meta name="theme-color" content="#000000">
   <title>Barber 920 | Prototipo de citas</title>
+  <link rel="icon" href="assets/logo920.jpg" type="image/jpeg">
+  <link rel="preload" href="assets/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="pole-stripe" aria-hidden="true"></div>
   <div class="demo-banner">
     Prototipo académico: direcciones facilitadas por el equipo; servicios, precios y reservas de prueba. No ingreses datos personales reales.
   </div>
 
   <header class="site-header">
     <a class="brand" href="#" data-view-link="inicio" aria-label="Barber 920, inicio">
-      <span class="brand-mark">920</span>
-      <span>BARBER</span>
+      <img src="assets/logo920.jpg" alt="" width="512" height="512">
     </a>
     <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">Menú</button>
     <nav id="mainNav" class="main-nav" aria-label="Navegación principal">
@@ -29,25 +32,31 @@
   <main>
     <section id="inicio" class="view active-view">
       <div class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">Estilo, precisión y comodidad</p>
-          <h1>Tu próximo corte comienza con una cita sencilla.</h1>
+        <p class="eyebrow">Estilo, precisión y comodidad</p>
+        <h1 class="display">Tu próximo corte <span class="glyph" aria-hidden="true">(<img src="assets/logo920.jpg" alt="" width="512" height="512">)</span> comienza con una cita sencilla.</h1>
+        <ol class="steps" aria-label="Resumen del proceso">
+          <li>
+            <span class="step-number">01</span>
+            <h2>Elige</h2>
+            <p>Sucursal y servicio.</p>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <h2>Agenda</h2>
+            <p>Fecha y horario disponible.</p>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <h2>Confirma</h2>
+            <p>Registra tus datos.</p>
+          </li>
+        </ol>
+        <div class="hero-aside">
           <p class="hero-copy">Consulta nuestras sucursales, selecciona un servicio y aparta un horario desde cualquier dispositivo.</p>
           <div class="hero-actions">
             <button class="button primary" data-view-link="reservar">Agendar demostración</button>
             <button class="button secondary" data-view-link="sucursales">Ver sucursales</button>
           </div>
-        </div>
-        <div class="hero-card" aria-label="Resumen del proceso">
-          <span class="step-number">01</span>
-          <h2>Elige</h2>
-          <p>Sucursal y servicio.</p>
-          <span class="step-number">02</span>
-          <h2>Agenda</h2>
-          <p>Fecha y horario disponible.</p>
-          <span class="step-number">03</span>
-          <h2>Confirma</h2>
-          <p>Registra tus datos.</p>
         </div>
       </div>
 
@@ -63,9 +72,11 @@
         <div>
           <p class="eyebrow">Avance de Fase 2</p>
           <h2>Reservas y administración conectadas</h2>
-          <p>La demostración guarda citas en SQLite y consulta disponibilidad desde el servidor. Ya muestra las direcciones y horarios informados; falta validar la versión conectada con el cliente.</p>
         </div>
-        <button class="button primary" data-view-link="reservar">Probar reservación</button>
+        <div>
+          <p>La demostración guarda citas en SQLite y consulta disponibilidad desde el servidor. Ya muestra las direcciones y horarios informados; falta validar la versión conectada con el cliente.</p>
+          <button class="button primary" data-view-link="reservar">Probar reservación</button>
+        </div>
       </section>
     </section>
 
@@ -87,7 +98,7 @@
 
       <div class="booking-layout">
         <form id="bookingForm" class="panel form-panel">
-          <div class="form-progress"><span>1</span><span>2</span><span>3</span></div>
+          <div class="form-progress" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
 
           <label for="branch">Sucursal</label>
           <select id="branch" name="branch" required>
@@ -142,12 +153,13 @@
 
     <section id="confirmacion" class="view" hidden>
       <div class="confirmation-card">
-        <div class="confirmation-icon">✓</div>
+        <div class="confirmation-icon" aria-hidden="true">✓</div>
         <p class="eyebrow">Registro de demostración completado</p>
         <h1>Cita de demostración guardada</h1>
         <p id="confirmationText"></p>
         <div class="hero-actions centered">
           <button class="button primary" data-view-link="administracion">Ver en administración</button>
+          <a id="confirmationDirections" class="button secondary" target="_blank" rel="noopener">Cómo llegar</a>
           <button class="button secondary" data-view-link="reservar">Registrar otra</button>
         </div>
       </div>
@@ -168,35 +180,35 @@
       </form>
 
       <div id="adminContent" hidden>
-      <div class="metric-grid">
-        <article class="metric"><span id="metricTotal">0</span><p>Total</p></article>
-        <article class="metric"><span id="metricPending">0</span><p>Pendientes</p></article>
-        <article class="metric"><span id="metricConfirmed">0</span><p>Confirmadas</p></article>
-        <article class="metric"><span id="metricCancelled">0</span><p>Canceladas</p></article>
-      </div>
+        <div class="metric-grid">
+          <article class="metric"><span id="metricTotal">0</span><p>Total</p></article>
+          <article class="metric" data-status="Pendiente"><span id="metricPending">0</span><p>Pendientes</p></article>
+          <article class="metric" data-status="Confirmada"><span id="metricConfirmed">0</span><p>Confirmadas</p></article>
+          <article class="metric" data-status="Cancelada"><span id="metricCancelled">0</span><p>Canceladas</p></article>
+        </div>
 
-      <div class="panel admin-panel">
-        <div class="admin-toolbar">
-          <div>
-            <label for="filterBranch">Filtrar sucursal</label>
-            <select id="filterBranch"><option value="">Todas</option></select>
+        <div class="panel admin-panel">
+          <div class="admin-toolbar">
+            <div>
+              <label for="filterBranch">Filtrar sucursal</label>
+              <select id="filterBranch"><option value="">Todas</option></select>
+            </div>
+            <div>
+              <label for="filterDate">Filtrar fecha</label>
+              <input id="filterDate" type="date">
+            </div>
+            <button id="logoutButton" class="button secondary">Cerrar sesión</button>
           </div>
-          <div>
-            <label for="filterDate">Filtrar fecha</label>
-            <input id="filterDate" type="date">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Cliente</th><th>Sucursal</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr>
+              </thead>
+              <tbody id="appointmentRows"></tbody>
+            </table>
+            <p id="emptyAppointments" class="empty-state">Todavía no hay citas de demostración.</p>
           </div>
-          <button id="logoutButton" class="button secondary">Cerrar sesión</button>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th>Cliente</th><th>Sucursal</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr>
-            </thead>
-            <tbody id="appointmentRows"></tbody>
-          </table>
-          <p id="emptyAppointments" class="empty-state">Todavía no hay citas de demostración.</p>
-        </div>
-      </div>
       </div>
     </section>
   </main>
