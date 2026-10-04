@@ -1,6 +1,6 @@
 # Arquitectura del avance de Fase 2
 
-**Actualizada:** 4 de octubre de 2026. Parte de las reglas del negocio continúan pendientes de validación con Barber 920.
+**Actualizada:** 3 de octubre de 2026. Parte de las reglas del negocio continúan pendientes de validación con Barber 920.
 
 ## Componentes implementados
 
