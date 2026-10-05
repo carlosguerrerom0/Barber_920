@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Project xmlns="http://schemas.microsoft.com/project">
   <SaveVersion>14</SaveVersion>
-  <Name>Barber 920 continuidad Fase 2</Name>
-  <Title>Plan de continuidad al 4 de octubre de 2026</Title>
+  <Name>Barber_920_Plan_Continuidad</Name>
+  <Title>Barber 920 - Continuidad de Fase 2 (O a W)</Title>
   <Company>Equipo Barber 920 UACJ</Company>
   <Manager>Luis Uziel Cruz Martínez</Manager>
   <Author>Equipo de trabajo</Author>
@@ -98,7 +98,7 @@
     <Task>
       <UID>1</UID>
       <ID>1</ID>
-      <Name>B Completar acuerdos y datos</Name>
+      <Name>O Completar acuerdos y datos</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>2.2</WBS>
@@ -127,12 +127,12 @@
       <RemainingWork>PT2H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 2.2. TE 1 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Alison Aguirre Hernández.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 2.2. TE de 1 jornada de 2 horas. Responsable: Alison Aguirre Hernández. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
     </Task>
     <Task>
       <UID>2</UID>
       <ID>2</ID>
-      <Name>C Completar catálogo y sucursales</Name>
+      <Name>P Completar catálogo y sucursales</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>2.3</WBS>
@@ -161,7 +161,7 @@
       <RemainingWork>PT4H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 2.3. TE 2 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Alison Aguirre Hernández.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 2.3. TE de 2 jornadas de 2 horas. Responsable: Alison Aguirre Hernández. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>1</PredecessorUID>
         <Type>1</Type>
@@ -173,7 +173,7 @@
     <Task>
       <UID>3</UID>
       <ID>3</ID>
-      <Name>D Definir personal y reglas</Name>
+      <Name>Q Definir personal y reglas</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>2.4</WBS>
@@ -202,7 +202,7 @@
       <RemainingWork>PT6H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 2.4. TE 3 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Dante Uriel Ramírez Márquez.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 2.4. TE de 3 jornadas de 2 horas. Responsable: Dante Uriel Ramírez Márquez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>1</PredecessorUID>
         <Type>1</Type>
@@ -214,7 +214,7 @@
     <Task>
       <UID>4</UID>
       <ID>4</ID>
-      <Name>E Ajustar interfaz con datos confirmados</Name>
+      <Name>R Ajustar interfaz con datos confirmados</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>5.3</WBS>
@@ -243,7 +243,7 @@
       <RemainingWork>PT4H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 5.3. TE 2 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Carlos Guerrero Morales.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 5.3. TE de 2 jornadas de 2 horas. Responsable: Carlos Guerrero Morales. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>2</PredecessorUID>
         <Type>1</Type>
@@ -255,7 +255,7 @@
     <Task>
       <UID>5</UID>
       <ID>5</ID>
-      <Name>F Adaptar API y disponibilidad</Name>
+      <Name>S Adaptar API y disponibilidad</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>5.4</WBS>
@@ -284,7 +284,7 @@
       <RemainingWork>PT8H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 5.4. TE 4 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Jesús Alberto González Martínez.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 5.4. TE de 4 jornadas de 2 horas. Responsable: Jesús Alberto González Martínez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>3</PredecessorUID>
         <Type>1</Type>
@@ -296,7 +296,7 @@
     <Task>
       <UID>6</UID>
       <ID>6</ID>
-      <Name>G Ejecutar pruebas integrales</Name>
+      <Name>T Ejecutar pruebas integrales</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>6.1</WBS>
@@ -325,7 +325,7 @@
       <RemainingWork>PT4H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 6.1. TE 2 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Jesús Alberto González Martínez.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 6.1. TE de 2 jornadas de 2 horas. Responsable: Jesús Alberto González Martínez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>4</PredecessorUID>
         <Type>1</Type>
@@ -344,7 +344,7 @@
     <Task>
       <UID>7</UID>
       <ID>7</ID>
-      <Name>H Revisar versión con cliente y equipo</Name>
+      <Name>U Revisar versión con cliente y equipo</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>6.2</WBS>
@@ -373,7 +373,7 @@
       <RemainingWork>PT2H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 6.2. TE 1 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Carlos Guerrero Morales.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 6.2. TE de 1 jornada de 2 horas. Responsable: Carlos Guerrero Morales. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>6</PredecessorUID>
         <Type>1</Type>
@@ -385,7 +385,7 @@
     <Task>
       <UID>8</UID>
       <ID>8</ID>
-      <Name>I Corregir observaciones</Name>
+      <Name>V Corregir observaciones</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>6.3</WBS>
@@ -414,7 +414,7 @@
       <RemainingWork>PT4H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 6.3. TE 2 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Carlos Guerrero Morales.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 6.3. TE de 2 jornadas de 2 horas. Responsable: Carlos Guerrero Morales. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>7</PredecessorUID>
         <Type>1</Type>
@@ -426,7 +426,7 @@
     <Task>
       <UID>9</UID>
       <ID>9</ID>
-      <Name>J Preparar evidencia de la iteración</Name>
+      <Name>W Preparar evidencia de la iteración</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
       <WBS>7.2</WBS>
@@ -455,7 +455,7 @@
       <RemainingWork>PT4H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta al 04/10/2026. WBS 7.2. TE 2 dias de 2 horas. Tarifa academica supuesta $80 MXN/h; no es gasto real. A (entrevista) realizada el 03/10/2026, excluida del trabajo restante. Fechas sujetas a datos del cliente. Responsable: Luis Uziel Cruz Martínez.</Notes>
+      <Notes>Propuesta del 4 de octubre de 2026. WBS 7.2. TE de 2 jornadas de 2 horas. Responsable: Luis Uziel Cruz Martínez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
       <PredecessorLink>
         <PredecessorUID>6</PredecessorUID>
         <Type>1</Type>
