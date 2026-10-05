@@ -17,12 +17,12 @@ Para la siguiente fase queda lo que depende del negocio: la colonia y el código
 
 | Parte | Estado | Dónde verlo |
 |---|---|---|
-| Requisitos y diagramas | Listos; faltan reglas que dependen del negocio | [Requerimientos](docs/requerimientos.md) |
-| Boceto e interfaz | Terminados; el cliente conoce el boceto | [Interfaz](web/index.html) · [Diseño](DESIGN.md) |
-| API, SQLite y panel con sesión | Funcionan en local | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
-| Entrevista con el propietario | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
-| Datos reales del negocio | Direcciones y horarios cargados; faltan servicios y personal | [Datos de la demostración](docs/datos-simulados.md) |
-| Planeación | Plan A–N de la Fase 2 terminado; propuesta O–W para la siguiente fase | [Planificación](docs/planificacion-fase2-2026-10-04.md) |
+| Requisitos y diagramas | Hecho; las reglas que dependen del negocio pasan a la siguiente fase | [Requerimientos](docs/requerimientos.md) |
+| Boceto e interfaz | Hecho; el cliente conoce el boceto | [Interfaz](web/index.html) · [Diseño](DESIGN.md) |
+| API, SQLite y panel con sesión | Hecho (demostración local) | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
+| Entrevista con el propietario | Hecho (3 de octubre) | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
+| Datos reales del negocio | Hecho: direcciones y horarios reales cargados; el catálogo y el personal pasan a la siguiente fase | [Datos de la demostración](docs/datos-simulados.md) |
+| Planeación | Hecho: plan A–N; propuesta O–W para la siguiente fase | [Planificación](docs/planificacion-fase2-2026-10-04.md) |
 | Revisión con el cliente y publicación | Siguiente fase | [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18) |
 
 ## Cómo correrlo en tu computadora
