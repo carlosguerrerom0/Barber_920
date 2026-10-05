@@ -1,34 +1,33 @@
-# Red PERT propuesta para el trabajo pendiente de Fase 2
+# Red PERT del trabajo pendiente (29 de septiembre de 2026)
 
-**Fecha de preparación:** 29 de septiembre de 2026  
-**Estado:** propuesta de planeación, pendiente de revisión por el equipo y el profesor. Las duraciones son estimaciones, no trabajo ya realizado ni fechas acordadas con el cliente.
+Esta red la armamos el 29 de septiembre, en la actividad K del plan de la Fase 2, para estimar cuánto nos faltaba después de conectar la página con el servidor. En ese momento la entrevista con el dueño todavía no ocurría, así que es la actividad A.
 
-**Seguimiento del 3 de octubre:** la actividad A (entrevista) ocurrió y quedó documentada en la [minuta](minuta-entrevista-cliente-2026-10-03.md). La duración de dos días en esta tabla era un supuesto inicial, no el tiempo real transcurrido. Las respuestas incompletas pueden cambiar B, C, D y la ruta crítica; el equipo debe actualizar los tiempos antes de utilizar la red como calendario.
+**Qué pasó después:** la entrevista se hizo el 3 de octubre ([minuta](minuta-entrevista-cliente-2026-10-03.md)). El resto del trabajo lo pasamos a un calendario real en el [plan de continuidad](planificacion-fase2-2026-10-04.md), donde las actividades B a J de esta red se llaman O a W para no confundirlas con las del plan A–N. Conservamos esta página como registro del cálculo original.
 
-El repositorio ya contiene un prototipo conectado con API, SQLite y panel administrativo. Esta red comienza con las actividades que faltan para adaptar esa demostración a información real y revisarla para la entrega de octubre. La fecha exacta de entrega no está registrada, por lo que se usan **días de trabajo relativos**, con el día 0 como inicio de la entrevista. La espera para conseguir cita con el cliente no está incluida.
+Usamos días de trabajo relativos: el día 0 es el inicio de la entrevista y no contamos el tiempo de espera para conseguir la cita con el cliente.
 
 ## Actividades y precedencias
 
-Las duraciones optimista, más probable y pesimista son supuestos para practicar PERT. En esta primera estimación son simétricas, por lo que el tiempo esperado `(O + 4M + P) / 6` coincide con M.
+Las duraciones optimista (O), más probable (M) y pesimista (P) son estimaciones nuestras. En esta primera versión las pusimos simétricas, por eso el tiempo esperado `(O + 4M + P) / 6` sale igual a M.
 
 | Actividad | Trabajo pendiente | Predecesora | O | M | P | Esperado |
 |---|---|---|---:|---:|---:|---:|
-| A | Entrevistar al cliente sobre operación real | — | 1 | 2 | 3 | 2 |
+| A | Entrevistar al cliente sobre la operación real | — | 1 | 2 | 3 | 2 |
 | B | Registrar acuerdos y datos confirmados | A | 1 | 1 | 1 | 1 |
 | C | Sustituir sucursales, servicios y contactos simulados | B | 1 | 2 | 3 | 2 |
 | D | Definir capacidad, personal y reglas de reservación | B | 2 | 3 | 4 | 3 |
 | E | Ajustar la interfaz a los datos confirmados | C | 1 | 2 | 3 | 2 |
-| F | Adaptar API y disponibilidad a las reglas confirmadas | D | 3 | 4 | 5 | 4 |
+| F | Adaptar la API y la disponibilidad a las reglas confirmadas | D | 3 | 4 | 5 | 4 |
 | G | Ejecutar pruebas integrales con los cambios | E, F | 1 | 2 | 3 | 2 |
-| H | Mostrar avance al equipo y al cliente, registrar observaciones | G | 1 | 1 | 1 | 1 |
-| I | Corregir observaciones de la revisión | H | 1 | 2 | 3 | 2 |
-| J | Preparar evidencia y documentación de la entrega | G | 1 | 2 | 3 | 2 |
+| H | Mostrar el avance al equipo y al cliente y anotar sus observaciones | G | 1 | 1 | 1 | 1 |
+| I | Corregir las observaciones de la revisión | H | 1 | 2 | 3 | 2 |
+| J | Preparar la evidencia y la documentación de la entrega | G | 1 | 2 | 3 | 2 |
 
-La actividad C no significa que ya existan datos reales; depende de la entrevista #1. D y F modifican el sistema existente, no construyen de cero el backend que ya está implementado. El despliegue público se decidirá en #11 y no forma parte de esta red inicial.
+D y F parten del servidor que ya existe; no se trata de construir el backend desde cero. Publicar el sistema en internet no entra en esta red: primero hay que decidir dónde alojarlo.
 
 ## Red de actividades en flechas
 
-La tabla de apoyo del equipo usa once eventos y dos actividades ficticias de duración cero. Se conserva aquí esa numeración para que las tablas del repositorio coincidan con el documento de Fase 2. E y F deben terminar antes de G; I y J deben terminar antes del cierre.
+Usamos once eventos y dos actividades ficticias de duración cero, igual que en la hoja de apoyo del equipo. E y F tienen que terminar antes de G, e I y J antes del cierre.
 
 ```mermaid
 flowchart LR
@@ -46,9 +45,9 @@ flowchart LR
     N10 -. "f2 · 0" .-> N11
 ```
 
-## Tiempos de eventos
+## Tiempos de los eventos
 
-El TMC se calcula de izquierda a derecha tomando el máximo en convergencias; el TML se calcula de derecha a izquierda tomando el mínimo en bifurcaciones. Para el último nodo, TML = TMC = 15.
+El TMC se calcula de izquierda a derecha y, donde llegan varias flechas, se toma el mayor. El TML se calcula de regreso y, donde salen varias, se toma el menor. En el último nodo, TML = TMC = 15.
 
 | Nodo | TMC | TML |
 |---:|---:|---:|
@@ -64,11 +63,11 @@ El TMC se calcula de izquierda a derecha tomando el máximo en convergencias; el
 | 10 | 14 | 15 |
 | 11 | 15 | 15 |
 
-Por ejemplo, TMC del nodo 7 = `max(7 + 0, 6 + 4) = 10`. El TML del nodo 10 es **15**, ya que f2 llega al nodo 11 con duración cero. En la hoja del equipo ese TML figuraba como 14; también faltaba identificar la segunda llegada al nodo 7.
+Por ejemplo, el TMC del nodo 7 es `max(7 + 0, 6 + 4) = 10`, y el TML del nodo 10 es 15 porque f2 llega al nodo 11 sin duración. Al revisar la hoja del equipo corregimos dos cosas: ahí el TML del nodo 10 aparecía como 14 y faltaba contar la segunda llegada al nodo 7.
 
 ## Holguras y ruta crítica
 
-Con la fórmula usada en clase, `Hᵢⱼ = Lⱼ − (Cᵢ + Tᵢⱼ)`, se obtiene:
+Con la fórmula de clase, `Hᵢⱼ = Lⱼ − (Cᵢ + Tᵢⱼ)`:
 
 | Actividad | Flecha | Cᵢ | Tᵢⱼ | Lⱼ | Holgura |
 |---|---|---:|---:|---:|---:|
@@ -85,6 +84,6 @@ Con la fórmula usada en clase, `Hᵢⱼ = Lⱼ − (Cᵢ + Tᵢⱼ)`, se obtien
 | J | 8 → 10 | 12 | 2 | 15 | 1 |
 | f2 | 10 → 11 | 14 | 0 | 15 | 1 |
 
-**Ruta crítica propuesta:** A → B → D → F → G → H → I, con **15 días de trabajo estimados** desde que empieza A. Las actividades C, E y f1 tienen tres días de holgura; J y f2 tienen uno. La suma de las duraciones de A a J es 21 días, pero no representa la duración del proyecto porque hay trabajo en paralelo.
+La ruta crítica es **A → B → D → F → G → H → I** y dura 15 días de trabajo desde que empieza la entrevista. C, E y f1 tienen tres días de holgura; J y f2, uno. Las duraciones suman 21 días, pero el proyecto no dura eso porque varias actividades van en paralelo.
 
-Antes de usar esta red como compromiso de entrega, el equipo debe revisar duraciones, disponibilidad del cliente, responsables y la fecha límite. Si se decide incluir despliegue público, habrá que agregar actividades y recalcular la ruta crítica.
+Sin la entrevista, que ya se hizo, el trabajo restante (B a J) dura 13 días. Es la misma ruta que aparece en el plan de continuidad como O–Q–S–T–U–V.
