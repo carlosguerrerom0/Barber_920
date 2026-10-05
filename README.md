@@ -6,12 +6,14 @@ Proyecto de la materia Administración y Evaluación de Proyectos de Tecnología
 
 ## Cómo vamos (4 de octubre de 2026)
 
+Ya terminamos todas las actividades de la Fase 2; el documento se entrega el 5 de octubre.
+
 - **1 y 2 de septiembre.** Documentamos los requisitos, los casos de uso y el modelo de datos, y armamos el boceto con una primera versión navegable. El cliente vio el boceto y no nos pidió cambios.
 - **29 de septiembre.** Conectamos la página a un servidor en Node.js con base de datos SQLite y un panel de administración protegido con contraseña.
 - **3 de octubre.** Entrevistamos al propietario, Miguel Solís. Con sus respuestas cargamos los horarios reales y, después, las direcciones de las sucursales ([minuta](docs/minuta-entrevista-cliente-2026-10-03.md)).
 - **4 de octubre.** Estrenamos el diseño con el logo, las tipografías Anton e Inter y un mapa por sucursal con su enlace "Cómo llegar".
 
-Todavía falta la colonia y el código postal de SUC 3, el catálogo real de servicios, los barberos con sus descansos y, sobre todo, enseñarle al dueño la versión conectada para que nos dé su opinión. Ese trabajo está programado del 5 al 21 de octubre en el [plan de continuidad](docs/planificacion-fase2-2026-10-04.md) y lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+Para la siguiente fase queda lo que depende del negocio: la colonia y el código postal de SUC 3, el catálogo real de servicios, los barberos con sus descansos y, sobre todo, enseñarle al dueño la versión conectada para que nos dé su opinión. Lo propusimos del 5 al 21 de octubre en la [planificación](docs/planificacion-fase2-2026-10-04.md) y lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
 
 | Parte | Estado | Dónde verlo |
 |---|---|---|
@@ -20,8 +22,8 @@ Todavía falta la colonia y el código postal de SUC 3, el catálogo real de ser
 | API, SQLite y panel con sesión | Funcionan en local | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
 | Entrevista con el propietario | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
 | Datos reales del negocio | Direcciones y horarios cargados; faltan servicios y personal | [Datos de la demostración](docs/datos-simulados.md) |
-| Planeación | Plan A–N terminado; continuidad O–W del 5 al 21 de octubre | [Planificación](docs/planificacion-fase2-2026-10-04.md) |
-| Revisión con el cliente y publicación | Pendientes | [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18) |
+| Planeación | Plan A–N de la Fase 2 terminado; propuesta O–W para la siguiente fase | [Planificación](docs/planificacion-fase2-2026-10-04.md) |
+| Revisión con el cliente y publicación | Siguiente fase | [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18) |
 
 ## Cómo correrlo en tu computadora
 

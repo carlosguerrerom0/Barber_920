@@ -2,11 +2,11 @@
 
 **Actualizado el 4 de octubre de 2026.**
 
-Aquí juntamos la planeación de la fase: cómo dividimos el trabajo (WBS), el plan que seguimos del 18 de agosto al 3 de octubre y el plan para lo que sigue. Los costos están calculados con una tarifa académica supuesta de $80 MXN por hora. Sirven para dimensionar el esfuerzo; no son pagos ni cobros al cliente.
+Aquí juntamos la planeación de la fase: cómo dividimos el trabajo (WBS), el plan que seguimos del 18 de agosto al 3 de octubre, con todas sus actividades terminadas, y nuestra propuesta para la siguiente fase. Los costos están calculados con una tarifa académica supuesta de $80 MXN por hora. Sirven para dimensionar el esfuerzo; no son pagos ni cobros al cliente.
 
 ## WBS y responsables
 
-El número antes del punto es el grupo de trabajo y el de después, el paquete. Cada paquete tiene un responsable que le da seguimiento, aunque en varios colaboramos más personas.
+El número antes del punto es el grupo de trabajo y el de después, el paquete. Cada paquete tiene un responsable que le da seguimiento, aunque en varios colaboramos más personas. Los paquetes 2.4, 5.4, 6.1, 6.2, 6.3 y 7.2 corresponden a la siguiente fase, y 2.2, 2.3 y 5.3 continúan en ella con nuevas actividades.
 
 | WBS | Paquete | Responsable | Resultado |
 |---|---|---|---|
@@ -66,9 +66,9 @@ La ruta crítica es **A–C–G–H–I–J–M–N** y dura 21 jornadas, o sea 
 
 Con una reserva del 10 % ($512) el presupuesto estimado queda en $5,632 MXN. En la práctica no gastamos nada: usamos nuestras computadoras, nuestro internet y herramientas gratuitas.
 
-## Plan de continuidad: actividades O a W (5 al 21 de octubre)
+## Propuesta para la siguiente fase: actividades O a W (5 al 21 de octubre)
 
-Después de la entrevista quedó trabajo por hacer: completar los datos del negocio, ajustar la página y la API, probar todo y enseñarle la versión conectada al dueño. Lo programamos como continuación del plan anterior, por eso las letras siguen después de la N. Archivo: [Barber_920_Plan_Continuidad.xml](Barber_920_Plan_Continuidad.xml).
+Las actividades A a N de la Fase 2 quedaron terminadas el 3 de octubre. Para la siguiente fase proponemos completar los datos del negocio, ajustar la página y la API, probar todo y enseñarle la versión conectada al dueño. Las letras siguen después de la N para no repetirlas. Archivo: [Barber_920_Plan_Continuidad.xml](Barber_920_Plan_Continuidad.xml).
 
 Este plan sale de la [red PERT que estimamos el 29 de septiembre](pert-fase2-pendiente.md). En esa red la entrevista era la actividad A y lo demás iba de la B a la J; aquí la O corresponde a la B, la P a la C, y así hasta la W, que era la J. Usamos el mismo calendario de dos horas diarias.
 
@@ -84,9 +84,9 @@ Este plan sale de la [red PERT que estimamos el 29 de septiembre](pert-fase2-pen
 | V | 6.3 | Corregir observaciones | Carlos | 2 | U | 20 oct. | 21 oct. | 4 | 320 |
 | W | 7.2 | Preparar evidencia de la iteración | Luis | 2 | T | 19 oct. | 20 oct. | 4 | 320 |
 
-La ruta crítica es **O–Q–S–T–U–V** y dura 13 jornadas. P y R tienen 3 jornadas de holgura y W tiene 1. En total son 19 jornadas y 38 horas de trabajo, con un costo base de $3,040 MXN; con la reserva del 10 % ($304) quedan $3,344.
+La ruta crítica propuesta es **O–Q–S–T–U–V** y dura 13 jornadas. P y R tienen 3 jornadas de holgura y W tiene 1. En total son 19 jornadas y 38 horas de trabajo, con un costo base de $3,040 MXN; con la reserva del 10 % ($304) quedan $3,344.
 
-Las fechas dependen de que el negocio nos mande el catálogo y los datos del personal, y la revisión del 19 de octubre todavía hay que acordarla con el dueño. W junta la evidencia de esta segunda etapa; la entrega documental de la Fase 2 sigue siendo el 5 de octubre. Los recordatorios, las cuentas de cliente, los permisos por rol y la publicación en internet no entran en este plan: primero tenemos que definir su alcance (#15 y #16).
+Las fechas dependen de que el negocio nos mande el catálogo y los datos del personal, y la revisión del 19 de octubre todavía hay que acordarla con el dueño. W junta la evidencia de la siguiente fase; la entrega documental de la Fase 2 es el 5 de octubre. Los recordatorios, las cuentas de cliente, los permisos por rol y la publicación en internet no entran en este plan: primero tenemos que definir su alcance (#15 y #16).
 
 ## Abrir los archivos en Project o ProjectLibre
 
@@ -97,6 +97,6 @@ Las fechas dependen de que el negocio nos mande el catálogo y los datos del per
 
 ## Issues
 
-Los Issues #1 a #17 los cerramos al terminar la fase, el 4 de octubre. Cerrar un Issue significa que el equipo terminó esa tarea, no que el cliente ya la aprobó. Lo que todavía falta comprobar, junto con las actividades O a W, lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+Los Issues #1 a #17 los cerramos al terminar la Fase 2, el 4 de octubre. Cerrar un Issue significa que el equipo terminó esa tarea, no que el cliente ya la aprobó. Las actividades O a W de la siguiente fase las seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
 
 El rediseño y los mapas llegaron en el commit `3e4192d` del 4 de octubre. Falta confirmar con el negocio que cada mapa marque el lugar correcto y agregar los perfiles de los barberos cuando tengamos su información.

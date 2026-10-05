@@ -53,7 +53,7 @@ En el video se pregunta por los días de cierre y se escucha algo sobre Navidad,
 | Enviar el catálogo completo con precios y duraciones, incluidos ceja y diseños | Dueño | Pendiente |
 | Confirmar barberos por sucursal, descansos, capacidad y bloqueos | Dueño y equipo | Pendiente |
 | Precisar cancelaciones, recordatorios, datos del cliente y permisos | Dueño y equipo | Pendiente |
-| Pasar las respuestas a los requisitos y al plan de desarrollo | Equipo | Hecho en [requerimientos](requerimientos.md) y en el [plan de continuidad](planificacion-fase2-2026-10-04.md) |
-| Presentar la versión conectada y anotar las observaciones | Equipo y dueño | Programado para el 19 de octubre (actividad U), fecha por acordar |
+| Pasar las respuestas a los requisitos y al plan de desarrollo | Equipo | Hecho en [requerimientos](requerimientos.md) y en la [propuesta para la siguiente fase](planificacion-fase2-2026-10-04.md) |
+| Presentar la versión conectada y anotar las observaciones | Equipo y dueño | Propuesto para la siguiente fase (actividad U, 19 de octubre), fecha por acordar |
 
 Los responsables de esta tabla los propusimos nosotros para dar seguimiento; no son compromisos que el dueño haya aceptado en el video.

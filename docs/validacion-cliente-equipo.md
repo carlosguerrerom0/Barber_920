@@ -18,4 +18,4 @@ En ese momento todavía nos faltaban las direcciones, los horarios, los servicio
 
 ## Lo que sigue pendiente
 
-El servidor, la API, SQLite y las sesiones los agregamos el 29 de septiembre, después del boceto. En la entrevista nos concentramos en cómo trabaja el negocio, así que el dueño todavía no revisa esa versión conectada. Esa revisión y los datos que faltan están programados en el [plan de continuidad](planificacion-fase2-2026-10-04.md): los datos en las actividades O, P y Q, y la revisión con el dueño en la U. Todo eso lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+El servidor, la API, SQLite y las sesiones los agregamos el 29 de septiembre, después del boceto. En la entrevista nos concentramos en cómo trabaja el negocio, así que el dueño todavía no revisa esa versión conectada. Esa revisión y los datos que faltan forman parte de la [propuesta para la siguiente fase](planificacion-fase2-2026-10-04.md): los datos en las actividades O, P y Q, y la revisión con el dueño en la U. Todo eso lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).

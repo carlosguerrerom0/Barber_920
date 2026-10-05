@@ -2,7 +2,7 @@
 
 **Registro inicial:** 2 de septiembre de 2026. **Actualizado:** 4 de octubre de 2026, con lo que nos dijo el propietario en la entrevista.
 
-Aquí está el alcance del sistema: lo que definimos al principio y lo que agregamos después de hablar con el dueño. Las respuestas completas de la entrevista, con los minutos del video de donde salen, están en la [minuta](minuta-entrevista-cliente-2026-10-03.md). Varias reglas todavía dependen de datos que el negocio nos tiene que mandar; esos datos los seguimos en el Issue #5 y en el plan de continuidad.
+Aquí está el alcance del sistema: lo que definimos al principio y lo que agregamos después de hablar con el dueño. Las respuestas completas de la entrevista, con los minutos del video de donde salen, están en la [minuta](minuta-entrevista-cliente-2026-10-03.md). Varias reglas todavía dependen de datos que el negocio nos tiene que mandar; esos datos los seguimos en la propuesta para la siguiente fase y en el Issue #18.
 
 ## Actores
 

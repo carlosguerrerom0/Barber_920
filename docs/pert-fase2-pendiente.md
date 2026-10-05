@@ -2,7 +2,7 @@
 
 Esta red la armamos el 29 de septiembre, en la actividad K del plan de la Fase 2, para estimar cuánto nos faltaba después de conectar la página con el servidor. En ese momento la entrevista con el dueño todavía no ocurría, así que es la actividad A.
 
-**Qué pasó después:** la entrevista se hizo el 3 de octubre ([minuta](minuta-entrevista-cliente-2026-10-03.md)). El resto del trabajo lo pasamos a un calendario real en el [plan de continuidad](planificacion-fase2-2026-10-04.md), donde las actividades B a J de esta red se llaman O a W para no confundirlas con las del plan A–N. Conservamos esta página como registro del cálculo original.
+**Qué pasó después:** la entrevista se hizo el 3 de octubre ([minuta](minuta-entrevista-cliente-2026-10-03.md)). El plan de la Fase 2 terminó el 3 de octubre, y el resto del trabajo lo propusimos con fechas para la [siguiente fase](planificacion-fase2-2026-10-04.md), donde las actividades B a J de esta red se llaman O a W para no confundirlas con las del plan A–N. Conservamos esta página como registro del cálculo original.
 
 Usamos días de trabajo relativos: el día 0 es el inicio de la entrevista y no contamos el tiempo de espera para conseguir la cita con el cliente.
 
@@ -86,4 +86,4 @@ Con la fórmula de clase, `Hᵢⱼ = Lⱼ − (Cᵢ + Tᵢⱼ)`:
 
 La ruta crítica es **A → B → D → F → G → H → I** y dura 15 días de trabajo desde que empieza la entrevista. C, E y f1 tienen tres días de holgura; J y f2, uno. Las duraciones suman 21 días, pero el proyecto no dura eso porque varias actividades van en paralelo.
 
-Sin la entrevista, que ya se hizo, el trabajo restante (B a J) dura 13 días. Es la misma ruta que aparece en el plan de continuidad como O–Q–S–T–U–V.
+Sin la entrevista, que ya se hizo, el trabajo restante (B a J) dura 13 días. Es la misma ruta que aparece en la propuesta para la siguiente fase como O–Q–S–T–U–V.
