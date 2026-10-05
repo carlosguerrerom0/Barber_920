@@ -38,4 +38,4 @@ Barber 920 tiene tres sucursales en Ciudad Juárez. Hoy recibe las citas por Wha
 | Poder de los clientes | Si un cliente no encuentra información clara o un horario libre, puede irse a otro lugar. |
 | Poder de los proveedores | El alojamiento y los avisos pueden requerir servicios externos; el costo depende de las opciones que elijamos. |
 
-Antes de usar la página con clientes reales necesitamos la capacidad por barbero, las reglas de cancelación y saber quién va a administrar los cambios. Ese trabajo está en el [plan de continuidad](planificacion-fase2-2026-10-04.md).
+Antes de usar la página con clientes reales necesitamos la capacidad por barbero, las reglas de cancelación y saber quién va a administrar los cambios. Ese trabajo está en la [propuesta para la siguiente fase](planificacion-fase2-2026-10-04.md).

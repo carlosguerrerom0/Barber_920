@@ -17,7 +17,7 @@ En la demostración cada sucursal atiende **una cita a la vez**. Los horarios em
 
 La vista Sucursales muestra un mapa de Google Maps por sede y el enlace "Cómo llegar". La política de seguridad del servidor solo deja cargar recursos propios, con una excepción: los mapas de `https://www.google.com`.
 
-El modelo de datos completo, con barberos y clientes, está en el [diagrama entidad-relación](diagramas/modelo-entidad-relacion.md). Por ahora el servidor solo implementa citas, administrador y sesiones; la agenda por barbero viene en el plan de continuidad.
+El modelo de datos completo, con barberos y clientes, está en el [diagrama entidad-relación](diagramas/modelo-entidad-relacion.md). Por ahora el servidor solo implementa citas, administrador y sesiones; la agenda por barbero está en la propuesta para la siguiente fase.
 
 ## Lo que falta
 
