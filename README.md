@@ -1,54 +1,73 @@
-# Sistema Web de Agendamiento y Sucursales · Barber 920
+# Barber 920 · Sistema web de citas y sucursales
 
-Proyecto académico de la Universidad Autónoma de Ciudad Juárez para consultar sucursales, reservar horarios y administrar citas.
+Proyecto de la materia Administración y Evaluación de Proyectos de Tecnologías de Información (UACJ). Estamos construyendo una página para que los clientes de Barber 920 consulten sus tres sucursales y agenden una cita, y para que el negocio administre esas citas desde un panel.
 
-> **Demostración:** las direcciones fueron precisadas por el equipo y los horarios se basan en la entrevista. Servicios, precios, capacidad y reservas siguen siendo de prueba; no constituyen citas reales. Use datos ficticios, nunca información personal real.
+> **Es una demostración.** Las direcciones y los horarios ya son los del negocio, pero los servicios, los precios y la capacidad todavía son de prueba. Las citas que se registren aquí no son reales: usa siempre datos inventados.
 
-## Estado al 3 de octubre de 2026
+## Cómo vamos (4 de octubre de 2026)
 
-El cliente ya conocía el boceto inicial y no comunicó observaciones; el equipo dio por terminada esa propuesta visual. Aún faltaba la entrevista para obtener los datos reales. El avance del 29 de septiembre conectó las vistas con una API, SQLite y acceso al panel mediante contraseña. El 3 de octubre se entrevistó al dueño y se registraron datos y necesidades en una [minuta](docs/minuta-entrevista-cliente-2026-10-03.md). Después el equipo precisó las direcciones de las tres sucursales: están incorporadas junto con los horarios y la anticipación mínima. Quedan por completar los datos de SUC 3, servicios y disponibilidad por barbero, y por revisar la versión conectada con el cliente.
+- **1 y 2 de septiembre.** Documentamos los requisitos, los casos de uso y el modelo de datos, y armamos el boceto con una primera versión navegable. El cliente vio el boceto y no nos pidió cambios.
+- **29 de septiembre.** Conectamos la página a un servidor en Node.js con base de datos SQLite y un panel de administración protegido con contraseña.
+- **3 de octubre.** Entrevistamos al propietario, Miguel Solís. Con sus respuestas cargamos los horarios reales y, después, las direcciones de las sucursales ([minuta](docs/minuta-entrevista-cliente-2026-10-03.md)).
+- **4 de octubre.** Estrenamos el diseño con el logo, las tipografías Anton e Inter y un mapa por sucursal con su enlace "Cómo llegar".
 
-| Actividad | Estado | Evidencia |
+Todavía falta la colonia y el código postal de SUC 3, el catálogo real de servicios, los barberos con sus descansos y, sobre todo, enseñarle al dueño la versión conectada para que nos dé su opinión. Ese trabajo está programado del 5 al 21 de octubre en el [plan de continuidad](docs/planificacion-fase2-2026-10-04.md) y lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+
+| Parte | Estado | Dónde verlo |
 |---|---|---|
-| Requerimientos y diagramas iniciales | Documentados; datos reales pendientes | [Estado del boceto](docs/validacion-cliente-equipo.md) |
-| Boceto, interfaz adaptable y flujo inicial | Terminados por el equipo; cliente enterado sin observaciones | [Interfaz](web/index.html) |
-| API de disponibilidad y reservas | Implementada para demostración | [Servidor](server/index.js) |
-| Persistencia y panel con sesión | Implementados para demostración | [Pruebas](test/server.test.js) |
-| Entrevista de operación | Realizada y documentada; respuestas incompletas identificadas | [Minuta y evidencia](docs/minuta-entrevista-cliente-2026-10-03.md) |
-| Completar catálogo, personal y reglas definitivas | En progreso; sedes y horarios incorporados | [Datos de demostración](docs/datos-simulados.md) |
-| Revisión del avance conectado y despliegue | Pendiente | [Seguimiento de septiembre](docs/avance-2026-09-29.md) |
+| Requisitos y diagramas | Listos; faltan reglas que dependen del negocio | [Requerimientos](docs/requerimientos.md) |
+| Boceto e interfaz | Terminados; el cliente conoce el boceto | [Interfaz](web/index.html) · [Diseño](DESIGN.md) |
+| API, SQLite y panel con sesión | Funcionan en local | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
+| Entrevista con el propietario | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
+| Datos reales del negocio | Direcciones y horarios cargados; faltan servicios y personal | [Datos de la demostración](docs/datos-simulados.md) |
+| Planeación | Plan A–N terminado; continuidad O–W del 5 al 21 de octubre | [Planificación](docs/planificacion-fase2-2026-10-04.md) |
+| Revisión con el cliente y publicación | Pendientes | [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18) |
 
-## Ejecutar en local
+## Cómo correrlo en tu computadora
 
-Requiere **Node.js 24 o posterior**. No hay dependencias de npm por instalar.
+Necesitas Node.js 24 o más reciente. No hay paquetes que instalar.
 
 ```bash
 export BARBER_ADMIN_PASSWORD='una-clave-de-prueba-de-12-caracteres-o-mas'
 npm start
 ```
 
-Abra [http://127.0.0.1:3000](http://127.0.0.1:3000). La contraseña se establece al crear la base de datos por primera vez. No la suba a GitHub. El archivo `data/barber.sqlite` queda excluido de Git. Para pruebas automatizadas: `npm test`.
+En PowerShell:
 
-El prototipo se sirve desde Node; abrir `web/index.html` directamente ya no permite reservar. La dirección de escucha predeterminada es local. `PORT` y `HOST` permiten cambiarla, aunque todavía no se ha preparado un despliegue público.
+```powershell
+$env:BARBER_ADMIN_PASSWORD = 'una-clave-de-prueba-de-12-caracteres-o-mas'
+npm start
+```
 
-## Funciones disponibles
+Después abre <http://127.0.0.1:3000>. Si ese puerto ya está ocupado, define otro con la variable `PORT` (por ejemplo, 3001).
 
-- Consulta de tres sucursales informadas por el equipo y cuatro servicios simulados.
-- Horarios disponibles calculados en el servidor, incluidos domingos y dos horas mínimas de anticipación.
-- Reserva persistente con validación y bloqueo de horarios ocupados por sucursal.
-- Acceso de administrador con contraseña, sesión y cierre de sesión.
-- Filtros, indicadores y cambios de estado de citas en el panel.
-- Pruebas de creación, colisiones, acceso, cancelación y persistencia.
+La contraseña del panel se guarda la primera vez que se crea la base de datos, `data/barber.sqlite`. Ni ese archivo ni la contraseña se suben a GitHub. Para correr las pruebas automáticas usa `npm test`.
 
-## Documentación
+La página necesita el servidor: si abres `web/index.html` directo en el navegador, no vas a poder reservar. Por ahora el servidor solo escucha en tu computadora; todavía no lo publicamos en internet.
 
-- [Seguimiento del 29 de septiembre](docs/avance-2026-09-29.md)
-- [Minuta de entrevista del 3 de octubre](docs/minuta-entrevista-cliente-2026-10-03.md)
-- [Red PERT propuesta para actividades pendientes](docs/pert-fase2-pendiente.md)
-- [Requerimientos](docs/requerimientos.md) · [Validación anterior](docs/validacion-cliente-equipo.md)
-- [Arquitectura](docs/arquitectura-preliminar.md) · [Decisión tecnológica](docs/decision-tecnologica.md)
-- [Casos de uso](docs/diagramas/casos-de-uso.md) · [Modelo preliminar](docs/diagramas/modelo-entidad-relacion.md)
-- [Guía de entrevista](docs/entrevista-cliente.md) · [Datos simulados](docs/datos-simulados.md)
-- [Organización del equipo](CONTRIBUTING.md) · [Roles y asignaciones de Fase 2](docs/roles-fase2.md) · [FODA y Porter](docs/analisis-fase2.md)
+## Qué hace hoy
 
-El tablero de trabajo se lleva en [GitHub Issues](https://github.com/carlosguerrerom0/Barber_920/issues).
+- Muestra las tres sucursales con su horario, su mapa y el enlace "Cómo llegar".
+- Calcula en el servidor los horarios libres: de lunes a sábado de 10:00 a 19:00 y el domingo de 10:00 a 16:00, con al menos dos horas de anticipación.
+- Guarda las citas en SQLite y no deja apartar un horario que ya está ocupado en la misma sucursal.
+- Tiene un panel con contraseña para ver las citas, filtrarlas y cambiar su estado.
+- Incluye pruebas automáticas de reservas, choques de horario, inicio de sesión, cancelación y persistencia.
+
+## Documentos
+
+- **Planeación:** [planificación de la Fase 2](docs/planificacion-fase2-2026-10-04.md) · [red PERT del 29 de septiembre](docs/pert-fase2-pendiente.md) · [roles](docs/roles-fase2.md) · [FODA y Porter](docs/analisis-fase2.md)
+- **Cliente y requisitos:** [requerimientos](docs/requerimientos.md) · [guía de entrevista](docs/entrevista-cliente.md) · [minuta de la entrevista](docs/minuta-entrevista-cliente-2026-10-03.md) · [estado del boceto](docs/validacion-cliente-equipo.md) · [avance del 29 de septiembre](docs/avance-2026-09-29.md)
+- **Diseño técnico:** [arquitectura](docs/arquitectura-preliminar.md) · [decisión tecnológica](docs/decision-tecnologica.md) · [casos de uso](docs/diagramas/casos-de-uso.md) · [modelo de datos](docs/diagramas/modelo-entidad-relacion.md) · [datos de la demostración](docs/datos-simulados.md)
+- **Equipo:** [forma de trabajo](CONTRIBUTING.md)
+
+## Equipo
+
+| Integrante | GitHub | Rol |
+|---|---|---|
+| Luis Uziel Cruz Martínez | — | Líder y enlace con el cliente |
+| Alison Aguirre Hernández | [@AH-afk3](https://github.com/AH-afk3) | Análisis e interfaz inicial |
+| Carlos Guerrero Morales | [@carlosguerrerom0](https://github.com/carlosguerrerom0) | Diseño y revisión del flujo |
+| Dante Uriel Ramírez Márquez | [@Danterm2003](https://github.com/Danterm2003) | Requisitos y arquitectura |
+| Jesús Alberto González Martínez | [@jesus453](https://github.com/jesus453) | Servidor, pruebas y PERT |
+
+Profesor: Abraham López Nájera. El trabajo del equipo se lleva en [GitHub Issues](https://github.com/carlosguerrerom0/Barber_920/issues).

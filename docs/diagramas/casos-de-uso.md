@@ -1,6 +1,6 @@
 # Diagrama de casos de uso
 
-**Estado:** propuesta de diseño basada en los requerimientos preliminares.
+Lo armamos el 1 de septiembre con los requerimientos iniciales.
 
 ```mermaid
 flowchart TD
@@ -33,4 +33,4 @@ flowchart TD
 | UC-04 Consultar y filtrar citas | Administrador | Visualiza reservaciones por fecha y sucursal. |
 | UC-05 Actualizar o cancelar cita | Administrador | Mantiene actualizado el estado de las reservaciones. |
 
-Los casos deberán ajustarse después de validar las reglas con Barber 920.
+Cuando tengamos las reglas definitivas agregaremos los casos que salieron de la entrevista, como elegir barbero, recibir avisos y cambiar o cancelar una cita.

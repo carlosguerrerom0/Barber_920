@@ -1,18 +1,15 @@
 # Requerimientos del sistema
 
-**Estado:** requerimientos iniciales documentados el 2 de septiembre; entrevista operativa realizada el 3 de octubre. Las reglas y datos reales aún requieren confirmación y revisión en la versión conectada.
-**Fecha del registro inicial:** 2 de septiembre de 2026.
+**Registro inicial:** 2 de septiembre de 2026. **Actualizado:** 4 de octubre de 2026, con lo que nos dijo el propietario en la entrevista.
 
-Este documento define el alcance preliminar del prototipo y orienta la siguiente etapa de desarrollo. Los datos operativos reales de sucursales y servicios se administran por separado en el Issue #5.
-
-La [minuta de entrevista](minuta-entrevista-cliente-2026-10-03.md) documenta las respuestas del dueño, sus fuentes y las dudas. El video no constituye una aceptación de la versión conectada.
+Aquí está el alcance del sistema: lo que definimos al principio y lo que agregamos después de hablar con el dueño. Las respuestas completas de la entrevista, con los minutos del video de donde salen, están en la [minuta](minuta-entrevista-cliente-2026-10-03.md). Varias reglas todavía dependen de datos que el negocio nos tiene que mandar; esos datos los seguimos en el Issue #5 y en el plan de continuidad.
 
 ## Actores
 
 | Actor | Descripción |
 |---|---|
-| Cliente | Persona que consulta sucursales, disponibilidad y registra una cita. |
-| Administrador | Personal autorizado que consulta y administra reservaciones. |
+| Cliente | Persona que consulta las sucursales y la disponibilidad, y registra una cita. |
+| Administrador | Personal autorizado que consulta y administra las reservaciones. |
 
 ## Requerimientos funcionales iniciales
 
@@ -24,7 +21,7 @@ La [minuta de entrevista](minuta-entrevista-cliente-2026-10-03.md) documenta las
 | RF-04 | El sistema mostrará los servicios disponibles. | Alta | Documentado |
 | RF-05 | El cliente podrá seleccionar un servicio, una fecha y un horario disponible. | Alta | Documentado |
 | RF-06 | El sistema impedirá registrar dos citas incompatibles en el mismo horario. | Alta | Documentado |
-| RF-07 | El cliente podrá registrar una cita proporcionando nombre y teléfono. | Alta | Documentado |
+| RF-07 | El cliente podrá registrar una cita con su nombre y teléfono. | Alta | Documentado |
 | RF-08 | El sistema mostrará una confirmación después de registrar la cita. | Alta | Documentado |
 | RF-09 | El administrador podrá consultar las reservaciones registradas. | Alta | Documentado |
 | RF-10 | El administrador podrá filtrar las reservaciones por fecha y sucursal. | Media | Documentado |
@@ -33,48 +30,46 @@ La [minuta de entrevista](minuta-entrevista-cliente-2026-10-03.md) documenta las
 
 ## Requerimientos no funcionales iniciales
 
-| ID | Requerimiento | Comprobación | Estado |
+| ID | Requerimiento | Cómo lo comprobamos | Estado |
 |---|---|---|---|
-| RNF-01 | La interfaz será adaptable a computadora y celular. | Probar las vistas en diferentes anchos de pantalla. | Documentado |
-| RNF-02 | La navegación utilizará textos claros y pasos sencillos. | Prueba de uso con usuarios y cliente. | Documentado |
-| RNF-03 | Los datos de administración requerirán acceso autorizado. | Intentar ingresar sin una sesión válida en la versión conectada. | Documentado |
-| RNF-04 | El sistema validará los datos obligatorios antes de registrar una cita. | Probar formularios incompletos o incorrectos. | Documentado |
-| RNF-05 | El sistema protegerá los datos personales recopilados. | Revisar permisos, exposición y almacenamiento. | Documentado |
-| RNF-06 | Las funciones principales responderán en un máximo de 3 segundos bajo condiciones normales. | Medir carga de vistas, consulta y registro. | Documentado |
-| RNF-07 | El código y la documentación permitirán realizar mantenimiento. | Revisar estructura, nombres y documentación. | Documentado |
-| RNF-08 | La interfaz considerará contraste, etiquetas y navegación comprensible. | Revisión básica de accesibilidad. | Documentado |
+| RNF-01 | La interfaz se adaptará a computadora y celular. | Revisar las vistas en distintos anchos de pantalla. | Documentado |
+| RNF-02 | La navegación usará textos claros y pasos sencillos. | Prueba de uso con usuarios y con el cliente. | Documentado |
+| RNF-03 | La administración requerirá acceso autorizado. | Intentar entrar al panel sin una sesión válida. | Documentado |
+| RNF-04 | El sistema validará los datos obligatorios antes de registrar una cita. | Enviar formularios incompletos o con errores. | Documentado |
+| RNF-05 | El sistema protegerá los datos personales que recopile. | Revisar permisos, exposición y almacenamiento. | Documentado |
+| RNF-06 | Las funciones principales responderán en máximo 3 segundos en condiciones normales. | Medir la carga de vistas, la consulta y el registro. | Documentado |
+| RNF-07 | El código y la documentación facilitarán el mantenimiento. | Revisar estructura, nombres y documentación. | Documentado |
+| RNF-08 | La interfaz cuidará el contraste, las etiquetas y una navegación comprensible. | Revisión básica de accesibilidad. | Documentado |
 
-## Información operativa pendiente
+## Lo que agregamos después de la entrevista (3 de octubre)
 
-La entrevista aportó tres direcciones, horarios generales y precios de algunos servicios. Todavía deben confirmarse:
+Estas necesidades entraron al backlog. Las que dependen de datos que todavía no tenemos no están listas para usarse con clientes reales.
 
-- Escritura completa de direcciones, teléfonos, mapas y hora de última cita.
-- Catálogo completo, precio y duración de ceja y diseños, y duración de barba.
-- Barberos por sucursal, descansos y capacidad de citas simultáneas.
-- Plazo exacto para cancelar o modificar y procedimiento de inasistencia.
-- Días festivos, cierres y permisos para bloquear horarios.
-- Datos personales mínimos, canal de avisos y material visual autorizado.
-
-Estos datos pendientes se concentran en el Issue #5 y las nuevas funciones se desglosan en el tablero.
-
-## Necesidades registradas en la entrevista del 3 de octubre
-
-Estas necesidades se agregan al backlog para análisis e implementación. Las reglas que dependen de datos faltantes no se consideran listas para producción.
-
-| ID | Necesidad registrada | Estado |
+| ID | Necesidad | Estado |
 |---|---|---|
-| RF-13 | Permitir seleccionar barbero y consultar su disponibilidad, respetando su día de descanso. | Pendiente de nombres, sucursales y descansos |
-| RF-14 | Aplicar un mínimo de dos horas entre la reserva y el inicio de la cita. | Implementado en demo; pendiente de revisión integral |
-| RF-15 | Mostrar horarios de lunes a sábado 10:00–19:00 y domingo 10:00–16:00 para las tres sedes. | Mostrado en demo; confirmar último horario reservable |
-| RF-16 | Permitir reservación como invitado y, si se define su alcance, mediante cuenta de cliente. | Pendiente de definir datos y flujo de cuenta |
-| RF-17 | Enviar confirmaciones y recordatorios a cliente y negocio. | Pendiente de canal, datos de contacto y momento |
-| RF-18 | Permitir al cliente modificar o cancelar con anticipación. | Pendiente de plazo exacto |
-| RF-19 | Permitir al personal aceptar o rechazar citas y administrar precios y horarios según permisos. | Pendiente de roles y flujo |
-| RF-20 | Generar resúmenes diarios, semanales y mensuales. | Pendiente de métricas |
-| RF-21 | Mostrar mapa, experiencia de barberos y contemplar calificaciones. | Pendiente de contenido y reglas de valoración |
+| RF-13 | Elegir barbero y ver su disponibilidad, respetando su día de descanso. | Falta saber nombres, sucursales y descansos |
+| RF-14 | Pedir al menos dos horas de anticipación para reservar. | Ya funciona en la demo; falta la revisión integral |
+| RF-15 | Mostrar el horario de lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00 en las tres sedes. | Ya aparece en la demo; falta confirmar la última hora para reservar |
+| RF-16 | Reservar como invitado y, si se define, también con cuenta de cliente. | Falta definir los datos y el flujo de la cuenta |
+| RF-17 | Enviar confirmaciones y recordatorios al cliente y al negocio. | Falta definir el canal, los datos de contacto y el momento |
+| RF-18 | Que el cliente pueda cambiar o cancelar su cita con anticipación. | Falta el plazo exacto |
+| RF-19 | Que el personal acepte o rechace citas y administre precios y horarios según sus permisos. | Falta definir roles y flujo |
+| RF-20 | Generar resúmenes diarios, semanales y mensuales. | Falta definir qué medir |
+| RF-21 | Mostrar mapas, la experiencia de los barberos y contemplar calificaciones. | Los mapas y "Cómo llegar" ya están en la demo; faltan perfiles y calificaciones |
 
-**Regla operativa adicional:** tolerancia de cinco minutos y recomendación de llegar diez minutos antes. Su efecto exacto sobre estados y reasignación de turnos requiere confirmación. La respuesta de “15–20 citas al día” no permite inferir capacidad simultánea.
+**Otra regla que mencionó el dueño:** hay cinco minutos de tolerancia y se recomienda llegar diez minutos antes. Falta definir cómo afecta eso al estado de la cita y a los turnos. Además, cuando preguntamos por citas simultáneas nos dijo que atienden unas 15 a 20 citas al día; con ese dato todavía no sabemos cuántas pueden atender al mismo tiempo.
+
+## Datos que nos faltan
+
+La entrevista nos dio las tres direcciones, los horarios generales y los precios de algunos servicios. Todavía tenemos que confirmar:
+
+- La colonia y el código postal de SUC 3, los teléfonos, que los mapas marquen el lugar correcto y la última hora para reservar.
+- El catálogo completo, con precio y duración de ceja y diseños, y la duración exacta de la barba.
+- Los barberos de cada sucursal, sus descansos y cuántas citas pueden atender al mismo tiempo.
+- El plazo para cancelar o cambiar una cita y qué hacer cuando el cliente no llega.
+- Los días festivos, los cierres y quién puede bloquear horarios.
+- Los datos mínimos que pediremos al cliente, el canal de avisos y el material visual autorizado.
 
 ## Estado del boceto
 
-El cliente conocía el boceto y no comunicó observaciones. El equipo dio por terminada esa propuesta inicial; seguía pendiente la entrevista para obtener datos reales. El detalle está en [validacion-cliente-equipo.md](validacion-cliente-equipo.md). La ausencia de comentarios no confirma las reglas operativas ni la versión conectada.
+El cliente conocía el boceto y no nos hizo comentarios, así que lo dimos por terminado. Eso no confirma las reglas de operación ni la versión conectada; el detalle está en [validacion-cliente-equipo.md](validacion-cliente-equipo.md).
