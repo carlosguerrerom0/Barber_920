@@ -1,6 +1,6 @@
 # Modelo entidad-relación preliminar
 
-**Estado:** propuesta inicial pendiente de validación.
+Es el modelo que propusimos el 1 de septiembre. La demostración actual solo guarda citas, la cuenta del administrador y las sesiones; barberos, clientes y servicios como tablas propias llegarán cuando tengamos los datos reales.
 
 ```mermaid
 erDiagram
@@ -62,10 +62,10 @@ erDiagram
     }
 ```
 
-## Reglas preliminares
+## Reglas del modelo
 
 - Una cita pertenece a una sucursal, servicio y cliente.
-- La asignación de barbero será opcional hasta confirmar esa función.
-- Dos citas no podrán ocupar el mismo recurso en un horario incompatible.
+- El barbero es opcional en la cita hasta que el negocio confirme cómo asignarlo.
+- Dos citas no pueden traslaparse en el mismo recurso: por ahora la sucursal y, más adelante, el barbero.
 - Los estados propuestos son: Pendiente, Confirmada, Completada y Cancelada.
-- Las contraseñas nunca se almacenarán como texto sin protección.
+- Las contraseñas nunca se guardan como texto plano.
