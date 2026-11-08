@@ -2,40 +2,38 @@
 
 **Actualizado el 4 de octubre de 2026.**
 
-Hicimos este análisis con lo que nos contó el propietario en la [entrevista del 3 de octubre](minuta-entrevista-cliente-2026-10-03.md) y con lo que conocemos del negocio. No es un estudio de mercado: no comparamos a la competencia a detalle.
+Hicimos este análisis con lo que nos contó el dueño en la [entrevista del 3 de octubre](minuta-entrevista-cliente-2026-10-03.md). No comparamos a la competencia a detalle.
 
-Barber 920 tiene tres sucursales en Ciudad Juárez. Hoy recibe las citas por WhatsApp y, mientras atienden, a veces no alcanzan a revisar los mensajes. Por eso queremos reunir la información de las sucursales y facilitar el registro de citas en una sola página.
+Barber 920 tiene tres sucursales en Ciudad Juárez. Recibe las citas por WhatsApp y, mientras atienden, a veces no alcanzan a ver los mensajes. Por eso queremos juntar la información de las sucursales y las citas en una sola página.
 
 ## FODA
 
 | Fortalezas | Debilidades |
 |---|---|
-| Aproximadamente diez años de trayectoria. | Las citas se administran por WhatsApp. |
-| Creció de una a tres sucursales. | Atender a los clientes puede impedir revisar los mensajes a tiempo. |
-| Tenemos contacto directo con el propietario para conocer la operación. | Faltan datos completos de personal, servicios y reglas para configurar el sistema. |
+| Unos diez años de trayectoria. | Las citas se llevan por WhatsApp. |
+| Creció de una a tres sucursales. | Mientras atienden, no alcanzan a ver los mensajes. |
+| Tenemos contacto directo con el dueño. | Faltan datos del personal, los servicios y las reglas. |
 
 | Oportunidades | Amenazas |
 |---|---|
-| Consultar y reservar desde el celular. | Los clientes pueden elegir otros medios u otros establecimientos. |
-| Reunir las tres sucursales en un solo sitio. | Puede haber resistencia a cambiar la forma de agendar. |
-| Organizar la agenda y agregar avisos en una etapa posterior. | La información puede quedar desactualizada si nadie la mantiene. |
-| | Publicar el sistema tiene costos de operación que todavía no definimos. |
+| Consultar y reservar desde el celular. | Los clientes pueden irse a otra barbería. |
+| Juntar las tres sucursales en un solo sitio. | Puede costar trabajo cambiar la forma de agendar. |
+| Más adelante, organizar la agenda y mandar avisos. | La información se puede quedar vieja si nadie la actualiza. |
+| | Publicar el sistema tiene un costo que todavía no sabemos. |
 
-## Estrategias que salen del FODA
+## Estrategias
 
-- **FO:** aprovechar la trayectoria del negocio y sus tres sucursales para ofrecer una página donde se consulte la información y se reserve fácil desde el celular.
-- **DO:** completar los datos que faltan y reunirlos en el sistema para que sea sencillo consultar sucursales, servicios y disponibilidad.
-- **FA:** mantener la atención personalizada y usar el sistema como apoyo, para que se pierdan menos solicitudes de cita.
-- **DA:** acordar quién va a actualizar horarios, servicios y personal. Antes de publicar, definir los costos y las reglas de uso de la agenda.
+- **FO:** usar la trayectoria y las tres sucursales para ofrecer una página donde se reserve fácil desde el celular.
+- **DO:** completar los datos que faltan para que sea sencillo ver sucursales, servicios y horarios.
+- **FA:** seguir con la atención personal y usar el sistema de apoyo, para que se pierdan menos citas.
+- **DA:** acordar quién va a actualizar horarios, servicios y personal, y definir los costos antes de publicar.
 
 ## Cinco fuerzas de Porter
 
-| Fuerza | Lo que observamos |
+| Fuerza | Lo que vimos |
 |---|---|
-| Rivalidad | Los clientes tienen otras opciones de barbería. No hicimos una comparación detallada de competidores. |
-| Nuevos participantes | Otros negocios pueden crear su página de reservas. La atención y la calidad del servicio siguen siendo lo más importante. |
-| Sustitutos | WhatsApp, las llamadas y la atención en persona siguen siendo formas de pedir cita. |
-| Poder de los clientes | Si un cliente no encuentra información clara o un horario libre, puede irse a otro lugar. |
-| Poder de los proveedores | El alojamiento y los avisos pueden requerir servicios externos; el costo depende de las opciones que elijamos. |
-
-Antes de usar la página con clientes reales necesitamos la capacidad por barbero, las reglas de cancelación y saber quién va a administrar los cambios. Ese trabajo está en la [propuesta para la siguiente fase](planificacion-fase2-2026-10-04.md).
+| Rivalidad | Los clientes tienen otras barberías. No comparamos competidores a detalle. |
+| Nuevos participantes | Otros negocios pueden hacer su página de reservas. La atención y la calidad siguen pesando más. |
+| Sustitutos | WhatsApp, las llamadas y llegar en persona siguen siendo formas de pedir cita. |
+| Poder de los clientes | Si no encuentran información clara o un horario libre, se van a otro lugar. |
+| Poder de los proveedores | El alojamiento y los avisos pueden requerir servicios de pago. El costo depende de lo que elijamos. |

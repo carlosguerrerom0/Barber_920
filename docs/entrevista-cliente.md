@@ -1,6 +1,6 @@
 # Guía de entrevista con el cliente
 
-Preparamos estas preguntas para conocer cómo opera Barber 920 y convertir nuestro borrador en requisitos definitivos. La entrevista se hizo el **3 de octubre de 2026**; las respuestas completas están en la [minuta](minuta-entrevista-cliente-2026-10-03.md). Dejamos aquí el cuestionario tal como lo usamos.
+Estas son las preguntas que usamos para conocer cómo trabaja Barber 920. La entrevista fue el 3 de octubre de 2026 y las respuestas completas están en la [minuta](minuta-entrevista-cliente-2026-10-03.md).
 
 ## Situación actual
 
@@ -58,12 +58,12 @@ Preparamos estas preguntas para conocer cómo opera Barber 920 y convertir nuest
 
 | Tema | Lo que respondió | Qué falta |
 |---|---|---|
-| Sucursales | Tres sedes con el mismo horario. | Colonia y código postal de SUC 3 y teléfonos. |
-| Servicios | Corte, barba, ceja y diseños; nos dio algunos precios. | Catálogo completo con precios y duraciones. |
-| Horarios y disponibilidad | Lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00; elegir barbero; dos horas de anticipación. | Barberos por sucursal, descansos y capacidad al mismo tiempo. |
-| Datos del cliente | Día, hora, sucursal, barbero y servicio; como invitado o con cuenta. | Qué datos personales serán obligatorios. |
-| Cancelaciones | Se puede cambiar o cancelar con anticipación; cinco minutos de tolerancia. | El plazo exacto y qué hacer si no llegan. |
-| Administración | Acceso para el dueño y los barberos; aceptar o rechazar citas; resúmenes. | Permisos por rol y qué incluir en los resúmenes. |
+| Sucursales | Tres sucursales con el mismo horario. | Colonia y código postal de SUC 3 y teléfonos. |
+| Servicios | Corte, barba, ceja y diseños. Nos dio tres precios. | Precio y duración de ceja y diseños. |
+| Horarios | Lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00. Elegir barbero. Dos horas de anticipación. | Barberos por sucursal y sus descansos. |
+| Datos del cliente | Día, hora, sucursal, barbero y servicio. Como invitado o con cuenta. | Qué datos personales serán obligatorios. |
+| Cancelaciones | Se puede cambiar o cancelar con anticipación. Hay cinco minutos de tolerancia. | El plazo exacto y qué hacer si no llegan. |
+| Administración | Acceso para el dueño y los barberos. Aceptar o rechazar citas. Resúmenes. | Qué puede hacer cada quien y qué llevan los resúmenes. |
 | Diseño | Tienen logotipo y material visual. | Material autorizado para la página. |
 
-Después de la reunión hicimos la minuta, actualizamos los requisitos y registramos los cambios de alcance en GitHub Issues.
+Después de la entrevista hicimos la minuta, actualizamos los requisitos y abrimos los Issues de lo nuevo. El 8 de noviembre cargamos los tres precios y agregamos la elección de barbero con barberos de prueba.
