@@ -13,12 +13,23 @@ const branches = [
   { id: 'oriente', name: 'Sucursal 3', schedule: 'Lun-Sáb · 10:00-19:00 · Dom · 10:00-16:00', address: 'Cerro del Crestón #6327, Juárez, Chih. (colonia y CP pendientes)' }
 ];
 const services = [
-  { id: 'clasico', name: 'Corte clásico', duration: 45, price: 250, description: 'Corte personalizado y acabado.' },
-  { id: 'barba', name: 'Arreglo de barba', duration: 30, price: 150, description: 'Perfilado y arreglo de barba.' },
-  { id: 'combo', name: 'Corte y barba', duration: 60, price: 350, description: 'Servicio completo de corte y barba.' },
-  { id: 'infantil', name: 'Corte infantil', duration: 40, price: 200, description: 'Corte para clientes infantiles.' }
+  { id: 'natural', name: 'Corte natural', duration: 20, price: 120, description: 'Corte de cabello natural.' },
+  { id: 'desvanecido', name: 'Desvanecido', duration: 30, price: 180, description: 'Corte con desvanecido.' },
+  { id: 'barba', name: 'Barba', duration: 20, price: 100, description: 'Arreglo de barba.' }
 ];
-const slots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+// Servicios de la demo anterior: solo se usan para respetar la duración de citas que ya estaban guardadas.
+const legacyDurations = { clasico: 45, combo: 60, infantil: 40 };
+// Barberos de prueba: el negocio todavía no nos pasa nombres ni días de descanso. restDay usa 0 = domingo ... 6 = sábado.
+const barbers = [
+  { id: 'suc1-a', branch: 'centro', name: 'Barbero A', restDay: 1 },
+  { id: 'suc1-b', branch: 'centro', name: 'Barbero B', restDay: 3 },
+  { id: 'suc2-a', branch: 'norte', name: 'Barbero C', restDay: 2 },
+  { id: 'suc2-b', branch: 'norte', name: 'Barbero D', restDay: 4 },
+  { id: 'suc3-a', branch: 'oriente', name: 'Barbero E', restDay: 1 },
+  { id: 'suc3-b', branch: 'oriente', name: 'Barbero F', restDay: 5 }
+];
+const anyBarber = 'cualquiera';
+const slots = ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30'];
 const allowedStatuses = ['Pendiente', 'Confirmada', 'Completada', 'Cancelada'];
 const staticPaths = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'],
@@ -65,6 +76,8 @@ function startDatabase(filename, password) {
       phone TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'Pendiente',
       created_at TEXT NOT NULL
     );`);
+  const columns = db.prepare('PRAGMA table_info(appointments)').all().map(column => column.name);
+  if (!columns.includes('barber')) db.exec('ALTER TABLE appointments ADD COLUMN barber TEXT');
   if (!db.prepare('SELECT id FROM admin LIMIT 1').get()) {
     if (!password || password.length < 12) {
       db.close();
@@ -83,17 +96,32 @@ function authorized(db, req) {
   return Boolean(session && session.expires_at > Date.now());
 }
 
-function available(db, branch, service, date) {
-  const duration = services.find(item => item.id === service)?.duration;
-  if (!branches.some(item => item.id === branch) || !duration || !validBookingDate(date)) return null;
-  const sunday = new Date(`${date}T12:00:00Z`).getUTCDay() === 0;
-  const closingMinute = sunday ? 16 * 60 : 19 * 60;
-  const bookings = db.prepare("SELECT time, service FROM appointments WHERE branch = ? AND date = ? AND status != 'Cancelada'").all(branch, date);
+const durationOf = service => services.find(item => item.id === service)?.duration ?? legacyDurations[service] ?? 60;
+const weekday = date => new Date(`${date}T12:00:00Z`).getUTCDay();
+const barbersOf = branch => barbers.filter(item => item.branch === branch);
+
+// Horarios libres de un barbero: respeta su día de descanso, el cierre, las dos horas de anticipación y sus otras citas.
+function freeSlots(db, barber, service, date) {
+  if (weekday(date) === barber.restDay) return [];
+  const duration = durationOf(service);
+  const closingMinute = weekday(date) === 0 ? 16 * 60 : 19 * 60;
+  const bookings = db.prepare("SELECT time, service FROM appointments WHERE branch = ? AND date = ? AND status != 'Cancelada' AND (barber = ? OR barber IS NULL)").all(barber.branch, date, barber.id);
   return slots.filter(time => {
     if (minutes(time) + duration > closingMinute) return false;
     if (date === todayInJuarez() && minutes(time) < minutes(timeInJuarez()) + 120) return false;
-    return !bookings.some(item => minutes(time) < minutes(item.time) + services.find(s => s.id === item.service).duration && minutes(item.time) < minutes(time) + duration);
+    return !bookings.some(item => minutes(time) < minutes(item.time) + durationOf(item.service) && minutes(item.time) < minutes(time) + duration);
   });
+}
+
+// Devuelve los horarios libres o null si los datos no son válidos.
+function available(db, branch, service, date, barberId = anyBarber) {
+  if (!branches.some(item => item.id === branch) || !services.some(item => item.id === service) || !validBookingDate(date)) return null;
+  if (barberId === anyBarber) {
+    const free = new Set(barbersOf(branch).flatMap(barber => freeSlots(db, barber, service, date)));
+    return slots.filter(time => free.has(time));
+  }
+  const barber = barbersOf(branch).find(item => item.id === barberId);
+  return barber ? freeSlots(db, barber, service, date) : null;
 }
 
 function sameOrigin(req) {
@@ -116,10 +144,10 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
       const key = `${req.method} ${url.pathname}`;
       if (url.pathname.startsWith('/api/') && !sameOrigin(req)) return json(res, 403, { error: 'Origen no permitido.' });
 
-      if (key === 'GET /api/config') return json(res, 200, { branches, services, slots, today: todayInJuarez(), demo: true });
+      if (key === 'GET /api/config') return json(res, 200, { branches, services, barbers, slots, today: todayInJuarez(), demo: true });
       if (key === 'GET /api/availability') {
-        const list = available(db, url.searchParams.get('branch'), url.searchParams.get('service'), url.searchParams.get('date'));
-        return list ? json(res, 200, { slots: list }) : json(res, 400, { error: 'Elige sucursal, servicio y fecha válidos.' });
+        const list = available(db, url.searchParams.get('branch'), url.searchParams.get('service'), url.searchParams.get('date'), url.searchParams.get('barber') || anyBarber);
+        return list ? json(res, 200, { slots: list }) : json(res, 400, { error: 'Elige sucursal, servicio, barbero y fecha válidos.' });
       }
       if (key === 'POST /api/appointments') {
         const input = await body(req);
@@ -127,19 +155,23 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
         const service = safeText(input.service);
         const date = safeText(input.date);
         const time = safeText(input.time);
+        const barberChoice = safeText(input.barber) || anyBarber;
         const clientName = safeText(input.clientName);
         const phone = safeText(input.phone);
-        if (!branches.some(item => item.id === branch) || !services.some(item => item.id === service) || !validBookingDate(date) || !slots.includes(time) || clientName.length < 3 || clientName.length > 80 || !/^\d{10}$/.test(phone)) {
+        const barberValid = barberChoice === anyBarber || barbersOf(branch).some(item => item.id === barberChoice);
+        if (!branches.some(item => item.id === branch) || !services.some(item => item.id === service) || !barberValid || !validBookingDate(date) || !slots.includes(time) || clientName.length < 3 || clientName.length > 80 || !/^\d{10}$/.test(phone)) {
           return json(res, 400, { error: 'Revisa los datos de la cita.' });
         }
         db.exec('BEGIN IMMEDIATE');
         try {
-          if (!available(db, branch, service, date).includes(time)) {
+          const candidates = barberChoice === anyBarber ? barbersOf(branch) : barbersOf(branch).filter(item => item.id === barberChoice);
+          const barber = candidates.find(item => freeSlots(db, item, service, date).includes(time));
+          if (!barber) {
             db.exec('ROLLBACK');
             return json(res, 409, { error: 'Ese horario ya no está disponible.' });
           }
-          const appointment = { id: randomBytes(16).toString('hex'), branch, service, date, time, clientName, status: 'Pendiente' };
-          db.prepare('INSERT INTO appointments (id, branch, service, date, time, client_name, phone, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)').run(appointment.id, branch, service, date, time, clientName, phone, appointment.status, new Date().toISOString());
+          const appointment = { id: randomBytes(16).toString('hex'), branch, service, barber: barber.id, barberName: barber.name, date, time, clientName, status: 'Pendiente' };
+          db.prepare('INSERT INTO appointments (id, branch, service, barber, date, time, client_name, phone, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)').run(appointment.id, branch, service, barber.id, date, time, clientName, phone, appointment.status, new Date().toISOString());
           db.exec('COMMIT');
           return json(res, 201, { appointment });
         } catch (error) { db.exec('ROLLBACK'); throw error; }
@@ -170,7 +202,7 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
         return json(res, 200, { authenticated: false }, { 'set-cookie': 'barber_session=; HttpOnly; SameSite=Strict; Path=/api; Max-Age=0' });
       }
       if (key === 'GET /api/admin/appointments') {
-        const rows = db.prepare('SELECT id, branch, service, date, time, client_name AS clientName, phone, status, created_at AS createdAt FROM appointments ORDER BY date, time').all();
+        const rows = db.prepare('SELECT id, branch, service, barber, date, time, client_name AS clientName, phone, status, created_at AS createdAt FROM appointments ORDER BY date, time').all();
         return json(res, 200, { appointments: rows });
       }
       const statusMatch = /^\/api\/admin\/appointments\/([a-f0-9]{32})$/.exec(url.pathname);

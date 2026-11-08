@@ -1,5 +1,6 @@
 let branches = [];
 let services = [];
+let barbers = [];
 let appointments = [];
 let availabilityRequest = 0;
 
@@ -8,6 +9,8 @@ const $$ = selector => [...document.querySelectorAll(selector)];
 const money = value => new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(value);
 const branchName = id => branches.find(item => item.id === id)?.name || id;
 const serviceName = id => services.find(item => item.id === id)?.name || id;
+const barberName = id => barbers.find(item => item.id === id)?.name || 'Sin asignar';
+const dayNames = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 const mapsQuery = branch => encodeURIComponent(branch.address.replace(/\s*\(.*?\)/g, ''));
 const mapEmbedUrl = branch => `https://www.google.com/maps?output=embed&hl=es&q=${mapsQuery(branch)}`;
 const directionsUrl = branch => `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery(branch)}`;
@@ -56,6 +59,7 @@ function option(value, label) {
 function populateContent(config) {
   branches = config.branches;
   services = config.services;
+  barbers = config.barbers;
   $('#date').min = config.today;
 
   for (const service of services) {
@@ -70,7 +74,7 @@ function populateContent(config) {
     description.textContent = service.description;
     const meta = document.createElement('p');
     meta.className = 'service-meta';
-    meta.textContent = `${service.duration} min · Servicio demo`;
+    meta.textContent = `${service.duration} min aprox.`;
     card.append(title, price, description, meta);
     $('#serviceCards').append(card);
     $('#service').append(option(service.id, `${service.name} · ${service.duration} min · ${money(service.price)}`));
@@ -84,7 +88,8 @@ function populateContent(config) {
     const title = document.createElement('h2');
     title.textContent = branch.name;
     const list = document.createElement('ul');
-    for (const value of [branch.schedule, branch.address, 'Por validar con el cliente']) {
+    const team = barbers.filter(item => item.branch === branch.id).map(item => item.name).join(' y ');
+    for (const value of [branch.schedule, branch.address, `Barberos de prueba: ${team}`]) {
       const item = document.createElement('li');
       item.textContent = value;
       list.append(item);
@@ -111,12 +116,22 @@ function populateContent(config) {
     $('#branch').append(option(branch.id, branch.name));
     $('#filterBranch').append(option(branch.id, branch.name));
   }
+  for (const barber of barbers) $('#filterBarber').append(option(barber.id, `${barber.name} · ${branchName(barber.branch)}`));
+}
+
+function fillBarbers() {
+  const select = $('#barber');
+  select.replaceChildren(option('cualquiera', 'Sin preferencia'));
+  for (const barber of barbers.filter(item => item.branch === $('#branch').value)) {
+    select.append(option(barber.id, `${barber.name} · descansa los ${dayNames[barber.restDay]}`));
+  }
 }
 
 function updateSummary() {
   const branch = branches.find(item => item.id === $('#branch').value);
   const service = services.find(item => item.id === $('#service').value);
   $('#summaryBranch').textContent = branch?.name || 'Sin seleccionar';
+  $('#summaryBarber').textContent = $('#barber').value === 'cualquiera' ? 'Sin preferencia' : barberName($('#barber').value);
   $('#summaryService').textContent = service?.name || 'Selecciona un servicio';
   $('#summaryDuration').textContent = service ? `${service.duration} minutos` : '-';
   $('#summaryPrice').textContent = service ? money(service.price) : '-';
@@ -129,10 +144,11 @@ async function refreshAvailability() {
   const branch = $('#branch').value;
   const service = $('#service').value;
   const date = $('#date').value;
+  const barber = $('#barber').value || 'cualquiera';
   if (!branch || !service || !date) return;
   select.options[0].textContent = 'Consultando...';
   try {
-    const params = new URLSearchParams({ branch, service, date });
+    const params = new URLSearchParams({ branch, service, date, barber });
     const result = await api(`/api/availability?${params}`);
     if (request !== availabilityRequest) return;
     select.options[0].textContent = result.slots.length ? 'Selecciona' : 'Sin horarios disponibles';
@@ -153,10 +169,11 @@ async function submitBooking(event) {
   submit.disabled = true;
   $('#formMessage').textContent = '';
   try {
-    await api('/api/appointments', { method: 'POST', body: JSON.stringify(data) });
-    $('#confirmationText').textContent = `${data.clientName}: ${serviceName(data.service)} en ${branchName(data.branch)}, ${data.date} a las ${data.time}.`;
+    const { appointment } = await api('/api/appointments', { method: 'POST', body: JSON.stringify(data) });
+    $('#confirmationText').textContent = `${data.clientName}: ${serviceName(data.service)} con ${appointment.barberName} en ${branchName(data.branch)}, ${data.date} a las ${data.time}.`;
     directionsLink($('#confirmationDirections'), branches.find(item => item.id === data.branch));
     form.reset();
+    fillBarbers();
     updateSummary();
     refreshAvailability();
     showView('confirmacion');
@@ -172,6 +189,7 @@ function renderAppointments() {
   const all = appointments;
   const filtered = all.filter(item =>
     (!$('#filterBranch').value || item.branch === $('#filterBranch').value) &&
+    (!$('#filterBarber').value || item.barber === $('#filterBarber').value) &&
     (!$('#filterDate').value || item.date === $('#filterDate').value)
   );
   $('#metricTotal').textContent = all.length;
@@ -186,10 +204,10 @@ function renderAppointments() {
     const name = document.createElement('strong');
     name.textContent = item.clientName;
     const note = document.createElement('small');
-    note.textContent = 'DEMO';
+    note.textContent = 'PRUEBA';
     client.append(name, document.createElement('br'), note);
     row.append(client);
-    for (const value of [branchName(item.branch), serviceName(item.service), item.date, item.time]) {
+    for (const value of [branchName(item.branch), barberName(item.barber), serviceName(item.service), item.date, item.time]) {
       const cell = document.createElement('td');
       cell.textContent = value;
       row.append(cell);
@@ -260,12 +278,14 @@ async function initialize() {
     const open = $('#mainNav').classList.toggle('open');
     $('#menuButton').setAttribute('aria-expanded', String(open));
   });
-  for (const selector of ['#branch', '#service', '#date']) {
+  $('#branch').addEventListener('change', fillBarbers);
+  for (const selector of ['#branch', '#service', '#barber', '#date']) {
     $(selector).addEventListener('change', () => { updateSummary(); refreshAvailability(); });
   }
   $('#bookingForm').addEventListener('submit', submitBooking);
   $('#loginForm').addEventListener('submit', login);
   $('#filterBranch').addEventListener('change', renderAppointments);
+  $('#filterBarber').addEventListener('change', renderAppointments);
   $('#filterDate').addEventListener('change', renderAppointments);
   $('#appointmentRows').addEventListener('change', updateStatus);
   $('#logoutButton').addEventListener('click', async () => {
@@ -277,6 +297,7 @@ async function initialize() {
     const button = event.target.closest('.choose-branch');
     if (!button) return;
     $('#branch').value = button.dataset.branch;
+    fillBarbers();
     updateSummary();
     refreshAvailability();
     showView('reservar');
