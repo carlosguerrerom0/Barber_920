@@ -4,7 +4,7 @@
 
 | Integrante | Usuario de GitHub | Rol | Actividades y fechas |
 |---|---|---|---|
-| Luis Uziel Cruz Martínez | Por vincular | Líder y enlace con el cliente | 18 ago.–3 oct.: tablero, minutas y reportes. 1–3 oct.: coordinación de entrevista y pendientes. |
+| Luis Uziel Cruz Martínez | @ | Líder y enlace con el cliente | 18 ago.–3 oct.: tablero, minutas y reportes. 1–3 oct.: coordinación de entrevista y pendientes. |
 | Alison Aguirre Hernández | @AH-afk3 | Análisis e interfaz inicial | 1–2 sep.: casos de uso #3 y primera versión navegable #10. 3 oct.: información pendiente #5; FODA #12 para la entrega. |
 | Carlos Guerrero Morales | @carlosguerrerom0 | Diseño y revisión del flujo | 1–2 sep.: boceto #6 y flujo inicial #8. 29 sep.–3 oct.: seguimiento de versión conectada #11 y entrevista #1. |
 | Dante Uriel Ramírez Márquez | @Danterm2003 | Requisitos y arquitectura | 1–2 sep.: requisitos #2, modelo #4 y tecnologías #9. Desde 3 oct.: reglas de disponibilidad por definir #14. |
