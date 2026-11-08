@@ -273,7 +273,7 @@ main { min-height: 75vh; }
 
 .card-grid, .branch-grid { display: grid; align-items: start; gap: var(--spacing-43) var(--spacing-27); }
 
-.card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .card-grid > :nth-child(even) { margin-top: var(--spacing-78); }
 
@@ -503,7 +503,7 @@ input:focus-visible, select:focus-visible { border-color: var(--color-gold); out
 
 .admin-toolbar {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) auto;
   align-items: end;
   gap: var(--spacing-27);
   margin-bottom: var(--spacing-43);
