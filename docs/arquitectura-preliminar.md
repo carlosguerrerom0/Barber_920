@@ -1,29 +1,35 @@
 # Arquitectura del sistema
 
-**Actualizada el 4 de octubre de 2026.** Algunas reglas del negocio todavía están por confirmar con Barber 920.
+**Actualizada el 8 de noviembre de 2026.**
 
 ## Cómo está armado
 
-1. **Interfaz:** HTML, CSS y JavaScript en `web/`. El logo y las fuentes Anton e Inter se sirven desde `web/assets/`.
-2. **Servidor y API:** Node.js 24 con el módulo `node:http`, en `server/index.js`. El mismo servidor entrega los archivos de la página.
+1. **Interfaz:** HTML, CSS y JavaScript en `web/`. El logo y las fuentes están en `web/assets/`.
+2. **Servidor:** Node.js 24 con `node:http`, en `server/index.js`. El mismo servidor entrega la página.
 3. **Base de datos:** SQLite con `node:sqlite`. Guarda las citas, la cuenta del administrador y las sesiones en `data/barber.sqlite`, que no se sube al repositorio.
-4. **Acceso al panel:** la contraseña se guarda con hash scrypt y sal. La sesión usa una cookie HTTP-only con SameSite Strict, hay cierre de sesión y un límite básico de intentos.
+4. **Acceso al panel:** la contraseña se guarda cifrada con scrypt. La sesión usa una cookie protegida, se puede cerrar sesión y hay un límite de intentos.
 
-## Cómo fluye una reserva
+## Cómo funciona una reserva
 
-El navegador pide `/api/config` para cargar sucursales y servicios, y `/api/availability` para saber qué horarios están libres. Al reservar manda `POST /api/appointments`; el servidor revisa los datos, la fecha y el horario, y guarda la cita dentro de una transacción para que dos personas no aparten el mismo lugar. El panel inicia sesión y usa `/api/admin/appointments` para filtrar citas y cambiarles el estado. Una cita cancelada libera su horario y ya no se puede reactivar.
+1. La página pide `/api/config` para cargar sucursales, servicios y barberos.
+2. Con `/api/availability` pregunta qué horarios tiene libres el barbero elegido. Si el cliente elige "Sin preferencia", el servidor junta los horarios de todos los barberos de esa sucursal.
+3. Al reservar se manda `POST /api/appointments`. El servidor revisa los datos y vuelve a confirmar que el horario siga libre antes de guardar. Así dos personas no apartan el mismo lugar.
+4. El panel usa `/api/admin/appointments` para listar las citas y cambiarles el estado. Una cita cancelada libera su horario y ya no se puede reactivar.
 
-En la demostración cada sucursal atiende **una cita a la vez**. Los horarios empiezan cada hora desde las 10:00, todos los días, y solo se ofrecen los que alcanzan a terminar antes del cierre: 19:00 de lunes a sábado y 16:00 el domingo, en hora de Ciudad Juárez. Para citas del mismo día se piden dos horas de anticipación.
+## Reglas de horario
 
-La vista Sucursales muestra un mapa de Google Maps por sede y el enlace "Cómo llegar". La política de seguridad del servidor solo deja cargar recursos propios, con una excepción: los mapas de `https://www.google.com`.
+- **Por barbero:** cada barbero atiende una cita a la vez y no trabaja en su día de descanso.
+- **Cada 30 minutos:** los horarios empiezan a las 10:00. Solo se ofrecen los que terminan antes del cierre, a las 19:00 de lunes a sábado y a las 16:00 el domingo.
+- **Anticipación:** para citas del mismo día se piden dos horas.
+- **Citas viejas:** las que se guardaron antes de la Fase 3 no tienen barbero. Esas bloquean su horario para todos los barberos de la sucursal.
 
-El modelo de datos completo, con barberos y clientes, está en el [diagrama entidad-relación](diagramas/modelo-entidad-relacion.md). Por ahora el servidor solo implementa citas, administrador y sesiones; la agenda por barbero está en la propuesta para la siguiente fase.
+La vista Sucursales muestra un mapa de Google Maps por sede. Es lo único de otro sitio que deja cargar la política de seguridad del servidor.
+
+El modelo de datos completo está en el [diagrama entidad-relación](diagramas/modelo-entidad-relacion.md). Por ahora los barberos y los servicios viven en el código, no en tablas propias.
 
 ## Lo que falta
 
-- Completar los datos de la tercera sucursal y confirmar con el cliente el personal, los servicios, los precios, las duraciones y las reglas de cancelación.
-- Cambiar los datos simulados y ajustar el modelo para la capacidad real de cada barbero.
-- Revisar la versión conectada con el cliente y el equipo, probarla en distintos dispositivos y decidir un alojamiento seguro antes de manejar datos reales.
-- Confirmaciones y recordatorios, si el negocio decide usarlos.
-
-Más detalle en el [avance del 29 de septiembre](avance-2026-09-29.md) y en la [planificación](planificacion-fase2-2026-10-04.md).
+- **Datos reales:** nombres de los barberos, sus descansos, el catálogo completo y las reglas de cancelación.
+- **Revisión:** enseñarle la versión al dueño y corregir lo que pida.
+- **Publicación:** elegir un alojamiento seguro antes de recibir citas reales.
+- **Avisos:** confirmaciones y recordatorios, si el negocio decide usarlos.
