@@ -45,7 +45,7 @@ Este es el nuevo orden para lo que falta. Sigue el mismo calendario de dos horas
 | 2 | P y Q: cargar el catálogo, SUC 3 y los barberos reales | 3 | Después de la reunión |
 | 3 | V: corregir lo que pida el dueño y repetir las pruebas | 2 | Después del paso 2 |
 
-Con esto faltan unas seis jornadas a partir de la reunión. La ruta crítica queda U–Q–V.
+Con esto faltan unas seis jornadas a partir de la reunión. La ruta crítica queda O–Q–V, porque Q necesita los datos que se piden en O. U se hace en la misma reunión que O.
 
 ## Costos
 
