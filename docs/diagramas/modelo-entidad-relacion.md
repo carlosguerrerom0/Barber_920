@@ -67,5 +67,5 @@ erDiagram
 - **Cita:** pertenece a una sucursal, un servicio y un cliente.
 - **Barbero:** cada cita nueva tiene uno. Las citas guardadas antes del 8 de noviembre no tienen.
 - **Sin choques:** un barbero no puede tener dos citas al mismo tiempo.
-- **Estados:** Pendiente, Confirmada, Completada y Cancelada.
+- **Estados:** Pendiente, Confirmada, Realizada y Cancelada.
 - **Contraseñas:** nunca se guardan como texto.

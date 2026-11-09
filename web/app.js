@@ -219,7 +219,7 @@ function renderAppointments() {
     select.className = 'status-select';
     select.dataset.id = item.id;
     select.setAttribute('aria-label', `Estado de la cita de ${item.clientName}`);
-    for (const status of ['Pendiente', 'Confirmada', 'Completada', 'Cancelada']) {
+    for (const status of ['Pendiente', 'Confirmada', 'Realizada', 'Cancelada']) {
       const choice = option(status, status);
       choice.selected = item.status === status;
       select.append(choice);

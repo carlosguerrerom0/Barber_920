@@ -1,6 +1,6 @@
 # Planificación de la Fase 3
 
-**Actualizado el 8 de noviembre de 2026.**
+**Actualizado el 9 de noviembre de 2026.**
 
 Aquí está cómo van las actividades O a W que propusimos al cerrar la Fase 2, cómo cambió el calendario y cuánto cuesta el proyecto. Los costos usan la misma tarifa supuesta de $80 MXN por hora. Sirven para medir el esfuerzo, no son pagos ni cobros.
 
@@ -27,6 +27,7 @@ Esto es lo que cambió en el sistema:
 - **Servicios:** quedaron los tres que nos dio el dueño: corte natural ($120, 20 min), desvanecido ($180, 30 min) y barba ($100, 20 min).
 - **Citas viejas:** las que se guardaron antes no tienen barbero. Siguen apartando su horario para que nadie se empalme.
 - **Panel:** muestra el barbero de cada cita y deja filtrar por barbero.
+- **Datos de la entrevista (9 de noviembre):** la página ya dice que hay que llegar 10 minutos antes y que hay 5 minutos de tolerancia. También menciona ceja y diseños, con el precio por confirmar. El estado "Completada" ahora se llama "Realizada", como lo dijo el dueño.
 
 Lo que falta depende del dueño: los nombres de los barberos y su día de descanso, el precio y la duración de ceja y diseños, la colonia y el código postal de SUC 3 y su opinión sobre esta versión. Cuando nos dé los datos, solo hay que cambiar las listas `services` y `barbers` en `server/index.js`.
 
