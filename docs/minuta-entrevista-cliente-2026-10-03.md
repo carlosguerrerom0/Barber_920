@@ -20,7 +20,7 @@ Queríamos entender cómo trabaja el negocio y qué necesita. En esta reunión n
 
 | Tema | Lo que nos dijo | Qué falta |
 |---|---|---|
-| Ubicaciones | Tres sucursales. En la entrevista dijo Ramón Rayón 1308, calle Durango 920 y Cerro del Crestón 5327 (video 2:14 a 2:30, apuntes 6). Después el equipo registró: SUC 1, C. Durango 920, Morelos II, 32673 Juárez, Chih.; SUC 2, Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.; SUC 3, Cerro del Crestón #6327. | Confirmar con el dueño las direcciones de SUC 2 y SUC 3, la colonia y el código postal de SUC 3, y los teléfonos. |
+| Ubicaciones | Tres sucursales. En la entrevista dijo Ramón Rayón 1308, calle Durango 920 y Cerro del Crestón 5327 (video 2:14 a 2:30, apuntes 6). Después el equipo registró estas, que son las que usa la página: SUC 1, C. Durango 920, Morelos II, 32673 Juárez, Chih.; SUC 2, Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.; SUC 3, Cerro del Crestón #6327. | Colonia y código postal de SUC 3, y los teléfonos. |
 | Horario | El mismo en las tres: lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00. | La hora de la última cita y los días festivos. |
 | Servicios | Corte de cabello, barba, ceja y diseños. | El catálogo exacto. |
 | Precios | Corte natural: $120, unos 20 min. Barba: $100, de 15 a 20 min. Desvanecido: $180, unos 30 min. | Precio y duración de ceja y diseños. |
