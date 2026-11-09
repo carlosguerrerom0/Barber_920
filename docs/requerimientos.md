@@ -1,6 +1,6 @@
 # Requerimientos del sistema
 
-**Registro inicial:** 2 de septiembre de 2026. **Actualizado:** 8 de noviembre de 2026.
+**Registro inicial:** 2 de septiembre de 2026. **Actualizado:** 9 de noviembre de 2026.
 
 Aquí está lo que debe hacer el sistema. Primero lo que definimos al inicio y después lo que agregamos con la entrevista del 3 de octubre ([minuta](minuta-entrevista-cliente-2026-10-03.md)). Lo que depende de datos del negocio lo seguimos en el Issue #18.
 
@@ -52,18 +52,18 @@ Estas necesidades salieron de la entrevista del 3 de octubre.
 | RF-15 | Mostrar el horario de lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00 en las tres sucursales. | Hecho. Falta confirmar la última hora para reservar |
 | RF-16 | Reservar como invitado y, si se decide, con cuenta de cliente. | Falta definir los datos y la cuenta |
 | RF-17 | Mandar confirmaciones y recordatorios al cliente y al negocio. | Falta definir por dónde y cuándo |
-| RF-18 | Que el cliente pueda cambiar o cancelar su cita con anticipación. | Falta el plazo |
-| RF-19 | Que el personal acepte o rechace citas y cambie precios y horarios. | Falta definir qué puede hacer cada quien |
-| RF-20 | Hacer resúmenes diarios, semanales y mensuales. | Falta definir qué medir |
+| RF-18 | Que el cliente pueda cambiar o cancelar su cita con anticipación. | Falta el plazo. La página ya avisa la tolerancia de 5 minutos |
+| RF-19 | Que el personal acepte o rechace citas y cambie precios y horarios. | En parte. Desde el 9 de noviembre el panel cambia el estado de las citas y los precios. Faltan los horarios |
+| RF-20 | Hacer resúmenes diarios, semanales y mensuales. | Hecho el 9 de noviembre: el panel cuenta las citas de hoy, de la semana y del mes, sin las canceladas |
 | RF-21 | Mostrar mapas, la experiencia de los barberos y calificaciones. | Los mapas ya están. Faltan perfiles y calificaciones |
 
-El dueño también dijo que hay cinco minutos de tolerancia y que prefieren que el cliente llegue diez minutos antes. Falta decidir cómo afecta eso a las citas.
+El dueño también dijo que hay cinco minutos de tolerancia, que si el cliente no llega se cancela la cita y que prefieren que llegue diez minutos antes. Desde el 9 de noviembre la página lo avisa en el resumen y en la confirmación.
 
 ## Datos que nos faltan
 
 - **Sucursal 3:** colonia y código postal. También los teléfonos de las tres y la última hora para reservar.
-- **Catálogo:** precio y duración de ceja y diseños, y confirmar cuánto tarda la barba.
+- **Catálogo:** precio y duración de ceja y diseños. La barba tarda de 15 a 20 minutos y en la página usamos 20.
 - **Barberos:** nombres por sucursal y su día de descanso.
 - **Cancelaciones:** el plazo y qué hacer cuando el cliente no llega.
-- **Cierres:** días festivos y quién puede bloquear horarios.
+- **Cierres:** en la entrevista dijo que no hay días de cierre especiales. Falta definir cómo se bloquean horarios. Según los apuntes, todos podrán hacerlo.
 - **Cliente:** qué datos pedirle, por dónde avisarle y qué material visual podemos usar.

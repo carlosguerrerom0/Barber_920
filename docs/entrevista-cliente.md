@@ -62,8 +62,8 @@ Estas son las preguntas que usamos para conocer cómo trabaja Barber 920. La ent
 | Servicios | Corte, barba, ceja y diseños. Nos dio tres precios. | Precio y duración de ceja y diseños. |
 | Horarios | Lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00. Elegir barbero. Dos horas de anticipación. | Barberos por sucursal y sus descansos. |
 | Datos del cliente | Día, hora, sucursal, barbero y servicio. Como invitado o con cuenta. | Qué datos personales serán obligatorios. |
-| Cancelaciones | Se puede cambiar o cancelar con anticipación. Hay cinco minutos de tolerancia. | El plazo exacto y qué hacer si no llegan. |
-| Administración | Acceso para el dueño y los barberos. Aceptar o rechazar citas. Resúmenes. | Qué puede hacer cada quien y qué llevan los resúmenes. |
+| Cancelaciones | Se puede cambiar o cancelar con anticipación. Hay cinco minutos de tolerancia. Si no llegan, se cancela la cita. | El plazo exacto para cancelar. |
+| Administración | Acceso para el dueño y los barberos. Aceptar o rechazar citas, cambiar precios y horarios. Resúmenes del día, la semana y el mes. | Cambiar horarios y bloquear horarios. |
 | Diseño | Tienen logotipo y material visual. | Material autorizado para la página. |
 
-Después de la entrevista hicimos la minuta, actualizamos los requisitos y abrimos los Issues de lo nuevo. El 8 de noviembre cargamos los tres precios y agregamos la elección de barbero con barberos de prueba.
+Después de la entrevista hicimos la minuta, actualizamos los requisitos y abrimos los Issues de lo nuevo. El 8 de noviembre cargamos los tres precios y agregamos la elección de barbero con barberos de prueba. El 9 de noviembre pasamos a la página la tolerancia, ceja y diseños, el estado Realizada, el resumen del día, la semana y el mes, y el cambio de precios.

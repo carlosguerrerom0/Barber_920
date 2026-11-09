@@ -346,7 +346,7 @@ main { min-height: 75vh; }
 
 .form-panel { max-width: 760px; }
 
-.form-panel label, .admin-toolbar label, .login-panel label {
+.form-panel label, .admin-toolbar label, .login-panel label, .price-grid label {
   display: block;
   margin: var(--spacing-27) 0 8px;
   color: var(--color-silver);
@@ -509,7 +509,7 @@ input:focus-visible, select:focus-visible { border-color: var(--color-gold); out
   margin-bottom: var(--spacing-43);
 }
 
-.admin-toolbar label { margin-top: 0; }
+.admin-toolbar label, .price-grid label { margin-top: 0; }
 
 .table-wrap { overflow-x: auto; }
 
@@ -568,6 +568,29 @@ footer strong {
 
 /* Adaptable */
 
+.period-panel, .price-panel { margin-bottom: var(--spacing-78); }
+
+.period-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-27);
+  margin-top: var(--spacing-13);
+}
+
+.price-panel { margin-top: var(--spacing-43); }
+
+.services-note { margin-top: var(--spacing-43); }
+
+.price-panel h2 { margin-bottom: var(--spacing-13); font-family: var(--font-display); font-size: var(--spacing-43); font-weight: 400; line-height: 1.05; }
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--spacing-27);
+  margin-top: var(--spacing-27);
+}
+
 @media (max-width: 1100px) {
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -591,7 +614,7 @@ footer strong {
   .main-nav.open { display: flex; }
   .nav-link { padding: var(--spacing-13) 0; font-size: var(--text-body); text-align: left; }
   .view { padding-top: var(--spacing-27); }
-  .steps, .card-grid, .field-row, .admin-toolbar { grid-template-columns: 1fr; }
+  .steps, .card-grid, .field-row, .admin-toolbar, .price-grid, .period-grid { grid-template-columns: 1fr; }
   .card-grid > :nth-child(even) { margin-top: 0; }
   .metric-grid { gap: var(--spacing-43) var(--spacing-18); }
   footer { flex-direction: column; }

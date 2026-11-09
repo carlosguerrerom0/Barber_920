@@ -2,6 +2,7 @@ let branches = [];
 let services = [];
 let barbers = [];
 let appointments = [];
+let today = '';
 let availabilityRequest = 0;
 
 const $ = selector => document.querySelector(selector);
@@ -56,12 +57,10 @@ function option(value, label) {
   return element;
 }
 
-function populateContent(config) {
-  branches = config.branches;
-  services = config.services;
-  barbers = config.barbers;
-  $('#date').min = config.today;
-
+function renderServices() {
+  const chosen = $('#service').value;
+  $('#serviceCards').replaceChildren();
+  $('#service').replaceChildren(option('', 'Selecciona un servicio'));
   for (const service of services) {
     const card = document.createElement('article');
     card.className = 'service-card';
@@ -79,6 +78,65 @@ function populateContent(config) {
     $('#serviceCards').append(card);
     $('#service').append(option(service.id, `${service.name} · ${service.duration} min · ${money(service.price)}`));
   }
+  $('#service').value = chosen;
+  renderPriceForm();
+}
+
+function renderPriceForm() {
+  const form = $('#priceForm');
+  form.replaceChildren();
+  for (const service of services) {
+    const field = document.createElement('div');
+    const label = document.createElement('label');
+    label.htmlFor = `price-${service.id}`;
+    label.textContent = `${service.name} (MXN)`;
+    const input = document.createElement('input');
+    input.id = `price-${service.id}`;
+    input.type = 'number';
+    input.min = '1';
+    input.max = '5000';
+    input.step = '1';
+    input.required = true;
+    input.value = String(service.price);
+    input.dataset.service = service.id;
+    field.append(label, input);
+    form.append(field);
+  }
+  const button = document.createElement('button');
+  button.type = 'submit';
+  button.className = 'button primary';
+  button.textContent = 'Guardar precios';
+  form.append(button);
+}
+
+async function savePrices(event) {
+  event.preventDefault();
+  const message = $('#priceMessage');
+  message.textContent = '';
+  try {
+    for (const input of $$('#priceForm input')) {
+      const service = services.find(item => item.id === input.dataset.service);
+      const price = Number(input.value);
+      if (service && price !== service.price) {
+        const saved = await api(`/api/admin/services/${service.id}`, { method: 'PUT', body: JSON.stringify({ price }) });
+        service.price = saved.service.price;
+      }
+    }
+    renderServices();
+    updateSummary();
+    message.textContent = 'Precios guardados.';
+  } catch (error) {
+    message.textContent = error.message;
+  }
+}
+
+function populateContent(config) {
+  branches = config.branches;
+  services = config.services;
+  barbers = config.barbers;
+  today = config.today;
+  $('#date').min = config.today;
+  renderServices();
   for (const [index, branch] of branches.entries()) {
     const card = document.createElement('article');
     card.className = 'branch-card';
@@ -185,6 +243,24 @@ async function submitBooking(event) {
   }
 }
 
+function weekRange(day) {
+  const date = new Date(`${day}T12:00:00`);
+  const start = new Date(date);
+  start.setDate(date.getDate() - (date.getDay() + 6) % 7);
+  const end = new Date(start);
+  end.setDate(start.getDate() + 6);
+  const iso = value => `${value.getFullYear()}-${String(value.getMonth() + 1).padStart(2, '0')}-${String(value.getDate()).padStart(2, '0')}`;
+  return [iso(start), iso(end)];
+}
+
+function renderPeriodSummary(all) {
+  const active = all.filter(item => item.status !== 'Cancelada');
+  const [weekStart, weekEnd] = weekRange(today);
+  $('#summaryToday').textContent = active.filter(item => item.date === today).length;
+  $('#summaryWeek').textContent = active.filter(item => item.date >= weekStart && item.date <= weekEnd).length;
+  $('#summaryMonth').textContent = active.filter(item => item.date.slice(0, 7) === today.slice(0, 7)).length;
+}
+
 function renderAppointments() {
   const all = appointments;
   const filtered = all.filter(item =>
@@ -196,6 +272,7 @@ function renderAppointments() {
   for (const [id, status] of [['metricPending', 'Pendiente'], ['metricConfirmed', 'Confirmada'], ['metricCancelled', 'Cancelada']]) {
     document.getElementById(id).textContent = all.filter(item => item.status === status).length;
   }
+  renderPeriodSummary(all);
   const body = $('#appointmentRows');
   body.replaceChildren();
   for (const item of filtered) {
@@ -284,6 +361,7 @@ async function initialize() {
   }
   $('#bookingForm').addEventListener('submit', submitBooking);
   $('#loginForm').addEventListener('submit', login);
+  $('#priceForm').addEventListener('submit', savePrices);
   $('#filterBranch').addEventListener('change', renderAppointments);
   $('#filterBarber').addEventListener('change', renderAppointments);
   $('#filterDate').addEventListener('change', renderAppointments);
