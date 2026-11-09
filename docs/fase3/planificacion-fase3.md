@@ -27,7 +27,8 @@ Esto es lo que cambió en el sistema:
 - **Servicios:** quedaron los tres que nos dio el dueño: corte natural ($120, 20 min), desvanecido ($180, 30 min) y barba ($100, 20 min).
 - **Citas viejas:** las que se guardaron antes no tienen barbero. Siguen apartando su horario para que nadie se empalme.
 - **Panel:** muestra el barbero de cada cita y deja filtrar por barbero.
-- **Datos de la entrevista (9 de noviembre):** la página ya dice que hay que llegar 10 minutos antes y que hay 5 minutos de tolerancia. También menciona ceja y diseños, con el precio por confirmar. El estado "Completada" ahora se llama "Realizada", como lo dijo el dueño.
+- **Datos de la entrevista (9 de noviembre):** la página ya dice que hay que llegar 10 minutos antes, que hay 5 minutos de tolerancia y que si no llegas se cancela la cita. También menciona ceja y diseños, con el precio por confirmar. El estado "Completada" ahora se llama "Realizada", como lo dijo el dueño.
+- **Panel (9 de noviembre):** muestra cuántas citas hay hoy, esta semana y este mes, y deja cambiar los precios de los servicios. El dueño pidió las dos cosas en la entrevista.
 
 Lo que falta depende del dueño: los nombres de los barberos y su día de descanso, el precio y la duración de ceja y diseños, la colonia y el código postal de SUC 3 y su opinión sobre esta versión. Cuando nos dé los datos, solo hay que cambiar las listas `services` y `barbers` en `server/index.js`.
 

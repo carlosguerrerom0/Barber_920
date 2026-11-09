@@ -12,8 +12,8 @@ Pasaron las 4 pruebas, sin fallas.
 |---|---|---|
 | Configuración | Las tres direcciones, los tres servicios con su precio y duración, dos barberos por sucursal, el logo, las fuentes y la política de seguridad de la página | Pasa |
 | Horarios | Horarios de 10:00 a 18:30 entre semana, cierre a las 16:00 el domingo y que un barbero no tenga horarios en su día de descanso. También que no se pueda pedir un barbero de otra sucursal | Pasa |
-| Reservas | Que no se pueda reservar a un barbero ocupado o que descansa, que "Sin preferencia" asigne al otro barbero libre, el inicio y cierre de sesión del panel, la cancelación y que las citas sigan ahí al reiniciar el servidor | Pasa |
-| Citas viejas | Que una cita guardada antes de la Fase 3, sin barbero, siga apartando su horario después de actualizar la base de datos | Pasa |
+| Reservas | Que no se pueda reservar a un barbero ocupado o que descansa, que "Sin preferencia" asigne al otro barbero libre, el inicio y cierre de sesión del panel, la cancelación, el estado Realizada, el cambio de precios y que las citas y los precios sigan ahí al reiniciar el servidor | Pasa |
+| Citas viejas | Que una cita guardada antes de la Fase 3, sin barbero, siga apartando su horario después de actualizar la base de datos, y que el estado Completada pase a Realizada | Pasa |
 
 Para correrlas:
 
@@ -40,6 +40,7 @@ Abrimos la página en Chrome con el servidor corriendo y datos inventados. Las c
 | [05-panel-barberos.png](evidencias/05-panel-barberos.png) | El panel con la columna de barbero |
 | [06-filtro-barbero.png](evidencias/06-filtro-barbero.png) | El panel filtrado por un barbero |
 | [07-celular-reservar.png](evidencias/07-celular-reservar.png) | La reserva en tamaño de celular |
+| [08-resumen-y-precios.png](evidencias/08-resumen-y-precios.png) | El panel con el resumen de hoy, la semana y el mes, y los precios editables (9 de noviembre) |
 
 ## Lo que no probamos
 

@@ -129,7 +129,14 @@ test('reservas por barbero, conflictos, sesión de administración y persistenci
   assert.equal((await request(app.base, anyRoute, 'PATCH', { status: 'Completada' }, login.cookie)).status, 400);
   assert.equal((await request(app.base, anyRoute, 'PATCH', { status: 'Realizada' }, login.cookie)).status, 200);
   assert.equal((await request(app.base, '/api/appointments', 'POST', booking)).status, 201);
+  assert.equal((await request(app.base, '/api/admin/services/barba', 'PUT', { price: 0 }, login.cookie)).status, 400);
+  assert.equal((await request(app.base, '/api/admin/services/peinado', 'PUT', { price: 90 }, login.cookie)).status, 404);
+  const newPrice = await request(app.base, '/api/admin/services/barba', 'PUT', { price: 110 }, login.cookie);
+  assert.equal(newPrice.status, 200);
+  assert.equal(newPrice.payload.service.price, 110);
+  assert.equal((await request(app.base, '/api/config')).payload.services.find(item => item.id === 'barba').price, 110);
   assert.equal((await request(app.base, '/api/admin/logout', 'POST', undefined, login.cookie)).status, 200);
+  assert.equal((await request(app.base, '/api/admin/services/barba', 'PUT', { price: 120 })).status, 401);
   assert.equal((await request(app.base, '/api/admin/appointments', 'GET', undefined, login.cookie)).status, 401);
 
   await new Promise(resolve => app.server.close(resolve));
@@ -137,6 +144,7 @@ test('reservas por barbero, conflictos, sesión de administración y persistenci
   const nextLogin = await request(app.base, '/api/admin/login', 'POST', { password });
   listing = await request(app.base, '/api/admin/appointments', 'GET', undefined, nextLogin.cookie);
   assert.equal(listing.payload.appointments.length, 4);
+  assert.equal((await request(app.base, '/api/config')).payload.services.find(item => item.id === 'barba').price, 110);
 }));
 
 test('citas guardadas antes de la Fase 3 siguen bloqueando su horario', async () => {

@@ -20,13 +20,13 @@ Queríamos entender cómo trabaja el negocio y qué necesita. En esta reunión n
 
 | Tema | Lo que nos dijo | Qué falta |
 |---|---|---|
-| Ubicaciones | Tres sucursales. Después de la entrevista el equipo confirmó las direcciones: SUC 1, C. Durango 920, Morelos II, 32673 Juárez, Chih.; SUC 2, Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.; SUC 3, Cerro del Crestón #6327. | Colonia y código postal de SUC 3, y los teléfonos. |
+| Ubicaciones | Tres sucursales. En la entrevista dijo Ramón Rayón 1308, calle Durango 920 y Cerro del Crestón 5327 (video 2:14 a 2:30, apuntes 6). Después el equipo registró: SUC 1, C. Durango 920, Morelos II, 32673 Juárez, Chih.; SUC 2, Blvd. Zaragoza 104, Manuel Valdez, 32590 Juárez, Chih.; SUC 3, Cerro del Crestón #6327. | Confirmar con el dueño las direcciones de SUC 2 y SUC 3, la colonia y el código postal de SUC 3, y los teléfonos. |
 | Horario | El mismo en las tres: lunes a sábado de 10:00 a 19:00 y domingo de 10:00 a 16:00. | La hora de la última cita y los días festivos. |
 | Servicios | Corte de cabello, barba, ceja y diseños. | El catálogo exacto. |
 | Precios | Corte natural: $120, unos 20 min. Barba: $100, de 15 a 20 min. Desvanecido: $180, unos 30 min. | Precio y duración de ceja y diseños. |
 | Mapa | Quieren un mapa o un enlace para llegar. | Revisar que cada mapa marque el lugar correcto. |
 
-Sobre los días de cierre se escucha algo de Navidad, pero no queda claro. En los apuntes dice "no", así que los días festivos siguen por confirmar. Video 1:55 a 3:02 y 3:10 a 3:50, apuntes 6 a 12.
+No tienen días de cierre especiales. En el video responde "Ninguno" y en los apuntes dice "no". Se menciona Navidad, pero no queda claro. Video 1:55 a 3:02 y 3:10 a 3:50, apuntes 6 a 12.
 
 ## Citas y personal
 
@@ -35,7 +35,7 @@ Sobre los días de cierre se escucha algo de Navidad, pero no queda claro. En lo
 - **Cantidad:** atienden unas 15 a 20 citas al día. No sabemos cuántas a la vez, porque falta saber cuántos barberos hay. Video 4:28 a 4:42, apunte 17.
 - **Datos de la cita:** día, hora, sucursal, barbero y servicio. Se puede reservar como invitado o con cuenta. No quedó claro qué datos personales son obligatorios. Video 4:47 a 5:20, apuntes 18 y 19.
 - **Avisos:** quieren confirmaciones y recordatorios, para el cliente y para el negocio, por mensaje o correo. Video 5:21 a 5:47, apuntes 20 y 21.
-- **Cambios:** el cliente puede cambiar o cancelar con anticipación, pero no se fijó el plazo. Hay cinco minutos de tolerancia y prefieren que lleguen diez minutos antes. Video 5:49 a 6:23, apuntes 22 y 23.
+- **Cambios:** el cliente puede cambiar o cancelar con anticipación, pero no se fijó el plazo. Hay cinco minutos de tolerancia. Si el cliente no llega, se cancela la cita y pasan al siguiente. Prefieren que lleguen diez minutos antes. Video 5:49 a 6:23, apuntes 22 y 23.
 
 ## Administración y diseño
 
@@ -54,6 +54,8 @@ Sobre los días de cierre se escucha algo de Navidad, pero no queda claro. En lo
 | Barberos por sucursal, descansos y bloqueos | Dueño y equipo | Pendiente. La página ya funciona con barberos de prueba |
 | Cancelaciones, recordatorios, datos del cliente y permisos | Dueño y equipo | Pendiente |
 | Pasar las respuestas a los requisitos | Equipo | Hecho en [requerimientos](requerimientos.md) |
+| Pasar a la página la tolerancia, ceja y diseños, el estado Realizada, el resumen y el cambio de precios | Equipo | Hecho el 9 de noviembre |
+| Cambiar horarios y bloquear horarios desde el panel | Equipo | Pendiente |
 | Enseñarle la versión conectada | Equipo y dueño | Pendiente. Ver la [guía de la revisión](fase3/revision-con-el-dueno.md) |
 
 Los responsables de esta tabla los propusimos nosotros. El dueño no se comprometió a fechas en el video.

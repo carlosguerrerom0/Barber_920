@@ -64,12 +64,18 @@ async function body(req) {
   return parsed;
 }
 
+function currentServices(db) {
+  const saved = new Map(db.prepare('SELECT service, price FROM service_prices').all().map(row => [row.service, row.price]));
+  return services.map(service => ({ ...service, price: saved.get(service.id) ?? service.price }));
+}
+
 function startDatabase(filename, password) {
   mkdirSync(path.dirname(filename), { recursive: true });
   const db = new DatabaseSync(filename);
   db.exec(`PRAGMA journal_mode = WAL;
     CREATE TABLE IF NOT EXISTS admin (id INTEGER PRIMARY KEY, salt TEXT NOT NULL, password_hash TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, expires_at INTEGER NOT NULL);
+    CREATE TABLE IF NOT EXISTS service_prices (service TEXT PRIMARY KEY, price INTEGER NOT NULL);
     CREATE TABLE IF NOT EXISTS appointments (
       id TEXT PRIMARY KEY, branch TEXT NOT NULL, service TEXT NOT NULL,
       date TEXT NOT NULL, time TEXT NOT NULL, client_name TEXT NOT NULL,
@@ -145,7 +151,7 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
       const key = `${req.method} ${url.pathname}`;
       if (url.pathname.startsWith('/api/') && !sameOrigin(req)) return json(res, 403, { error: 'Origen no permitido.' });
 
-      if (key === 'GET /api/config') return json(res, 200, { branches, services, barbers, slots, today: todayInJuarez(), demo: true });
+      if (key === 'GET /api/config') return json(res, 200, { branches, services: currentServices(db), barbers, slots, today: todayInJuarez(), demo: true });
       if (key === 'GET /api/availability') {
         const list = available(db, url.searchParams.get('branch'), url.searchParams.get('service'), url.searchParams.get('date'), url.searchParams.get('barber') || anyBarber);
         return list ? json(res, 200, { slots: list }) : json(res, 400, { error: 'Elige sucursal, servicio, barbero y fecha válidos.' });
@@ -217,6 +223,14 @@ export function createApp({ dbPath = path.join(root, 'data', 'barber.sqlite'), a
         }
         db.prepare('UPDATE appointments SET status = ? WHERE id = ?').run(input.status, statusMatch[1]);
         return json(res, 200, { updated: true });
+      }
+      const priceMatch = /^\/api\/admin\/services\/([a-z]+)$/.exec(url.pathname);
+      if (req.method === 'PUT' && priceMatch) {
+        const input = await body(req);
+        if (!services.some(item => item.id === priceMatch[1])) return json(res, 404, { error: 'Servicio no encontrado.' });
+        if (!Number.isInteger(input.price) || input.price < 1 || input.price > 5000) return json(res, 400, { error: 'El precio debe ser un número entero entre 1 y 5000.' });
+        db.prepare('INSERT INTO service_prices (service, price) VALUES (?, ?) ON CONFLICT(service) DO UPDATE SET price = excluded.price').run(priceMatch[1], input.price);
+        return json(res, 200, { service: currentServices(db).find(item => item.id === priceMatch[1]) });
       }
       if (url.pathname.startsWith('/api/')) return json(res, 404, { error: 'Ruta no encontrada.' });
       const file = staticPaths.get(url.pathname);
