@@ -27,7 +27,7 @@ Los colores los sacamos del logo.
 |--------|-------|-------|
 | Pendiente | Oro | `--color-gold` |
 | Confirmada | Azul poste | `--color-pole-blue` |
-| Completada | Marfil | `--color-ivory` |
+| Realizada | Marfil | `--color-ivory` |
 | Cancelada | Rojo poste | `--color-pole-red` |
 
 El estado se muestra siempre como un cuadro de 10 px seguido del texto. El color nunca es la única señal.

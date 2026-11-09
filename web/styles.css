@@ -489,7 +489,7 @@ input:focus-visible, select:focus-visible { border-color: var(--color-gold); out
 
 [data-status="Pendiente"] { --status-color: var(--color-gold); }
 [data-status="Confirmada"] { --status-color: var(--color-pole-blue); }
-[data-status="Completada"] { --status-color: var(--color-ivory); }
+[data-status="Realizada"] { --status-color: var(--color-ivory); }
 [data-status="Cancelada"] { --status-color: var(--color-pole-red); }
 
 .metric[data-status] p::before, .status-cell::before {

@@ -30,7 +30,7 @@ const barbers = [
 ];
 const anyBarber = 'cualquiera';
 const slots = ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30'];
-const allowedStatuses = ['Pendiente', 'Confirmada', 'Completada', 'Cancelada'];
+const allowedStatuses = ['Pendiente', 'Confirmada', 'Realizada', 'Cancelada'];
 const staticPaths = new Map([
   ['/', 'index.html'], ['/index.html', 'index.html'], ['/styles.css', 'styles.css'], ['/app.js', 'app.js'],
   ['/assets/logo920.jpg', 'assets/logo920.jpg'],
@@ -78,6 +78,7 @@ function startDatabase(filename, password) {
     );`);
   const columns = db.prepare('PRAGMA table_info(appointments)').all().map(column => column.name);
   if (!columns.includes('barber')) db.exec('ALTER TABLE appointments ADD COLUMN barber TEXT');
+  db.exec("UPDATE appointments SET status = 'Realizada' WHERE status = 'Completada'");
   if (!db.prepare('SELECT id FROM admin LIMIT 1').get()) {
     if (!password || password.length < 12) {
       db.close();

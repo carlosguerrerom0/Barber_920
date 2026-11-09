@@ -125,6 +125,9 @@ test('reservas por barbero, conflictos, sesión de administración y persistenci
   const route = `/api/admin/appointments/${created.payload.appointment.id}`;
   assert.equal((await request(app.base, route, 'PATCH', { status: 'Cancelada' }, login.cookie)).status, 200);
   assert.equal((await request(app.base, route, 'PATCH', { status: 'Confirmada' }, login.cookie)).status, 409);
+  const anyRoute = `/api/admin/appointments/${any.payload.appointment.id}`;
+  assert.equal((await request(app.base, anyRoute, 'PATCH', { status: 'Completada' }, login.cookie)).status, 400);
+  assert.equal((await request(app.base, anyRoute, 'PATCH', { status: 'Realizada' }, login.cookie)).status, 200);
   assert.equal((await request(app.base, '/api/appointments', 'POST', booking)).status, 201);
   assert.equal((await request(app.base, '/api/admin/logout', 'POST', undefined, login.cookie)).status, 200);
   assert.equal((await request(app.base, '/api/admin/appointments', 'GET', undefined, login.cookie)).status, 401);
@@ -149,6 +152,7 @@ test('citas guardadas antes de la Fase 3 siguen bloqueando su horario', async ()
       phone TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'Pendiente',
       created_at TEXT NOT NULL)`);
     old.prepare('INSERT INTO appointments VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)').run('a'.repeat(32), 'centro', 'combo', tuesday, '12:00', 'Cita vieja', '0000000000', 'Pendiente', new Date().toISOString());
+    old.prepare('INSERT INTO appointments VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)').run('b'.repeat(32), 'centro', 'clasico', tuesday, '16:00', 'Cita vieja atendida', '0000000000', 'Completada', new Date().toISOString());
     old.close();
     app = await start(dbPath);
     const free = await slotsFor(app.base);
@@ -159,6 +163,9 @@ test('citas guardadas antes de la Fase 3 siguen bloqueando su horario', async ()
     const login = await request(app.base, '/api/admin/login', 'POST', { password });
     const listing = await request(app.base, '/api/admin/appointments', 'GET', undefined, login.cookie);
     assert.equal(listing.payload.appointments[0].barber, null);
+    const statuses = listing.payload.appointments.map(item => item.status);
+    assert.equal(statuses.includes('Realizada'), true);
+    assert.equal(statuses.includes('Completada'), false);
   } finally {
     if (app?.server.listening) await new Promise(resolve => app.server.close(resolve));
     await rm(dir, { recursive: true, force: true });
