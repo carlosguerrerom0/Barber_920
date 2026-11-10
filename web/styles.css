@@ -581,6 +581,24 @@ footer strong {
 
 .services-note { margin-top: var(--spacing-43); }
 
+.session-user { margin-bottom: var(--spacing-43); color: var(--color-silver); font-size: var(--text-label); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+
+.worker-panel { margin-top: var(--spacing-43); }
+
+.worker-panel h2 { margin-bottom: var(--spacing-13); font-family: var(--font-display); font-size: var(--spacing-43); font-weight: 400; line-height: 1.05; }
+
+.worker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--spacing-27);
+  margin: var(--spacing-27) 0 var(--spacing-13);
+}
+
+.worker-grid label { display: block; margin: 0 0 8px; color: var(--color-silver); font-size: var(--text-label); font-weight: 500; letter-spacing: var(--tracking-label); text-transform: uppercase; }
+
+.worker-toggle { min-height: 0; padding: 8px 14px; }
+
 .price-panel h2 { margin-bottom: var(--spacing-13); font-family: var(--font-display); font-size: var(--spacing-43); font-weight: 400; line-height: 1.05; }
 
 .price-grid {
@@ -614,7 +632,7 @@ footer strong {
   .main-nav.open { display: flex; }
   .nav-link { padding: var(--spacing-13) 0; font-size: var(--text-body); text-align: left; }
   .view { padding-top: var(--spacing-27); }
-  .steps, .card-grid, .field-row, .admin-toolbar, .price-grid, .period-grid { grid-template-columns: 1fr; }
+  .steps, .card-grid, .field-row, .admin-toolbar, .price-grid, .period-grid, .worker-grid { grid-template-columns: 1fr; }
   .card-grid > :nth-child(even) { margin-top: 0; }
   .metric-grid { gap: var(--spacing-43) var(--spacing-18); }
   footer { flex-direction: column; }

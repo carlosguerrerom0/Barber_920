@@ -11,6 +11,7 @@ const money = value => new Intl.NumberFormat('es-MX', { style: 'currency', curre
 const branchName = id => branches.find(item => item.id === id)?.name || id;
 const serviceName = id => services.find(item => item.id === id)?.name || id;
 const barberName = id => barbers.find(item => item.id === id)?.name || 'Sin asignar';
+const roleNames = { admin: 'Administrador', trabajador: 'Trabajador' };
 const dayNames = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 const mapsQuery = branch => encodeURIComponent(branch.address.replace(/\s*\(.*?\)/g, ''));
 const mapEmbedUrl = branch => `https://www.google.com/maps?output=embed&hl=es&q=${mapsQuery(branch)}`;
@@ -146,12 +147,15 @@ function populateContent(config) {
     const title = document.createElement('h2');
     title.textContent = branch.name;
     const list = document.createElement('ul');
-    const team = barbers.filter(item => item.branch === branch.id).map(item => item.name).join(' y ');
-    for (const value of [branch.schedule, branch.address, `Barberos de prueba: ${team}`]) {
+    for (const value of [branch.schedule, branch.address]) {
       const item = document.createElement('li');
       item.textContent = value;
       list.append(item);
     }
+    const team = document.createElement('li');
+    team.className = 'branch-team';
+    team.dataset.branch = branch.id;
+    list.append(team);
     const button = document.createElement('button');
     button.className = 'button secondary choose-branch';
     button.dataset.branch = branch.id;
@@ -173,16 +177,38 @@ function populateContent(config) {
     $('#branchCards').append(card);
     $('#branch').append(option(branch.id, branch.name));
     $('#filterBranch').append(option(branch.id, branch.name));
+    $('#workerBranch').append(option(branch.id, branch.name));
   }
+  for (const [day, name] of dayNames.entries()) $('#workerRest').append(option(String(day), name));
+  renderBarbers();
+}
+
+// Barberos activos: lista de la sucursal, filtro del panel y selector de la reserva.
+function renderBarbers() {
+  for (const item of $$('.branch-team')) {
+    const names = barbers.filter(barber => barber.branch === item.dataset.branch).map(barber => barber.name);
+    item.textContent = names.length ? `Barberos: ${names.join(', ')}` : 'Barberos: por registrar';
+  }
+  const chosen = $('#filterBarber').value;
+  $('#filterBarber').replaceChildren(option('', 'Todos'));
   for (const barber of barbers) $('#filterBarber').append(option(barber.id, `${barber.name} · ${branchName(barber.branch)}`));
+  $('#filterBarber').value = barbers.some(item => item.id === chosen) ? chosen : '';
+  fillBarbers();
+}
+
+async function reloadBarbers() {
+  barbers = (await api('/api/config')).barbers;
+  renderBarbers();
 }
 
 function fillBarbers() {
   const select = $('#barber');
+  const chosen = select.value;
   select.replaceChildren(option('cualquiera', 'Sin preferencia'));
   for (const barber of barbers.filter(item => item.branch === $('#branch').value)) {
     select.append(option(barber.id, `${barber.name} · descansa los ${dayNames[barber.restDay]}`));
   }
+  if ([...select.options].some(item => item.value === chosen)) select.value = chosen;
 }
 
 function updateSummary() {
@@ -211,7 +237,7 @@ async function refreshAvailability() {
     if (request !== availabilityRequest) return;
     select.options[0].textContent = result.slots.length ? 'Selecciona' : 'Sin horarios disponibles';
     for (const time of result.slots) select.append(option(time, time));
-    $('#formMessage').textContent = '';
+    $('#formMessage').textContent = barbers.some(item => item.branch === branch) ? '' : 'Esta sucursal todavía no tiene barberos registrados.';
   } catch (error) {
     if (request !== availabilityRequest) return;
     select.options[0].textContent = 'Selecciona';
@@ -284,7 +310,7 @@ function renderAppointments() {
     note.textContent = 'PRUEBA';
     client.append(name, document.createElement('br'), note);
     row.append(client);
-    for (const value of [branchName(item.branch), barberName(item.barber), serviceName(item.service), item.date, item.time]) {
+    for (const value of [branchName(item.branch), item.barberName || barberName(item.barber), serviceName(item.service), item.date, item.time]) {
       const cell = document.createElement('td');
       cell.textContent = value;
       row.append(cell);
@@ -314,17 +340,78 @@ async function refreshAdmin() {
     $('#loginForm').hidden = session.authenticated;
     $('#adminContent').hidden = !session.authenticated;
     if (!session.authenticated) return;
+    const isAdmin = session.user.role === 'admin';
+    $('#sessionUser').textContent = `${session.user.name} · ${roleNames[session.user.role] || session.user.role}`;
+    for (const panel of $$('.admin-only')) panel.hidden = !isAdmin;
     appointments = (await api('/api/admin/appointments')).appointments;
     renderAppointments();
+    if (isAdmin) await loadWorkers();
   } catch (error) {
     $('#loginMessage').textContent = error.message;
+  }
+}
+
+async function loadWorkers() {
+  const { workers } = await api('/api/admin/workers');
+  const body = $('#workerRows');
+  body.replaceChildren();
+  for (const worker of workers) {
+    const row = document.createElement('tr');
+    for (const value of [worker.name, worker.username, branchName(worker.branch), dayNames[worker.restDay], worker.active ? 'Activo' : 'De baja']) {
+      const cell = document.createElement('td');
+      cell.textContent = value;
+      row.append(cell);
+    }
+    const action = document.createElement('td');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'button secondary worker-toggle';
+    button.dataset.id = worker.id;
+    button.dataset.active = String(!worker.active);
+    button.textContent = worker.active ? 'Dar de baja' : 'Reactivar';
+    button.setAttribute('aria-label', `${button.textContent} a ${worker.name}`);
+    action.append(button);
+    row.append(action);
+    body.append(row);
+  }
+  $('#emptyWorkers').hidden = workers.length > 0;
+}
+
+async function createWorker(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const data = Object.fromEntries(new FormData(form));
+  const message = $('#workerMessage');
+  message.textContent = '';
+  try {
+    await api('/api/admin/workers', { method: 'POST', body: JSON.stringify({ ...data, username: data.username.trim().toLowerCase(), restDay: Number(data.restDay) }) });
+    form.reset();
+    message.textContent = `${data.name} quedó dado de alta.`;
+    await loadWorkers();
+    await reloadBarbers();
+  } catch (error) {
+    message.textContent = error.message;
+  }
+}
+
+async function toggleWorker(event) {
+  const button = event.target.closest('.worker-toggle');
+  if (!button) return;
+  button.disabled = true;
+  try {
+    await api(`/api/admin/workers/${button.dataset.id}`, { method: 'PATCH', body: JSON.stringify({ active: button.dataset.active === 'true' }) });
+    await loadWorkers();
+    await reloadBarbers();
+  } catch (error) {
+    $('#workerMessage').textContent = error.message;
+    button.disabled = false;
   }
 }
 
 async function login(event) {
   event.preventDefault();
   try {
-    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password: $('#adminPassword').value }) });
+    await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ username: $('#adminUser').value.trim().toLowerCase(), password: $('#adminPassword').value }) });
     $('#adminPassword').value = '';
     $('#loginMessage').textContent = '';
     await refreshAdmin();
@@ -362,6 +449,8 @@ async function initialize() {
   $('#bookingForm').addEventListener('submit', submitBooking);
   $('#loginForm').addEventListener('submit', login);
   $('#priceForm').addEventListener('submit', savePrices);
+  $('#workerForm').addEventListener('submit', createWorker);
+  $('#workerRows').addEventListener('click', toggleWorker);
   $('#filterBranch').addEventListener('change', renderAppointments);
   $('#filterBarber').addEventListener('change', renderAppointments);
   $('#filterDate').addEventListener('change', renderAppointments);

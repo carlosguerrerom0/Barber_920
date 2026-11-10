@@ -7,9 +7,9 @@ export BARBER_ADMIN_PASSWORD='una-clave-de-prueba-de-12-caracteres-o-mas'
 npm start
 ```
 
-y abre <http://127.0.0.1:3000>. Necesitas Node.js 24 o más reciente. La contraseña se define la primera vez que se crea la base de datos. Usa siempre datos inventados.
+y abre <http://127.0.0.1:3000>. Necesitas Node.js 24 o más reciente. Esa contraseña es la del administrador, Junior Solis (usuario `junior`), y se guarda la primera vez que se crea la base de datos.
 
-La página muestra las direcciones y los horarios del negocio, los precios que nos dio el dueño y dos barberos de prueba por sucursal. El cliente elige sucursal, servicio, barbero y fecha, y solo ve los horarios libres. En el panel se pueden filtrar las citas y cambiarles el estado. Una cita cancelada no se puede reactivar, hay que registrar otra.
+La página muestra las direcciones y los horarios del negocio y los precios que nos dio el dueño. Los barberos los da de alta Junior desde el panel. El cliente elige sucursal, servicio, barbero y fecha, y solo ve los horarios libres. En el panel se pueden filtrar las citas y cambiarles el estado. Una cita cancelada no se puede reactivar, hay que registrar otra.
 
 Si abres `index.html` como archivo, o con un servidor de archivos estáticos, la reserva y el panel no funcionan.
 
