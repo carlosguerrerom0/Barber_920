@@ -2,15 +2,15 @@
 
 Proyecto de la materia Administración y Evaluación de Proyectos de Tecnologías de Información (UACJ). Es una página para que los clientes de Barber 920 vean sus tres sucursales y agenden una cita, y para que el negocio administre esas citas desde un panel.
 
-> **Es un prototipo.** Las direcciones, los horarios y los precios de tres servicios son los del negocio. Los barberos y las citas son de prueba, así que usa siempre datos inventados.
+> **Es un prototipo escolar.** Las direcciones, los horarios y los precios son los del negocio. No trae registros de ejemplo: los barberos los da de alta el administrador desde el panel.
 
-## Cómo vamos (8 de noviembre de 2026)
+## Cómo vamos (9 de noviembre de 2026)
 
 - **Fase 1:** elegimos a Barber 920, definimos la idea y formalizamos el inicio el 13 de agosto.
 - **Fase 2:** del 18 de agosto al 3 de octubre hicimos los requisitos, el boceto, el servidor con base de datos, el panel y la entrevista con el dueño.
-- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero. Ahora el cliente elige barbero, cada barbero tiene su día de descanso y el panel filtra por barbero. También cargamos los precios que nos dio el dueño y corrimos las pruebas.
+- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero y cargamos los precios que nos dio el dueño. El 9 de noviembre agregamos el perfil de administrador de Junior Solis, que da de alta a los barberos, el resumen de citas del día, la semana y el mes, y el cambio de precios.
 
-Lo que sigue es enseñarle esta versión al dueño y pedirle los nombres de sus barberos, sus descansos y el resto del catálogo. Todo eso está en la [planificación de la Fase 3](docs/fase3/planificacion-fase3.md) y en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+Lo que sigue es enseñarle esta versión al dueño, dar de alta a sus barberos y completar el catálogo. Todo eso está en la [planificación de la Fase 3](docs/fase3/planificacion-fase3.md) y en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
 
 | Parte | Estado | Dónde verlo |
 |---|---|---|
@@ -18,7 +18,8 @@ Lo que sigue es enseñarle esta versión al dueño y pedirle los nombres de sus 
 | Boceto e interfaz | Hechos | [Interfaz](web/index.html) · [Diseño](DESIGN.md) |
 | Servidor, base de datos y panel | Hechos | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
 | Entrevista con el dueño | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
-| Agenda por barbero | Hecha el 8 de noviembre, con barberos de prueba | [Pruebas de la Fase 3](docs/fase3/pruebas-integrales.md) |
+| Agenda por barbero | Hecha el 8 de noviembre | [Pruebas de la Fase 3](docs/fase3/pruebas-integrales.md) |
+| Administrador y trabajadores | Hecho el 9 de noviembre | [Servidor](server/index.js) |
 | Revisión con el dueño | Pendiente | [Guía de la revisión](docs/fase3/revision-con-el-dueno.md) |
 
 ## Cómo correrlo en tu computadora
@@ -39,18 +40,18 @@ npm start
 
 Luego abre <http://127.0.0.1:3000>. Si el puerto está ocupado, usa otro con la variable `PORT`, por ejemplo 3001.
 
-La contraseña del panel se guarda la primera vez que se crea la base de datos, `data/barber.sqlite`. Ese archivo no se sube a GitHub. Las pruebas se corren con `npm test`.
+La primera vez que se crea la base de datos, `data/barber.sqlite`, se crea el perfil de administrador de **Junior Solis**. Su usuario es `junior` y su contraseña es la de `BARBER_ADMIN_PASSWORD`. Desde el panel, Junior da de alta a cada barbero con su usuario, su contraseña, su sucursal y su día de descanso. La base de datos no se sube a GitHub. Las pruebas se corren con `npm test`.
 
 La página necesita el servidor. Si abres `web/index.html` directo, no vas a poder reservar.
 
 ## Qué hace hoy
 
 - **Sucursales:** muestra las tres con su horario, su mapa y el enlace "Cómo llegar".
-- **Barberos:** cada sucursal tiene dos barberos de prueba, cada uno con su día de descanso.
+- **Barberos:** son los trabajadores que da de alta el administrador. Cada uno tiene su sucursal y su día de descanso. Si una sucursal no tiene barberos, la página lo avisa y no muestra horarios.
 - **Horarios:** calcula los horarios libres de cada barbero cada 30 minutos. Abre de lunes a sábado de 10:00 a 19:00 y el domingo de 10:00 a 16:00, y pide dos horas de anticipación.
 - **Reservas:** guarda las citas en SQLite y no deja apartar a un barbero que ya está ocupado. Con "Sin preferencia" se asigna el primero que esté libre.
-- **Panel:** con contraseña, deja ver las citas, filtrarlas por sucursal, barbero y fecha, y cambiarles el estado.
-- **Pruebas:** revisan reservas, choques de horario, descansos, inicio de sesión, cancelación y que los datos se guarden.
+- **Panel:** cada quien entra con su usuario. Todos ven las citas, las filtran por sucursal, barbero y fecha, y les cambian el estado. También ven cuántas citas hay hoy, esta semana y este mes. Solo el administrador da de alta o de baja a los barberos y cambia los precios.
+- **Pruebas:** revisan reservas, choques de horario, descansos, inicio de sesión, permisos del administrador y de los trabajadores, cancelación, precios y que los datos se guarden.
 
 ## Documentos
 
