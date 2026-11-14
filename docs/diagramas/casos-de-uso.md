@@ -1,6 +1,6 @@
 # Diagrama de casos de uso
 
-Lo armamos el 1 de septiembre con los requerimientos iniciales.
+Lo armamos el 1 de septiembre y le agregamos la elección de barbero el 8 de noviembre.
 
 ```mermaid
 flowchart TD
@@ -9,6 +9,7 @@ flowchart TD
 
     subgraph Sistema["Sistema Barber 920"]
         UC1["Consultar sucursales y servicios"]
+        UC6["Elegir barbero"]
         UC2["Consultar disponibilidad"]
         UC3["Registrar cita"]
         UC4["Consultar y filtrar citas"]
@@ -16,21 +17,24 @@ flowchart TD
     end
 
     Cliente --> UC1
+    Cliente --> UC6
     Cliente --> UC2
     Cliente --> UC3
     Admin --> UC4
     Admin --> UC5
     UC3 -. incluye .-> UC2
+    UC2 -. incluye .-> UC6
 ```
 
-## Descripción resumida
+## Descripción
 
-| Caso | Actor | Resultado esperado |
+| Caso | Actor | Qué obtiene |
 |---|---|---|
-| UC-01 Consultar sucursales y servicios | Cliente | Visualiza información útil para elegir dónde y qué reservar. |
-| UC-02 Consultar disponibilidad | Cliente | Obtiene fechas y horarios disponibles. |
-| UC-03 Registrar cita | Cliente | Registra sus datos y recibe una confirmación. |
-| UC-04 Consultar y filtrar citas | Administrador | Visualiza reservaciones por fecha y sucursal. |
-| UC-05 Actualizar o cancelar cita | Administrador | Mantiene actualizado el estado de las reservaciones. |
+| UC-01 Consultar sucursales y servicios | Cliente | Ve dónde están las sucursales y qué servicios hay. |
+| UC-02 Consultar disponibilidad | Cliente | Ve los horarios libres del barbero que eligió. |
+| UC-03 Registrar cita | Cliente | Deja sus datos y recibe una confirmación. |
+| UC-04 Consultar y filtrar citas | Administrador | Ve las citas por fecha, sucursal o barbero. |
+| UC-05 Actualizar o cancelar cita | Administrador | Cambia el estado de una cita. |
+| UC-06 Elegir barbero | Cliente | Escoge a un barbero o deja "Sin preferencia". |
 
-Cuando tengamos las reglas definitivas agregaremos los casos que salieron de la entrevista, como elegir barbero, recibir avisos y cambiar o cancelar una cita.
+Cuando el dueño confirme las reglas, agregaremos los avisos y los cambios de cita.

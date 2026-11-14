@@ -1,43 +1,50 @@
 # Forma de trabajo
 
-## Flujo de las tareas
+## Cómo llevamos las tareas
 
-1. Registrar cada actividad como un GitHub Issue.
-2. Indicar el objetivo y los criterios de aceptación.
-3. Asignar un responsable antes de comenzar.
-4. Crear una rama cuando la actividad implique cambios en archivos o código.
-5. Relacionar los commits con el número del Issue.
-6. Revisar el resultado antes de marcar la actividad como terminada.
-7. Adjuntar o enlazar la evidencia correspondiente.
+1. Cada actividad se registra como un Issue en GitHub.
+2. En el Issue ponemos qué se quiere lograr y cómo sabremos que quedó.
+3. Antes de empezar, se asigna a un responsable.
+4. Si la actividad cambia archivos o código, se trabaja en una rama.
+5. Los commits llevan el número del Issue.
+6. Otro integrante revisa el resultado antes de cerrarlo.
+7. Se adjunta o se enlaza la evidencia.
 
-## Estados recomendados
+## Estados del tablero
 
-- **Backlog:** actividad identificada para después.
-- **Por hacer:** actividad priorizada.
-- **En progreso:** actividad que ya tiene responsable.
-- **En revisión:** resultado pendiente de revisión.
-- **Terminado:** resultado aceptado y con evidencia.
+- **Backlog:** actividad que haremos más adelante.
+- **Por hacer:** actividad que ya tiene prioridad.
+- **En progreso:** alguien ya está trabajando en ella.
+- **En revisión:** falta que otro integrante la revise.
+- **Terminado:** quedó, fue revisada y tiene evidencia.
 
-## Convención para ramas
+## Nombres de ramas
 
 - `docs/descripcion`
 - `feature/descripcion`
 - `fix/descripcion`
 - `design/descripcion`
 
-Ejemplos:
+Por ejemplo: `docs/requerimientos`, `design/prototipo-reservacion` o `feature/consulta-sucursales`.
 
-- `docs/requerimientos`
-- `design/prototipo-reservacion`
-- `feature/consulta-sucursales`
-
-## Convención para commits
+## Mensajes de commit
 
 - `docs: agrega minuta de requisitos`
 - `feat: agrega selección de sucursal`
 - `fix: corrige validación de horario`
 - `design: agrega prototipo de reservación`
 
-## Definición de terminado
+## Cuándo una tarea está terminada
 
-Una tarea se considera terminada cuando cumple sus criterios de aceptación, tiene evidencia, fue revisada por otro integrante y, si modifica el alcance, fue validada con el cliente.
+Cuando cumple lo que se pidió, tiene evidencia y otro integrante la revisó. Si cambia lo que se acordó con el cliente, también la tiene que ver el dueño.
+
+## Cómo escribimos
+
+Queremos que los documentos se lean fácil, como si se lo explicáramos a un compañero.
+
+- **Oraciones cortas:** una idea por oración. Evitamos el punto y coma y los guiones largos.
+- **Palabras comunes:** si usamos un término técnico, lo explicamos la primera vez.
+- **Primero lo hecho:** contamos lo que hicimos y después lo que falta. Lo que falta se dice una vez, no en cada párrafo.
+- **Sin rodeos:** nada de "cabe mencionar", "con el fin de" o "no sustituye". Decimos las cosas directo.
+- **Listas:** cuando hay varios puntos, usamos viñetas que empiezan con una palabra en negritas.
+- **Fechas:** se escriben así: 3 de octubre de 2026.

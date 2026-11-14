@@ -1,14 +1,14 @@
 # Red PERT del trabajo pendiente (29 de septiembre de 2026)
 
-Esta red la armamos el 29 de septiembre, en la actividad K del plan de la Fase 2, para estimar cuánto nos faltaba después de conectar la página con el servidor. En ese momento la entrevista con el dueño todavía no ocurría, así que es la actividad A.
+Esta red la armamos el 29 de septiembre para calcular cuánto nos faltaba después de conectar la página con el servidor. La entrevista con el dueño todavía no pasaba, por eso aparece como actividad A.
 
-**Qué pasó después:** la entrevista se hizo el 3 de octubre ([minuta](minuta-entrevista-cliente-2026-10-03.md)). El plan de la Fase 2 terminó el 3 de octubre, y el resto del trabajo lo propusimos con fechas para la [siguiente fase](planificacion-fase2-2026-10-04.md), donde las actividades B a J de esta red se llaman O a W para no confundirlas con las del plan A–N. Conservamos esta página como registro del cálculo original.
+La entrevista se hizo el 3 de octubre. Lo demás pasó a la siguiente fase con otras letras: las actividades B a J de esta red son las O a W del [plan de la Fase 3](fase3/planificacion-fase3.md). Dejamos esta página como registro del cálculo.
 
-Usamos días de trabajo relativos: el día 0 es el inicio de la entrevista y no contamos el tiempo de espera para conseguir la cita con el cliente.
+Contamos días de trabajo. El día 0 es cuando empieza la entrevista.
 
 ## Actividades y precedencias
 
-Las duraciones optimista (O), más probable (M) y pesimista (P) son estimaciones nuestras. En esta primera versión las pusimos simétricas, por eso el tiempo esperado `(O + 4M + P) / 6` sale igual a M.
+Los tiempos optimista (O), más probable (M) y pesimista (P) los estimamos nosotros. Como son simétricos, el tiempo esperado `(O + 4M + P) / 6` sale igual a M.
 
 | Actividad | Trabajo pendiente | Predecesora | O | M | P | Esperado |
 |---|---|---|---:|---:|---:|---:|
@@ -23,11 +23,11 @@ Las duraciones optimista (O), más probable (M) y pesimista (P) son estimaciones
 | I | Corregir las observaciones de la revisión | H | 1 | 2 | 3 | 2 |
 | J | Preparar la evidencia y la documentación de la entrega | G | 1 | 2 | 3 | 2 |
 
-D y F parten del servidor que ya existe; no se trata de construir el backend desde cero. Publicar el sistema en internet no entra en esta red: primero hay que decidir dónde alojarlo.
+D y F usan el servidor que ya teníamos. Publicar en internet no entra en esta red.
 
 ## Red de actividades en flechas
 
-Usamos once eventos y dos actividades ficticias de duración cero, igual que en la hoja de apoyo del equipo. E y F tienen que terminar antes de G, e I y J antes del cierre.
+Son once eventos y dos actividades ficticias de duración cero. E y F terminan antes de G, e I y J antes del cierre.
 
 ```mermaid
 flowchart LR
@@ -47,7 +47,7 @@ flowchart LR
 
 ## Tiempos de los eventos
 
-El TMC se calcula de izquierda a derecha y, donde llegan varias flechas, se toma el mayor. El TML se calcula de regreso y, donde salen varias, se toma el menor. En el último nodo, TML = TMC = 15.
+El TMC se calcula de izquierda a derecha. Donde llegan varias flechas se toma el mayor. El TML se calcula de regreso y, donde salen varias, se toma el menor. En el último nodo los dos valen 15.
 
 | Nodo | TMC | TML |
 |---:|---:|---:|
@@ -63,7 +63,7 @@ El TMC se calcula de izquierda a derecha y, donde llegan varias flechas, se toma
 | 10 | 14 | 15 |
 | 11 | 15 | 15 |
 
-Por ejemplo, el TMC del nodo 7 es `max(7 + 0, 6 + 4) = 10`, y el TML del nodo 10 es 15 porque f2 llega al nodo 11 sin duración. Al revisar la hoja del equipo corregimos dos cosas: ahí el TML del nodo 10 aparecía como 14 y faltaba contar la segunda llegada al nodo 7.
+Por ejemplo, el TMC del nodo 7 es `max(7 + 0, 6 + 4) = 10`. El TML del nodo 10 es 15 porque f2 llega al nodo 11 sin duración. En la hoja del equipo corregimos dos errores: el TML del nodo 10 decía 14 y faltaba la segunda llegada al nodo 7.
 
 ## Holguras y ruta crítica
 
@@ -84,6 +84,6 @@ Con la fórmula de clase, `Hᵢⱼ = Lⱼ − (Cᵢ + Tᵢⱼ)`:
 | J | 8 → 10 | 12 | 2 | 15 | 1 |
 | f2 | 10 → 11 | 14 | 0 | 15 | 1 |
 
-La ruta crítica es **A → B → D → F → G → H → I** y dura 15 días de trabajo desde que empieza la entrevista. C, E y f1 tienen tres días de holgura; J y f2, uno. Las duraciones suman 21 días, pero el proyecto no dura eso porque varias actividades van en paralelo.
+La ruta crítica es **A → B → D → F → G → H → I** y dura 15 días. C, E y f1 tienen tres días de holgura, y J y f2 tienen uno. Las duraciones suman 21 días, pero varias actividades van al mismo tiempo.
 
-Sin la entrevista, que ya se hizo, el trabajo restante (B a J) dura 13 días. Es la misma ruta que aparece en la propuesta para la siguiente fase como O–Q–S–T–U–V.
+Sin la entrevista, lo que queda (B a J) dura 13 días. Es la ruta O–Q–S–T–U–V del plan de la Fase 3.
