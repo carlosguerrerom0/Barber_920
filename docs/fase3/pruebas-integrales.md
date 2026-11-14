@@ -44,8 +44,11 @@ Abrimos la página en Chrome con el servidor corriendo y datos inventados. Las c
 | [08-resumen-y-precios.png](evidencias/08-resumen-y-precios.png) | El panel con el resumen de hoy, la semana y el mes, y los precios editables (9 de noviembre) |
 | [09-administrador-y-barberos.png](evidencias/09-administrador-y-barberos.png) | La sesión de Junior Solis con el alta de un barbero en una base de prueba (9 de noviembre) |
 
+## Revisión del cliente
+
+El 12 de noviembre de 2026 el cliente revisó esta versión y firmó la entrega del proyecto. Esa fue la actividad U. La guía que usamos está en [revision-con-el-dueno.md](revision-con-el-dueno.md).
+
 ## Lo que no probamos
 
-- **Datos reales:** la página ya no trae barberos de ejemplo. Faltan los barberos reales, que Junior Solis dará de alta.
+- **Datos reales:** la página ya no trae barberos de ejemplo. Los barberos reales los da de alta Junior Solis desde el panel.
 - **Mapas:** no revisamos que carguen los mapas de Google, porque la computadora donde tomamos las capturas no tenía acceso a ese sitio.
-- **Opinión del dueño:** eso es la actividad U. La guía está en [revision-con-el-dueno.md](revision-con-el-dueno.md).

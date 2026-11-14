@@ -2,14 +2,14 @@
 <Project xmlns="http://schemas.microsoft.com/project">
   <SaveVersion>14</SaveVersion>
   <Name>Barber_920_Plan_Continuidad</Name>
-  <Title>Barber 920 - Propuesta para la siguiente fase (O a W)</Title>
+  <Title>Barber 920 - Fase 3 (O a W), terminada</Title>
   <Company>Equipo Barber 920 UACJ</Company>
   <Manager>Luis Uziel Cruz Martínez</Manager>
   <Author>Equipo de trabajo</Author>
   <CreationDate>2026-10-04T18:30:00</CreationDate>
   <ScheduleFromStart>1</ScheduleFromStart>
-  <StartDate>2026-10-05T18:30:00</StartDate>
-  <FinishDate>2026-10-21T20:30:00</FinishDate>
+  <StartDate>2026-11-08T18:30:00</StartDate>
+  <FinishDate>2026-11-12T20:30:00</FinishDate>
   <CurrencyDigits>2</CurrencyDigits>
   <CurrencySymbol>$</CurrencySymbol>
   <CurrencyCode>MXN</CurrencyCode>
@@ -24,8 +24,8 @@
   <DefaultStandardRate>80</DefaultStandardRate>
   <DurationFormat>7</DurationFormat>
   <WorkFormat>2</WorkFormat>
-  <StatusDate>2026-10-04T18:30:00</StatusDate>
-  <CurrentDate>2026-10-04T18:30:00</CurrentDate>
+  <StatusDate>2026-11-13T18:30:00</StatusDate>
+  <CurrentDate>2026-11-13T18:30:00</CurrentDate>
   <Calendars>
     <Calendar>
       <UID>1</UID>
@@ -91,7 +91,40 @@
           <DayType>7</DayType>
           <DayWorking>0</DayWorking>
         </WeekDay>
+        <WeekDay>
+          <DayType>0</DayType>
+          <DayWorking>1</DayWorking>
+          <TimePeriod>
+            <FromDate>2026-11-08T00:00:00</FromDate>
+            <ToDate>2026-11-08T23:59:00</ToDate>
+          </TimePeriod>
+          <WorkingTimes>
+            <WorkingTime>
+              <FromTime>18:30:00</FromTime>
+              <ToTime>20:30:00</ToTime>
+            </WorkingTime>
+          </WorkingTimes>
+        </WeekDay>
       </WeekDays>
+      <Exceptions>
+        <Exception>
+          <EnteredByOccurrences>0</EnteredByOccurrences>
+          <TimePeriod>
+            <FromDate>2026-11-08T00:00:00</FromDate>
+            <ToDate>2026-11-08T23:59:00</ToDate>
+          </TimePeriod>
+          <Occurrences>1</Occurrences>
+          <Name>Avance de la Fase 3</Name>
+          <Type>1</Type>
+          <DayWorking>1</DayWorking>
+          <WorkingTimes>
+            <WorkingTime>
+              <FromTime>18:30:00</FromTime>
+              <ToTime>20:30:00</ToTime>
+            </WorkingTime>
+          </WorkingTimes>
+        </Exception>
+      </Exceptions>
     </Calendar>
   </Calendars>
   <Tasks>
@@ -105,8 +138,8 @@
       <OutlineNumber>1</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-05T18:30:00</Start>
-      <Finish>2026-10-05T20:30:00</Finish>
+      <Start>2026-11-12T18:30:00</Start>
+      <Finish>2026-11-12T20:30:00</Finish>
       <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT2H0M0S</Work>
@@ -119,15 +152,29 @@
       <Critical>1</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>160</Cost>
-      <RemainingDuration>PT2H0M0S</RemainingDuration>
-      <RemainingCost>160</RemainingCost>
-      <RemainingWork>PT2H0M0S</RemainingWork>
+      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>160</ActualCost>
+      <ActualWork>PT2H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 2.2. TE de 1 jornada de 2 horas. Responsable: Alison Aguirre Hernández. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 12 de noviembre de 2026: el cliente firmó la entrega del proyecto. Plan del 4 de octubre: TE de 1 jornada de 2 horas. Responsable en el plan: Alison Aguirre Hernández. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-05T18:30:00</Start>
+        <Finish>2026-10-05T20:30:00</Finish>
+        <Duration>PT2H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT2H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>2</UID>
@@ -139,8 +186,8 @@
       <OutlineNumber>2</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-06T18:30:00</Start>
-      <Finish>2026-10-07T20:30:00</Finish>
+      <Start>2026-11-08T18:30:00</Start>
+      <Finish>2026-11-09T20:30:00</Finish>
       <Duration>PT4H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT4H0M0S</Work>
@@ -153,15 +200,20 @@
       <Critical>0</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>320</Cost>
-      <RemainingDuration>PT4H0M0S</RemainingDuration>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualFinish>2026-11-09T20:30:00</ActualFinish>
+      <ActualDuration>PT4H0M0S</ActualDuration>
+      <ActualCost>320</ActualCost>
+      <ActualWork>PT4H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 2.3. TE de 2 jornadas de 2 horas. Responsable: Alison Aguirre Hernández. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 9 de noviembre de 2026: precios de la entrevista y cambio de precios desde el panel. El cliente la aceptó con la firma del 12 de noviembre. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Alison Aguirre Hernández. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>1</PredecessorUID>
         <Type>1</Type>
@@ -169,6 +221,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-06T18:30:00</Start>
+        <Finish>2026-10-07T20:30:00</Finish>
+        <Duration>PT4H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>3</UID>
@@ -180,9 +241,9 @@
       <OutlineNumber>3</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-06T18:30:00</Start>
-      <Finish>2026-10-08T20:30:00</Finish>
-      <Duration>PT6H0M0S</Duration>
+      <Start>2026-11-08T18:30:00</Start>
+      <Finish>2026-11-09T20:30:00</Finish>
+      <Duration>PT4H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT6H0M0S</Work>
       <EffortDriven>0</EffortDriven>
@@ -194,15 +255,20 @@
       <Critical>1</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>480</Cost>
-      <RemainingDuration>PT6H0M0S</RemainingDuration>
-      <RemainingCost>480</RemainingCost>
-      <RemainingWork>PT6H0M0S</RemainingWork>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualFinish>2026-11-09T20:30:00</ActualFinish>
+      <ActualDuration>PT4H0M0S</ActualDuration>
+      <ActualCost>480</ActualCost>
+      <ActualWork>PT6H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 2.4. TE de 3 jornadas de 2 horas. Responsable: Dante Uriel Ramírez Márquez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 9 de noviembre de 2026: reglas por barbero y alta de barberos con su sucursal y descanso desde el panel. El cliente la aceptó con la firma del 12 de noviembre. Plan del 4 de octubre: TE de 3 jornadas de 2 horas. Responsable en el plan: Dante Uriel Ramírez Márquez. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>1</PredecessorUID>
         <Type>1</Type>
@@ -210,6 +276,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-06T18:30:00</Start>
+        <Finish>2026-10-08T20:30:00</Finish>
+        <Duration>PT6H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT6H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>4</UID>
@@ -221,9 +296,9 @@
       <OutlineNumber>4</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-08T18:30:00</Start>
-      <Finish>2026-10-09T20:30:00</Finish>
-      <Duration>PT4H0M0S</Duration>
+      <Start>2026-11-08T18:30:00</Start>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT4H0M0S</Work>
       <EffortDriven>0</EffortDriven>
@@ -235,15 +310,20 @@
       <Critical>0</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>320</Cost>
-      <RemainingDuration>PT4H0M0S</RemainingDuration>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>320</ActualCost>
+      <ActualWork>PT4H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 5.3. TE de 2 jornadas de 2 horas. Responsable: Carlos Guerrero Morales. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 8 de noviembre de 2026: agenda por barbero en la página. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>2</PredecessorUID>
         <Type>1</Type>
@@ -251,6 +331,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-08T18:30:00</Start>
+        <Finish>2026-10-09T20:30:00</Finish>
+        <Duration>PT4H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>5</UID>
@@ -262,9 +351,9 @@
       <OutlineNumber>5</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-09T18:30:00</Start>
-      <Finish>2026-10-14T20:30:00</Finish>
-      <Duration>PT8H0M0S</Duration>
+      <Start>2026-11-08T18:30:00</Start>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT8H0M0S</Work>
       <EffortDriven>0</EffortDriven>
@@ -276,15 +365,20 @@
       <Critical>1</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>640</Cost>
-      <RemainingDuration>PT8H0M0S</RemainingDuration>
-      <RemainingCost>640</RemainingCost>
-      <RemainingWork>PT8H0M0S</RemainingWork>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>640</ActualCost>
+      <ActualWork>PT8H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 5.4. TE de 4 jornadas de 2 horas. Responsable: Jesús Alberto González Martínez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 8 de noviembre de 2026: API con disponibilidad por barbero. Plan del 4 de octubre: TE de 4 jornadas de 2 horas. Responsable en el plan: Jesús Alberto González Martínez. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>3</PredecessorUID>
         <Type>1</Type>
@@ -292,6 +386,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-09T18:30:00</Start>
+        <Finish>2026-10-14T20:30:00</Finish>
+        <Duration>PT8H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT8H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>6</UID>
@@ -303,9 +406,9 @@
       <OutlineNumber>6</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-15T18:30:00</Start>
-      <Finish>2026-10-16T20:30:00</Finish>
-      <Duration>PT4H0M0S</Duration>
+      <Start>2026-11-08T18:30:00</Start>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT4H0M0S</Work>
       <EffortDriven>0</EffortDriven>
@@ -317,15 +420,20 @@
       <Critical>1</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>320</Cost>
-      <RemainingDuration>PT4H0M0S</RemainingDuration>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>320</ActualCost>
+      <ActualWork>PT4H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 6.1. TE de 2 jornadas de 2 horas. Responsable: Jesús Alberto González Martínez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 8 de noviembre de 2026: pruebas automáticas y recorrido con capturas. Pasan 5 de 5. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Jesús Alberto González Martínez. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>4</PredecessorUID>
         <Type>1</Type>
@@ -340,6 +448,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-15T18:30:00</Start>
+        <Finish>2026-10-16T20:30:00</Finish>
+        <Duration>PT4H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>7</UID>
@@ -351,8 +468,8 @@
       <OutlineNumber>7</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-19T18:30:00</Start>
-      <Finish>2026-10-19T20:30:00</Finish>
+      <Start>2026-11-12T18:30:00</Start>
+      <Finish>2026-11-12T20:30:00</Finish>
       <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT2H0M0S</Work>
@@ -365,15 +482,20 @@
       <Critical>1</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>160</Cost>
-      <RemainingDuration>PT2H0M0S</RemainingDuration>
-      <RemainingCost>160</RemainingCost>
-      <RemainingWork>PT2H0M0S</RemainingWork>
+      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>160</ActualCost>
+      <ActualWork>PT2H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 6.2. TE de 1 jornada de 2 horas. Responsable: Carlos Guerrero Morales. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 12 de noviembre de 2026: el cliente revisó la versión y firmó la entrega. Plan del 4 de octubre: TE de 1 jornada de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>6</PredecessorUID>
         <Type>1</Type>
@@ -381,6 +503,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-19T18:30:00</Start>
+        <Finish>2026-10-19T20:30:00</Finish>
+        <Duration>PT2H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT2H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>8</UID>
@@ -392,9 +523,9 @@
       <OutlineNumber>8</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-20T18:30:00</Start>
-      <Finish>2026-10-21T20:30:00</Finish>
-      <Duration>PT4H0M0S</Duration>
+      <Start>2026-11-12T18:30:00</Start>
+      <Finish>2026-11-12T20:30:00</Finish>
+      <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT4H0M0S</Work>
       <EffortDriven>0</EffortDriven>
@@ -406,15 +537,20 @@
       <Critical>1</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>320</Cost>
-      <RemainingDuration>PT4H0M0S</RemainingDuration>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
+      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>320</ActualCost>
+      <ActualWork>PT4H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 6.3. TE de 2 jornadas de 2 horas. Responsable: Carlos Guerrero Morales. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada el 12 de noviembre de 2026: se cerró con la firma del cliente. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>7</PredecessorUID>
         <Type>1</Type>
@@ -422,6 +558,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-20T18:30:00</Start>
+        <Finish>2026-10-21T20:30:00</Finish>
+        <Duration>PT4H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Task>
     <Task>
       <UID>9</UID>
@@ -433,9 +578,9 @@
       <OutlineNumber>9</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-10-19T18:30:00</Start>
-      <Finish>2026-10-20T20:30:00</Finish>
-      <Duration>PT4H0M0S</Duration>
+      <Start>2026-11-08T18:30:00</Start>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT4H0M0S</Work>
       <EffortDriven>0</EffortDriven>
@@ -447,15 +592,20 @@
       <Critical>0</Critical>
       <FixedCost>0</FixedCost>
       <FixedCostAccrual>3</FixedCostAccrual>
-      <PercentComplete>0</PercentComplete>
-      <PercentWorkComplete>0</PercentWorkComplete>
+      <PercentComplete>100</PercentComplete>
+      <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>320</Cost>
-      <RemainingDuration>PT4H0M0S</RemainingDuration>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualDuration>PT2H0M0S</ActualDuration>
+      <ActualCost>320</ActualCost>
+      <ActualWork>PT4H0M0S</ActualWork>
+      <RemainingDuration>PT0H0M0S</RemainingDuration>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Propuesta del 4 de octubre de 2026. WBS 7.2. TE de 2 jornadas de 2 horas. Responsable: Luis Uziel Cruz Martínez. Costo calculado con la tarifa académica de $80 MXN por hora; no es un gasto real. Continúa el plan A a N, que terminó con la entrevista del 3 de octubre. Las fechas pueden moverse según los datos que entregue el cliente.</Notes>
+      <Notes>Terminada: capturas del 8 de noviembre de 2026 y video de entrega. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Luis Uziel Cruz Martínez. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>6</PredecessorUID>
         <Type>1</Type>
@@ -463,6 +613,15 @@
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-19T18:30:00</Start>
+        <Finish>2026-10-20T20:30:00</Finish>
+        <Duration>PT4H0M0S</Duration>
+        <DurationFormat>7</DurationFormat>
+        <EstimatedDuration>0</EstimatedDuration>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Task>
   </Tasks>
   <Resources>
@@ -552,136 +711,208 @@
       <UID>1</UID>
       <TaskUID>1</TaskUID>
       <ResourceUID>2</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>160</ActualCost>
+      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualWork>PT2H0M0S</ActualWork>
       <Cost>160</Cost>
-      <Finish>2026-10-05T20:30:00</Finish>
-      <RemainingCost>160</RemainingCost>
-      <RemainingWork>PT2H0M0S</RemainingWork>
-      <Start>2026-10-05T18:30:00</Start>
+      <Finish>2026-11-12T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-12T18:30:00</Start>
       <Units>1</Units>
       <Work>PT2H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-05T18:30:00</Start>
+        <Finish>2026-10-05T20:30:00</Finish>
+        <Work>PT2H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>2</UID>
       <TaskUID>2</TaskUID>
       <ResourceUID>2</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>320</ActualCost>
+      <ActualFinish>2026-11-09T20:30:00</ActualFinish>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualWork>PT4H0M0S</ActualWork>
       <Cost>320</Cost>
-      <Finish>2026-10-07T20:30:00</Finish>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
-      <Start>2026-10-06T18:30:00</Start>
+      <Finish>2026-11-09T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-08T18:30:00</Start>
       <Units>1</Units>
       <Work>PT4H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-06T18:30:00</Start>
+        <Finish>2026-10-07T20:30:00</Finish>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>3</UID>
       <TaskUID>3</TaskUID>
       <ResourceUID>4</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>480</ActualCost>
+      <ActualFinish>2026-11-09T20:30:00</ActualFinish>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualWork>PT6H0M0S</ActualWork>
       <Cost>480</Cost>
-      <Finish>2026-10-08T20:30:00</Finish>
-      <RemainingCost>480</RemainingCost>
-      <RemainingWork>PT6H0M0S</RemainingWork>
-      <Start>2026-10-06T18:30:00</Start>
-      <Units>1</Units>
+      <Finish>2026-11-09T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-08T18:30:00</Start>
+      <Units>1.5</Units>
       <Work>PT6H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-06T18:30:00</Start>
+        <Finish>2026-10-08T20:30:00</Finish>
+        <Work>PT6H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>4</UID>
       <TaskUID>4</TaskUID>
       <ResourceUID>3</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>320</ActualCost>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualWork>PT4H0M0S</ActualWork>
       <Cost>320</Cost>
-      <Finish>2026-10-09T20:30:00</Finish>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
-      <Start>2026-10-08T18:30:00</Start>
-      <Units>1</Units>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-08T18:30:00</Start>
+      <Units>2</Units>
       <Work>PT4H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-08T18:30:00</Start>
+        <Finish>2026-10-09T20:30:00</Finish>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>5</UID>
       <TaskUID>5</TaskUID>
       <ResourceUID>5</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>640</ActualCost>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualWork>PT8H0M0S</ActualWork>
       <Cost>640</Cost>
-      <Finish>2026-10-14T20:30:00</Finish>
-      <RemainingCost>640</RemainingCost>
-      <RemainingWork>PT8H0M0S</RemainingWork>
-      <Start>2026-10-09T18:30:00</Start>
-      <Units>1</Units>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-08T18:30:00</Start>
+      <Units>4</Units>
       <Work>PT8H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-09T18:30:00</Start>
+        <Finish>2026-10-14T20:30:00</Finish>
+        <Work>PT8H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>6</UID>
       <TaskUID>6</TaskUID>
       <ResourceUID>5</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>320</ActualCost>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualWork>PT4H0M0S</ActualWork>
       <Cost>320</Cost>
-      <Finish>2026-10-16T20:30:00</Finish>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
-      <Start>2026-10-15T18:30:00</Start>
-      <Units>1</Units>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-08T18:30:00</Start>
+      <Units>2</Units>
       <Work>PT4H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-15T18:30:00</Start>
+        <Finish>2026-10-16T20:30:00</Finish>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>7</UID>
       <TaskUID>7</TaskUID>
       <ResourceUID>3</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>160</ActualCost>
+      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualWork>PT2H0M0S</ActualWork>
       <Cost>160</Cost>
-      <Finish>2026-10-19T20:30:00</Finish>
-      <RemainingCost>160</RemainingCost>
-      <RemainingWork>PT2H0M0S</RemainingWork>
-      <Start>2026-10-19T18:30:00</Start>
+      <Finish>2026-11-12T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-12T18:30:00</Start>
       <Units>1</Units>
       <Work>PT2H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-19T18:30:00</Start>
+        <Finish>2026-10-19T20:30:00</Finish>
+        <Work>PT2H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>8</UID>
       <TaskUID>8</TaskUID>
       <ResourceUID>3</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>320</ActualCost>
+      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualWork>PT4H0M0S</ActualWork>
       <Cost>320</Cost>
-      <Finish>2026-10-21T20:30:00</Finish>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
-      <Start>2026-10-20T18:30:00</Start>
-      <Units>1</Units>
+      <Finish>2026-11-12T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-12T18:30:00</Start>
+      <Units>2</Units>
       <Work>PT4H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-20T18:30:00</Start>
+        <Finish>2026-10-21T20:30:00</Finish>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Assignment>
     <Assignment>
       <UID>9</UID>
       <TaskUID>9</TaskUID>
       <ResourceUID>1</ResourceUID>
-      <PercentWorkComplete>0</PercentWorkComplete>
-      <ActualCost>0</ActualCost>
-      <ActualWork>PT0H0M0S</ActualWork>
+      <PercentWorkComplete>100</PercentWorkComplete>
+      <ActualCost>320</ActualCost>
+      <ActualFinish>2026-11-08T20:30:00</ActualFinish>
+      <ActualStart>2026-11-08T18:30:00</ActualStart>
+      <ActualWork>PT4H0M0S</ActualWork>
       <Cost>320</Cost>
-      <Finish>2026-10-20T20:30:00</Finish>
-      <RemainingCost>320</RemainingCost>
-      <RemainingWork>PT4H0M0S</RemainingWork>
-      <Start>2026-10-19T18:30:00</Start>
-      <Units>1</Units>
+      <Finish>2026-11-08T20:30:00</Finish>
+      <RemainingCost>0</RemainingCost>
+      <RemainingWork>PT0H0M0S</RemainingWork>
+      <Start>2026-11-08T18:30:00</Start>
+      <Units>2</Units>
       <Work>PT4H0M0S</Work>
+      <Baseline>
+        <Number>0</Number>
+        <Start>2026-10-19T18:30:00</Start>
+        <Finish>2026-10-20T20:30:00</Finish>
+        <Work>PT4H0M0S</Work>
+      </Baseline>
     </Assignment>
   </Assignments>
 </Project>

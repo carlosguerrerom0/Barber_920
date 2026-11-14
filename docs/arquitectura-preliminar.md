@@ -30,6 +30,5 @@ El modelo de datos completo está en el [diagrama entidad-relación](diagramas/m
 ## Lo que falta
 
 - **Datos reales:** nombres de los barberos, sus descansos, el catálogo completo y las reglas de cancelación.
-- **Revisión:** enseñarle la versión al dueño y corregir lo que pida.
 - **Publicación:** elegir un alojamiento seguro antes de recibir citas reales.
 - **Avisos:** confirmaciones y recordatorios, si el negocio decide usarlos.

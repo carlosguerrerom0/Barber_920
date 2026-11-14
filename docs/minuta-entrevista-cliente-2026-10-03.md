@@ -51,11 +51,11 @@ No tienen días de cierre especiales. En el video responde "Ninguno" y en los ap
 |---|---|---|
 | Colonia y código postal de SUC 3, teléfonos y material autorizado | Dueño | Ya tenemos las direcciones y el logo. Faltan SUC 3 y los teléfonos |
 | Catálogo con precios y duraciones de ceja y diseños | Dueño | Pendiente |
-| Barberos por sucursal, descansos y bloqueos | Dueño y equipo | Pendiente. La página ya funciona con barberos de prueba |
+| Barberos por sucursal, descansos y bloqueos | Dueño y equipo | Desde el 9 de noviembre el administrador da de alta a cada barbero con su sucursal y su descanso |
 | Cancelaciones, recordatorios, datos del cliente y permisos | Dueño y equipo | Pendiente |
 | Pasar las respuestas a los requisitos | Equipo | Hecho en [requerimientos](requerimientos.md) |
 | Pasar a la página la tolerancia, ceja y diseños, el estado Realizada, el resumen y el cambio de precios | Equipo | Hecho el 9 de noviembre |
 | Cambiar horarios y bloquear horarios desde el panel | Equipo | Pendiente |
-| Enseñarle la versión conectada | Equipo y dueño | Pendiente. Ver la [guía de la revisión](fase3/revision-con-el-dueno.md) |
+| Enseñarle la versión conectada | Equipo y dueño | Hecho. El 12 de noviembre revisó la versión y firmó la entrega. Ver la [guía de la revisión](fase3/revision-con-el-dueno.md) |
 
 Los responsables de esta tabla los propusimos nosotros. El dueño no se comprometió a fechas en el video.

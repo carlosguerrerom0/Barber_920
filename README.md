@@ -4,13 +4,13 @@ Proyecto de la materia Administración y Evaluación de Proyectos de Tecnología
 
 > **Es un prototipo escolar.** Las direcciones, los horarios y los precios son los del negocio. No trae registros de ejemplo: los barberos los da de alta el administrador desde el panel.
 
-## Cómo vamos (9 de noviembre de 2026)
+## Cómo quedó (13 de noviembre de 2026)
 
 - **Fase 1:** elegimos a Barber 920, definimos la idea y formalizamos el inicio el 13 de agosto.
 - **Fase 2:** del 18 de agosto al 3 de octubre hicimos los requisitos, el boceto, el servidor con base de datos, el panel y la entrevista con el dueño.
-- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero y cargamos los precios que nos dio el dueño. El 9 de noviembre agregamos el perfil de administrador de Junior Solis, que da de alta a los barberos, el resumen de citas del día, la semana y el mes, y el cambio de precios.
+- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero y cargamos los precios que nos dio el dueño. El 9 de noviembre agregamos el perfil de administrador de Junior Solis, que da de alta a los barberos, el resumen de citas del día, la semana y el mes, y el cambio de precios. El 12 de noviembre el cliente revisó la página y firmó la entrega. También grabamos el video de entrega.
 
-Lo que sigue es enseñarle esta versión al dueño, dar de alta a sus barberos y completar el catálogo. Todo eso está en la [planificación de la Fase 3](docs/fase3/planificacion-fase3.md) y en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+**El proyecto está terminado.** Las actividades O a W de la Fase 3 quedaron cerradas. El detalle está en la [planificación de la Fase 3](docs/fase3/planificacion-fase3.md) y en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
 
 | Parte | Estado | Dónde verlo |
 |---|---|---|
@@ -20,7 +20,8 @@ Lo que sigue es enseñarle esta versión al dueño, dar de alta a sus barberos y
 | Entrevista con el dueño | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
 | Agenda por barbero | Hecha el 8 de noviembre | [Pruebas de la Fase 3](docs/fase3/pruebas-integrales.md) |
 | Administrador y trabajadores | Hecho el 9 de noviembre | [Servidor](server/index.js) |
-| Revisión con el dueño | Pendiente | [Guía de la revisión](docs/fase3/revision-con-el-dueno.md) |
+| Revisión y firma del cliente | Hecha el 12 de noviembre | [Guía de la revisión](docs/fase3/revision-con-el-dueno.md) |
+| Video de entrega | Hecho | — |
 
 ## Cómo correrlo en tu computadora
 
