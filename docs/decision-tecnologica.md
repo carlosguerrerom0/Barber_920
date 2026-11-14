@@ -38,6 +38,6 @@ Ahora el servidor aplica las reglas del negocio y SQLite funciona casi sin confi
 - [x] Pruebas automáticas.
 - [x] Agenda por barbero (8 de noviembre).
 - [x] Administrador y alta de barberos desde el panel (9 de noviembre).
-- [x] Revisión con el dueño. El cliente firmó la entrega el 12 de noviembre.
+- [x] Revisión con el dueño. El cliente firmó la entrega el 11 de noviembre.
 
 La publicación en internet no entró en la entrega. La página corre en local. Es un prototipo escolar, así que no uses datos personales reales.
