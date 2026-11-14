@@ -1,43 +1,43 @@
-# Selección de tecnologías
+# Tecnologías
 
-**Decisión inicial:** 1 de septiembre de 2026. **Revisada:** 29 de septiembre de 2026, al implementar el servidor.
+**Decisión inicial:** 1 de septiembre de 2026. **Revisada:** 29 de septiembre de 2026, cuando hicimos el servidor.
 
 ## Qué comparamos
 
-| Capa | Opción 1 | Opción 2 | Lo que elegimos al inicio |
+| Parte | Opción 1 | Opción 2 | Lo que elegimos al inicio |
 |---|---|---|---|
 | Interfaz | HTML, CSS y JavaScript | React | HTML, CSS y JavaScript |
-| Backend | Node.js con Express | Python con Flask | Node.js con Express |
+| Servidor | Node.js con Express | Python con Flask | Node.js con Express |
 | Base de datos | SQLite | PostgreSQL | SQLite para desarrollo |
-| Publicación | GitHub Pages para el prototipo | Servicio que ejecute la aplicación completa | GitHub Pages para el prototipo |
+| Publicación | GitHub Pages | Un servicio que corra la aplicación completa | GitHub Pages |
 
-Al final la versión conectada quedó con **Node.js 24, `node:http` y `node:sqlite`**, sin dependencias externas. Habíamos pensado en Express, pero para una demostración local no lo necesitamos. GitHub Pages solo sirve páginas estáticas, así que no puede ejecutar la API ni la base de datos; publicar la versión conectada sigue pendiente.
+Al final usamos **Node.js 24 con `node:http` y `node:sqlite`**, sin paquetes externos. Express no hizo falta para una versión local. GitHub Pages solo sirve páginas estáticas y no puede correr la base de datos, así que la publicación queda para después.
 
 ## Por qué
 
-Empezamos con HTML, CSS y JavaScript porque nos permitía tener rápido una versión navegable sin complicarnos. Así pudimos revisar primero el flujo de sucursales, reservación y administración.
+Empezamos con HTML, CSS y JavaScript para tener rápido una versión que se pudiera navegar. Así revisamos primero cómo se ven las sucursales, la reservación y el panel.
 
-Ahora la API aplica las reglas del negocio y SQLite nos deja desarrollar y enseñar el sistema con muy poca configuración. Cuando el cliente valide el alcance, tendremos que pensar en una base de datos y un alojamiento para varios usuarios a la vez.
+Ahora el servidor aplica las reglas del negocio y SQLite funciona casi sin configuración. Cuando el dueño apruebe el sistema, habrá que elegir una base de datos y un alojamiento para varios usuarios.
 
 ## Etapas
 
 ### Etapa 1: prototipo
 
-- Interfaz adaptable.
+- Interfaz adaptable al celular.
 - Navegación entre secciones.
-- Formulario de reservación con validación básica.
-- Datos guardados solo en el navegador, para demostrar.
-- Panel administrativo simulado.
+- Formulario de reservación con validaciones básicas.
+- Datos guardados solo en el navegador.
+- Panel de prueba.
 
 ### Etapa 2: sistema conectado
 
-- [x] API con Node.js.
+- [x] Servidor con Node.js.
 - [x] Base de datos SQLite.
-- [x] Acceso administrativo para la demostración local.
-- [x] Disponibilidad calculada en el servidor y validación de choques de horario.
-- [x] Pruebas automáticas del flujo principal.
-- [ ] Publicación y revisión del avance conectado con el cliente.
+- [x] Acceso con contraseña al panel.
+- [x] Horarios libres calculados en el servidor.
+- [x] Pruebas automáticas.
+- [x] Agenda por barbero (8 de noviembre).
+- [x] Administrador y alta de barberos desde el panel (9 de noviembre).
+- [x] Revisión con el dueño. El cliente firmó la entrega el 12 de noviembre.
 
-## Una advertencia
-
-Los servicios, los precios y la capacidad de la demostración siguen siendo de prueba. No uses datos personales reales al probarla.
+La publicación en internet no entró en la entrega. La página corre en local. Es un prototipo escolar, así que no uses datos personales reales.

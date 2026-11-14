@@ -13,7 +13,7 @@
 <body>
   <div class="pole-stripe" aria-hidden="true"></div>
   <div class="demo-banner">
-    Prototipo académico: direcciones facilitadas por el equipo; servicios, precios y reservas de prueba. No ingreses datos personales reales.
+    Prototipo escolar de Barber 920. No pongas datos personales reales.
   </div>
 
   <header class="site-header">
@@ -54,7 +54,7 @@
         <div class="hero-aside">
           <p class="hero-copy">Consulta nuestras sucursales, selecciona un servicio y aparta un horario desde cualquier dispositivo.</p>
           <div class="hero-actions">
-            <button class="button primary" data-view-link="reservar">Agendar demostración</button>
+            <button class="button primary" data-view-link="reservar">Agendar cita</button>
             <button class="button secondary" data-view-link="sucursales">Ver sucursales</button>
           </div>
         </div>
@@ -62,19 +62,20 @@
 
       <section class="section-block">
         <div class="section-heading">
-          <p class="eyebrow">Servicios de demostración</p>
-          <h2>Opciones para cada estilo</h2>
+          <p class="eyebrow">Precios que nos dio el dueño</p>
+          <h2>Servicios</h2>
         </div>
         <div id="serviceCards" class="card-grid"></div>
+        <p class="small-note services-note">También hacemos ceja y diseños. Sus precios y duraciones están por confirmar.</p>
       </section>
 
       <section class="status-panel">
         <div>
-          <p class="eyebrow">Avance de Fase 2</p>
-          <h2>Reservas y administración conectadas</h2>
+          <p class="eyebrow">Avance de Fase 3</p>
+          <h2>Ya puedes elegir barbero</h2>
         </div>
         <div>
-          <p>La demostración guarda citas en SQLite y consulta disponibilidad desde el servidor. Ya muestra las direcciones y horarios informados; falta validar la versión conectada con el cliente.</p>
+          <p>Cada barbero tiene su propia agenda y su día de descanso. El administrador da de alta a los barberos desde el panel.</p>
           <button class="button primary" data-view-link="reservar">Probar reservación</button>
         </div>
       </section>
@@ -84,16 +85,16 @@
       <div class="page-heading">
         <p class="eyebrow">Tres sucursales</p>
         <h1>Elige tu sucursal</h1>
-        <p>Direcciones facilitadas por el equipo después de la entrevista. Faltan colonia y código postal de SUC 3, así como revisar la versión conectada con el cliente.</p>
+        <p>Las tres tienen el mismo horario. De la Sucursal 3 todavía nos falta la colonia y el código postal.</p>
       </div>
       <div id="branchCards" class="branch-grid"></div>
     </section>
 
     <section id="reservar" class="view" hidden>
       <div class="page-heading">
-        <p class="eyebrow">Flujo de demostración</p>
+        <p class="eyebrow">Reservación de prueba</p>
         <h1>Agenda una cita</h1>
-        <p>Las citas de demostración se guardan en la base de datos local del servidor.</p>
+        <p>Elige sucursal, servicio y barbero. Solo te mostramos los horarios libres.</p>
       </div>
 
       <div class="booking-layout">
@@ -108,6 +109,11 @@
           <label for="service">Servicio</label>
           <select id="service" name="service" required>
             <option value="">Selecciona un servicio</option>
+          </select>
+
+          <label for="barber">Barbero</label>
+          <select id="barber" name="barber" required>
+            <option value="cualquiera">Sin preferencia</option>
           </select>
 
           <div class="field-row">
@@ -131,10 +137,10 @@
 
           <label class="checkbox-label">
             <input id="demoConsent" type="checkbox" required>
-            Entiendo que esta es una demostración y no una cita real.
+            Entiendo que es una cita de prueba.
           </label>
 
-          <button type="submit" class="button primary full-width">Registrar cita de demostración</button>
+          <button type="submit" class="button primary full-width">Registrar cita de prueba</button>
           <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
         </form>
 
@@ -143,10 +149,12 @@
           <h2 id="summaryService">Selecciona un servicio</h2>
           <dl>
             <div><dt>Sucursal</dt><dd id="summaryBranch">Sin seleccionar</dd></div>
+            <div><dt>Barbero</dt><dd id="summaryBarber">Sin preferencia</dd></div>
             <div><dt>Duración</dt><dd id="summaryDuration">-</dd></div>
-            <div><dt>Precio demo</dt><dd id="summaryPrice">-</dd></div>
+            <div><dt>Precio</dt><dd id="summaryPrice">-</dd></div>
           </dl>
-          <p class="small-note">Horarios de apertura informados; disponibilidad de demostración para una cita simultánea por sucursal, sin selección de barbero.</p>
+          <p class="small-note">Cada barbero atiende una cita a la vez. Si eliges "Sin preferencia", te toca el primero que esté libre.</p>
+          <p class="small-note">Llega 10 minutos antes. Tienes 5 minutos de tolerancia. Si no llegas, se cancela la cita.</p>
         </aside>
       </div>
     </section>
@@ -154,9 +162,10 @@
     <section id="confirmacion" class="view" hidden>
       <div class="confirmation-card">
         <div class="confirmation-icon" aria-hidden="true">✓</div>
-        <p class="eyebrow">Registro de demostración completado</p>
-        <h1>Cita de demostración guardada</h1>
+        <p class="eyebrow">Listo</p>
+        <h1>Cita de prueba guardada</h1>
         <p id="confirmationText"></p>
+        <p class="small-note">Llega 10 minutos antes. Tienes 5 minutos de tolerancia. Si no llegas, se cancela la cita.</p>
         <div class="hero-actions centered">
           <button class="button primary" data-view-link="administracion">Ver en administración</button>
           <a id="confirmationDirections" class="button secondary" target="_blank" rel="noopener">Cómo llegar</a>
@@ -167,19 +176,22 @@
 
     <section id="administracion" class="view" hidden>
       <div class="page-heading">
-        <p class="eyebrow">Panel de demostración</p>
+        <p class="eyebrow">Panel</p>
         <h1>Administración de citas</h1>
-        <p>Acceso protegido con contraseña para administrar citas de prueba.</p>
+        <p>Entra con tu usuario y contraseña para ver y cambiar las citas.</p>
       </div>
 
       <form id="loginForm" class="panel login-panel">
-        <label for="adminPassword">Contraseña de administración</label>
+        <label for="adminUser">Usuario</label>
+        <input id="adminUser" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        <label for="adminPassword">Contraseña</label>
         <input id="adminPassword" type="password" autocomplete="current-password" required>
         <button type="submit" class="button primary">Ingresar</button>
         <p id="loginMessage" class="form-message" role="alert" aria-live="polite"></p>
       </form>
 
       <div id="adminContent" hidden>
+        <p id="sessionUser" class="session-user"></p>
         <div class="metric-grid">
           <article class="metric"><span id="metricTotal">0</span><p>Total</p></article>
           <article class="metric" data-status="Pendiente"><span id="metricPending">0</span><p>Pendientes</p></article>
@@ -187,11 +199,24 @@
           <article class="metric" data-status="Cancelada"><span id="metricCancelled">0</span><p>Canceladas</p></article>
         </div>
 
+        <div class="panel period-panel">
+          <p class="eyebrow">Resumen sin canceladas</p>
+          <div class="period-grid">
+            <article class="metric"><span id="summaryToday">0</span><p>Hoy</p></article>
+            <article class="metric"><span id="summaryWeek">0</span><p>Esta semana</p></article>
+            <article class="metric"><span id="summaryMonth">0</span><p>Este mes</p></article>
+          </div>
+        </div>
+
         <div class="panel admin-panel">
           <div class="admin-toolbar">
             <div>
               <label for="filterBranch">Filtrar sucursal</label>
               <select id="filterBranch"><option value="">Todas</option></select>
+            </div>
+            <div>
+              <label for="filterBarber">Filtrar barbero</label>
+              <select id="filterBarber"><option value="">Todos</option></select>
             </div>
             <div>
               <label for="filterDate">Filtrar fecha</label>
@@ -202,12 +227,42 @@
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>Cliente</th><th>Sucursal</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr>
+                <tr><th>Cliente</th><th>Sucursal</th><th>Barbero</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr>
               </thead>
               <tbody id="appointmentRows"></tbody>
             </table>
-            <p id="emptyAppointments" class="empty-state">Todavía no hay citas de demostración.</p>
+            <p id="emptyAppointments" class="empty-state">Todavía no hay citas.</p>
           </div>
+        </div>
+
+        <div class="panel worker-panel admin-only">
+          <p class="eyebrow">Trabajadores</p>
+          <h2>Barberos</h2>
+          <p class="small-note">Da de alta a cada barbero con su sucursal y su día de descanso. Con su usuario puede entrar al panel a ver las citas.</p>
+          <form id="workerForm" class="worker-grid">
+            <div><label for="workerName">Nombre</label><input id="workerName" name="name" type="text" minlength="3" maxlength="60" required></div>
+            <div><label for="workerUser">Usuario</label><input id="workerUser" name="username" type="text" minlength="3" maxlength="30" pattern="[a-z0-9._\-]{3,30}" autocapitalize="none" spellcheck="false" required></div>
+            <div><label for="workerPassword">Contraseña</label><input id="workerPassword" name="password" type="password" minlength="10" maxlength="100" autocomplete="new-password" required></div>
+            <div><label for="workerBranch">Sucursal</label><select id="workerBranch" name="branch" required></select></div>
+            <div><label for="workerRest">Día de descanso</label><select id="workerRest" name="restDay" required></select></div>
+            <button type="submit" class="button primary">Dar de alta</button>
+          </form>
+          <p id="workerMessage" class="form-message" role="status" aria-live="polite"></p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nombre</th><th>Usuario</th><th>Sucursal</th><th>Descansa</th><th>Estado</th><th></th></tr></thead>
+              <tbody id="workerRows"></tbody>
+            </table>
+            <p id="emptyWorkers" class="empty-state">Todavía no hay barberos registrados.</p>
+          </div>
+        </div>
+
+        <div class="panel price-panel admin-only">
+          <p class="eyebrow">Servicios</p>
+          <h2>Precios</h2>
+          <p class="small-note">Cambia el precio y guarda. La página lo muestra al momento.</p>
+          <form id="priceForm" class="price-grid"></form>
+          <p id="priceMessage" class="form-message" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>
@@ -215,7 +270,7 @@
 
   <footer>
     <strong>Barber 920</strong>
-    <span>Prototipo académico · UACJ · Fase 2 · 2026</span>
+    <span>Prototipo escolar · UACJ · Fase 3 · 2026</span>
   </footer>
 
   <script src="app.js"></script>

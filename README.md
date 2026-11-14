@@ -1,33 +1,31 @@
 # Barber 920 · Sistema web de citas y sucursales
 
-Proyecto de la materia Administración y Evaluación de Proyectos de Tecnologías de Información (UACJ). Estamos construyendo una página para que los clientes de Barber 920 consulten sus tres sucursales y agenden una cita, y para que el negocio administre esas citas desde un panel.
+Proyecto de la materia Administración y Evaluación de Proyectos de Tecnologías de Información (UACJ). Es una página para que los clientes de Barber 920 vean sus tres sucursales y agenden una cita, y para que el negocio administre esas citas desde un panel.
 
-> **Es una demostración.** Las direcciones y los horarios ya son los del negocio, pero los servicios, los precios y la capacidad todavía son de prueba. Las citas que se registren aquí no son reales: usa siempre datos inventados.
+> **Es un prototipo escolar.** Las direcciones, los horarios y los precios son los del negocio. No trae registros de ejemplo: los barberos los da de alta el administrador desde el panel.
 
-## Cómo vamos (4 de octubre de 2026)
+## Cómo quedó (13 de noviembre de 2026)
 
-Ya terminamos todas las actividades de la Fase 2; el documento se entrega el 5 de octubre.
+- **Fase 1:** elegimos a Barber 920, definimos la idea y formalizamos el inicio el 13 de agosto.
+- **Fase 2:** del 18 de agosto al 3 de octubre hicimos los requisitos, el boceto, el servidor con base de datos, el panel y la entrevista con el dueño.
+- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero y cargamos los precios que nos dio el dueño. El 9 de noviembre agregamos el perfil de administrador de Junior Solis, que da de alta a los barberos, el resumen de citas del día, la semana y el mes, y el cambio de precios. El 12 de noviembre el cliente revisó la página y firmó la entrega. También grabamos el video de entrega.
 
-- **1 y 2 de septiembre.** Documentamos los requisitos, los casos de uso y el modelo de datos, y armamos el boceto con una primera versión navegable. El cliente vio el boceto y no nos pidió cambios.
-- **29 de septiembre.** Conectamos la página a un servidor en Node.js con base de datos SQLite y un panel de administración protegido con contraseña.
-- **3 de octubre.** Entrevistamos al propietario, Miguel Solís. Con sus respuestas cargamos los horarios reales y, después, las direcciones de las sucursales ([minuta](docs/minuta-entrevista-cliente-2026-10-03.md)).
-- **4 de octubre.** Estrenamos el diseño con el logo, las tipografías Anton e Inter y un mapa por sucursal con su enlace "Cómo llegar".
-
-Para la siguiente fase queda lo que depende del negocio: la colonia y el código postal de SUC 3, el catálogo real de servicios, los barberos con sus descansos y, sobre todo, enseñarle al dueño la versión conectada para que nos dé su opinión. Lo propusimos del 5 al 21 de octubre en la [planificación](docs/planificacion-fase2-2026-10-04.md) y lo seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+**El proyecto está terminado.** Las actividades O a W de la Fase 3 quedaron cerradas. El detalle está en la [planificación de la Fase 3](docs/fase3/planificacion-fase3.md) y en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
 
 | Parte | Estado | Dónde verlo |
 |---|---|---|
-| Requisitos y diagramas | Hecho; las reglas que dependen del negocio pasan a la siguiente fase | [Requerimientos](docs/requerimientos.md) |
-| Boceto e interfaz | Hecho; el cliente conoce el boceto | [Interfaz](web/index.html) · [Diseño](DESIGN.md) |
-| API, SQLite y panel con sesión | Hecho (demostración local) | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
-| Entrevista con el propietario | Hecho (3 de octubre) | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
-| Datos reales del negocio | Hecho: direcciones y horarios reales cargados; el catálogo y el personal pasan a la siguiente fase | [Datos de la demostración](docs/datos-simulados.md) |
-| Planeación | Hecho: plan A–N; propuesta O–W para la siguiente fase | [Planificación](docs/planificacion-fase2-2026-10-04.md) |
-| Revisión con el cliente y publicación | Siguiente fase | [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18) |
+| Requisitos y diagramas | Hechos | [Requerimientos](docs/requerimientos.md) |
+| Boceto e interfaz | Hechos | [Interfaz](web/index.html) · [Diseño](DESIGN.md) |
+| Servidor, base de datos y panel | Hechos | [Servidor](server/index.js) · [Pruebas](test/server.test.js) |
+| Entrevista con el dueño | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
+| Agenda por barbero | Hecha el 8 de noviembre | [Pruebas de la Fase 3](docs/fase3/pruebas-integrales.md) |
+| Administrador y trabajadores | Hecho el 9 de noviembre | [Servidor](server/index.js) |
+| Revisión y firma del cliente | Hecha el 12 de noviembre | [Guía de la revisión](docs/fase3/revision-con-el-dueno.md) |
+| Video de entrega | Hecho | — |
 
 ## Cómo correrlo en tu computadora
 
-Necesitas Node.js 24 o más reciente. No hay paquetes que instalar.
+Necesitas Node.js 24 o más reciente. No hay que instalar paquetes.
 
 ```bash
 export BARBER_ADMIN_PASSWORD='una-clave-de-prueba-de-12-caracteres-o-mas'
@@ -41,25 +39,27 @@ $env:BARBER_ADMIN_PASSWORD = 'una-clave-de-prueba-de-12-caracteres-o-mas'
 npm start
 ```
 
-Después abre <http://127.0.0.1:3000>. Si ese puerto ya está ocupado, define otro con la variable `PORT` (por ejemplo, 3001).
+Luego abre <http://127.0.0.1:3000>. Si el puerto está ocupado, usa otro con la variable `PORT`, por ejemplo 3001.
 
-La contraseña del panel se guarda la primera vez que se crea la base de datos, `data/barber.sqlite`. Ni ese archivo ni la contraseña se suben a GitHub. Para correr las pruebas automáticas usa `npm test`.
+La primera vez que se crea la base de datos, `data/barber.sqlite`, se crea el perfil de administrador de **Junior Solis**. Su usuario es `junior` y su contraseña es la de `BARBER_ADMIN_PASSWORD`. Desde el panel, Junior da de alta a cada barbero con su usuario, su contraseña, su sucursal y su día de descanso. La base de datos no se sube a GitHub. Las pruebas se corren con `npm test`.
 
-La página necesita el servidor: si abres `web/index.html` directo en el navegador, no vas a poder reservar. Por ahora el servidor solo escucha en tu computadora; todavía no lo publicamos en internet.
+La página necesita el servidor. Si abres `web/index.html` directo, no vas a poder reservar.
 
 ## Qué hace hoy
 
-- Muestra las tres sucursales con su horario, su mapa y el enlace "Cómo llegar".
-- Calcula en el servidor los horarios libres: de lunes a sábado de 10:00 a 19:00 y el domingo de 10:00 a 16:00, con al menos dos horas de anticipación.
-- Guarda las citas en SQLite y no deja apartar un horario que ya está ocupado en la misma sucursal.
-- Tiene un panel con contraseña para ver las citas, filtrarlas y cambiar su estado.
-- Incluye pruebas automáticas de reservas, choques de horario, inicio de sesión, cancelación y persistencia.
+- **Sucursales:** muestra las tres con su horario, su mapa y el enlace "Cómo llegar".
+- **Barberos:** son los trabajadores que da de alta el administrador. Cada uno tiene su sucursal y su día de descanso. Si una sucursal no tiene barberos, la página lo avisa y no muestra horarios.
+- **Horarios:** calcula los horarios libres de cada barbero cada 30 minutos. Abre de lunes a sábado de 10:00 a 19:00 y el domingo de 10:00 a 16:00, y pide dos horas de anticipación.
+- **Reservas:** guarda las citas en SQLite y no deja apartar a un barbero que ya está ocupado. Con "Sin preferencia" se asigna el primero que esté libre.
+- **Panel:** cada quien entra con su usuario. Todos ven las citas, las filtran por sucursal, barbero y fecha, y les cambian el estado. También ven cuántas citas hay hoy, esta semana y este mes. Solo el administrador da de alta o de baja a los barberos y cambia los precios.
+- **Pruebas:** revisan reservas, choques de horario, descansos, inicio de sesión, permisos del administrador y de los trabajadores, cancelación, precios y que los datos se guarden.
 
 ## Documentos
 
-- **Planeación:** [planificación de la Fase 2](docs/planificacion-fase2-2026-10-04.md) · [red PERT del 29 de septiembre](docs/pert-fase2-pendiente.md) · [roles](docs/roles-fase2.md) · [FODA y Porter](docs/analisis-fase2.md)
+- **Fase 3:** [planificación](docs/fase3/planificacion-fase3.md) · [pruebas integrales](docs/fase3/pruebas-integrales.md) · [riesgos y Pareto](docs/fase3/riesgos.md) · [guía de la revisión con el dueño](docs/fase3/revision-con-el-dueno.md)
+- **Fase 2:** [planificación](docs/planificacion-fase2-2026-10-04.md) · [red PERT del 29 de septiembre](docs/pert-fase2-pendiente.md) · [roles](docs/roles-fase2.md) · [FODA y Porter](docs/analisis-fase2.md)
 - **Cliente y requisitos:** [requerimientos](docs/requerimientos.md) · [guía de entrevista](docs/entrevista-cliente.md) · [minuta de la entrevista](docs/minuta-entrevista-cliente-2026-10-03.md) · [estado del boceto](docs/validacion-cliente-equipo.md) · [avance del 29 de septiembre](docs/avance-2026-09-29.md)
-- **Diseño técnico:** [arquitectura](docs/arquitectura-preliminar.md) · [decisión tecnológica](docs/decision-tecnologica.md) · [casos de uso](docs/diagramas/casos-de-uso.md) · [modelo de datos](docs/diagramas/modelo-entidad-relacion.md) · [datos de la demostración](docs/datos-simulados.md)
+- **Diseño técnico:** [arquitectura](docs/arquitectura-preliminar.md) · [tecnologías](docs/decision-tecnologica.md) · [casos de uso](docs/diagramas/casos-de-uso.md) · [modelo de datos](docs/diagramas/modelo-entidad-relacion.md) · [datos de prueba](docs/datos-simulados.md)
 - **Equipo:** [forma de trabajo](CONTRIBUTING.md)
 
 ## Equipo
@@ -72,4 +72,4 @@ La página necesita el servidor: si abres `web/index.html` directo en el navegad
 | Dante Uriel Ramírez Márquez | [@Danterm2003](https://github.com/Danterm2003) | Requisitos y arquitectura |
 | Jesús Alberto González Martínez | [@jesus453](https://github.com/jesus453) | Servidor, pruebas y PERT |
 
-Profesor: Abraham López Nájera. El trabajo del equipo se lleva en [GitHub Issues](https://github.com/carlosguerrerom0/Barber_920/issues).
+Profesor: Abraham López Nájera. El trabajo se lleva en [GitHub Issues](https://github.com/carlosguerrerom0/Barber_920/issues).

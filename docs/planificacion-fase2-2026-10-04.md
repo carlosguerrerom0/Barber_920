@@ -2,11 +2,11 @@
 
 **Actualizado el 4 de octubre de 2026.**
 
-Aquí juntamos la planeación de la fase: cómo dividimos el trabajo (WBS), el plan que seguimos del 18 de agosto al 3 de octubre, con todas sus actividades terminadas, y nuestra propuesta para la siguiente fase. Los costos están calculados con una tarifa académica supuesta de $80 MXN por hora. Sirven para dimensionar el esfuerzo; no son pagos ni cobros al cliente.
+Aquí está cómo dividimos el trabajo (WBS), el plan que seguimos del 18 de agosto al 3 de octubre y lo que propusimos para la siguiente fase. Los costos usan una tarifa supuesta de $80 MXN por hora. Sirven para medir el esfuerzo, no son pagos ni cobros.
 
 ## WBS y responsables
 
-El número antes del punto es el grupo de trabajo y el de después, el paquete. Cada paquete tiene un responsable que le da seguimiento, aunque en varios colaboramos más personas. Los paquetes 2.4, 5.4, 6.1, 6.2, 6.3 y 7.2 corresponden a la siguiente fase, y 2.2, 2.3 y 5.3 continúan en ella con nuevas actividades.
+El número antes del punto es el grupo de trabajo y el de después, el paquete. Cada paquete tiene un responsable, aunque en varios ayudamos más personas. Los paquetes 2.4, 5.4, 6.1, 6.2, 6.3 y 7.2 son de la siguiente fase. Los paquetes 2.2, 2.3 y 5.3 siguen en ella con actividades nuevas.
 
 | WBS | Paquete | Responsable | Resultado |
 |---|---|---|---|
@@ -32,9 +32,9 @@ El número antes del punto es el grupo de trabajo y el de después, el paquete. 
 
 ## Plan de la Fase 2: actividades A a N (18 de agosto al 3 de octubre)
 
-Es el plan que presentamos en el documento de la Fase 2. Las catorce actividades siguen las reuniones de las minutas 5 a 18 y ya están terminadas. Archivo para Project o ProjectLibre: [Barber_920_Plan_Project.xml](Barber_920_Plan_Project.xml).
+Es el plan del documento de la Fase 2. Las catorce actividades siguen las minutas 5 a 18 y ya están terminadas. Archivo para Project o ProjectLibre: [Barber_920_Plan_Project.xml](Barber_920_Plan_Project.xml).
 
-Trabajamos de lunes a viernes de 18:30 a 20:30, hora de Ciudad Juárez, para no chocar con la clase de los lunes y miércoles de 16:00 a 18:00. Cada jornada es de dos horas (120 minutos por día y 600 por semana). El sábado 3 de octubre lo marcamos como laborable porque ese día fue la entrevista.
+Trabajamos de lunes a viernes de 18:30 a 20:30 para no chocar con la clase de los lunes y miércoles de 16:00 a 18:00. Cada jornada es de dos horas. El sábado 3 de octubre cuenta como laborable porque ese día fue la entrevista.
 
 | ID | WBS | Actividad | Responsable | TE (jornadas) | Anterior | Inicio | Fin | Horas | Costo MXN |
 |---|---|---|---|---:|---|---|---|---:|---:|
@@ -53,7 +53,7 @@ Trabajamos de lunes a viernes de 18:30 a 20:30, hora de Ciudad Juárez, para no 
 | M | 2.1 | Entrevista con el propietario | Carlos | 2 | J, K, L | 2 oct. | 3 oct. | 4 | 320 |
 | N | 2.2 | Registrar direcciones de sucursales | Alison | 1 | M (fin a fin) | 3 oct. | 3 oct. | 2 | 160 |
 
-La ruta crítica es **A–C–G–H–I–J–M–N** y dura 21 jornadas, o sea 42 horas de calendario. K corre en paralelo con J y también tiene holgura cero. B tiene 10 jornadas de holgura y D, E, F y L tienen 5. Si sumamos todas las actividades salen 32 jornadas y 64 horas de trabajo; el proyecto dura menos porque varias se hicieron al mismo tiempo. N va ligada a M fin a fin porque las direcciones se registraron el mismo día de la entrevista.
+La ruta crítica es **A–C–G–H–I–J–M–N** y dura 21 jornadas, o sea 42 horas. K va al mismo tiempo que J y también tiene holgura cero. B tiene 10 jornadas de holgura y D, E, F y L tienen 5. Todas las actividades suman 32 jornadas y 64 horas, pero varias se hicieron al mismo tiempo. N termina junto con M porque las direcciones se anotaron el día de la entrevista.
 
 | Integrante | Actividades | Horas | Costo MXN |
 |---|---|---:|---:|
@@ -64,13 +64,17 @@ La ruta crítica es **A–C–G–H–I–J–M–N** y dura 21 jornadas, o sea 
 | Jesús Alberto González Martínez | G, H, I, K | 24 | 1,920 |
 | **Total** | | **64** | **5,120** |
 
-Con una reserva del 10 % ($512) el presupuesto estimado queda en $5,632 MXN. En la práctica no gastamos nada: usamos nuestras computadoras, nuestro internet y herramientas gratuitas.
+Con una reserva del 10 % ($512) el presupuesto estimado queda en $5,632 MXN. En realidad no gastamos nada. Usamos nuestras computadoras, nuestro internet y herramientas gratuitas.
 
 ## Propuesta para la siguiente fase: actividades O a W (5 al 21 de octubre)
 
-Las actividades A a N de la Fase 2 quedaron terminadas el 3 de octubre. Para la siguiente fase proponemos completar los datos del negocio, ajustar la página y la API, probar todo y enseñarle la versión conectada al dueño. Las letras siguen después de la N para no repetirlas. Archivo: [Barber_920_Plan_Continuidad.xml](Barber_920_Plan_Continuidad.xml).
+Para la siguiente fase propusimos completar los datos del negocio, ajustar la página y el servidor, probar todo y enseñarle la versión al dueño. Las letras siguen después de la N para no repetirlas. Archivo: [Barber_920_Plan_Continuidad.xml](Barber_920_Plan_Continuidad.xml).
 
-Este plan sale de la [red PERT que estimamos el 29 de septiembre](pert-fase2-pendiente.md). En esa red la entrevista era la actividad A y lo demás iba de la B a la J; aquí la O corresponde a la B, la P a la C, y así hasta la W, que era la J. Usamos el mismo calendario de dos horas diarias.
+Esta es la propuesta como quedó el 4 de octubre. Cómo van estas actividades y los cambios de fechas están en la [planificación de la Fase 3](fase3/planificacion-fase3.md).
+
+Este plan sale de la [red PERT del 29 de septiembre](pert-fase2-pendiente.md). Ahí las actividades iban de la B a la J. Aquí la O es la B, la P es la C y así hasta la W. Usamos el mismo calendario de dos horas diarias.
+
+> Estas fechas cambiaron. Lo que pasó con cada actividad está en la [planificación de la Fase 3](fase3/planificacion-fase3.md).
 
 | ID | WBS | Actividad | Responsable | TE (jornadas) | Anterior | Inicio | Fin | Horas | Costo MXN |
 |---|---|---|---|---:|---|---|---|---:|---:|
@@ -84,19 +88,17 @@ Este plan sale de la [red PERT que estimamos el 29 de septiembre](pert-fase2-pen
 | V | 6.3 | Corregir observaciones | Carlos | 2 | U | 20 oct. | 21 oct. | 4 | 320 |
 | W | 7.2 | Preparar evidencia de la iteración | Luis | 2 | T | 19 oct. | 20 oct. | 4 | 320 |
 
-La ruta crítica propuesta es **O–Q–S–T–U–V** y dura 13 jornadas. P y R tienen 3 jornadas de holgura y W tiene 1. En total son 19 jornadas y 38 horas de trabajo, con un costo base de $3,040 MXN; con la reserva del 10 % ($304) quedan $3,344.
+La ruta crítica propuesta es **O–Q–S–T–U–V** y dura 13 jornadas. P y R tienen 3 jornadas de holgura y W tiene 1. En total son 19 jornadas y 38 horas, con un costo base de $3,040 MXN. Con la reserva del 10 % ($304) quedan $3,344.
 
-Las fechas dependen de que el negocio nos mande el catálogo y los datos del personal, y la revisión del 19 de octubre todavía hay que acordarla con el dueño. W junta la evidencia de la siguiente fase; la entrega documental de la Fase 2 es el 5 de octubre. Los recordatorios, las cuentas de cliente, los permisos por rol y la publicación en internet no entran en este plan: primero tenemos que definir su alcance (#15 y #16).
+Los recordatorios, las cuentas de cliente, los permisos y la publicación en internet no entran en este plan. Primero hay que definir su alcance (#15 y #16).
 
 ## Abrir los archivos en Project o ProjectLibre
 
 1. Abre el XML desde el programa (Archivo → Abrir).
-2. En las opciones de calendario del proyecto pon **2 horas por día y 10 por semana**. Si no, el programa cuenta días de 8 horas y verás duraciones como "0.5 días" en lugar de 2 jornadas.
-3. Revisa que el proyecto use el calendario de 18:30 a 20:30. En el plan A–N, el sábado 3 de octubre debe aparecer como laborable; si no aparece, márcalo a mano en "Cambio de tiempo laborable". Sin ese día, M y N terminan el lunes 5 de octubre y el proyecto ya no cierra el 3.
+2. En las opciones de calendario pon **2 horas por día y 10 por semana**. Si no, el programa cuenta días de 8 horas y verás "0.5 días" en lugar de 2 jornadas.
+3. Revisa que use el calendario de 18:30 a 20:30. En el plan A–N, el sábado 3 de octubre debe salir como laborable. Si no sale, márcalo en "Cambio de tiempo laborable", o M y N terminarán el 5 de octubre.
 4. Guarda el archivo en el formato del programa y toma las capturas desde ahí.
 
 ## Issues
 
-Los Issues #1 a #17 los cerramos al terminar la Fase 2, el 4 de octubre. Cerrar un Issue significa que el equipo terminó esa tarea, no que el cliente ya la aprobó. Las actividades O a W de la siguiente fase las seguimos en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
-
-El rediseño y los mapas llegaron en el commit `3e4192d` del 4 de octubre. Falta confirmar con el negocio que cada mapa marque el lugar correcto y agregar los perfiles de los barberos cuando tengamos su información.
+Los Issues #1 a #17 los cerramos el 4 de octubre, al terminar la Fase 2. Las actividades O a W se siguen en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18). El rediseño y los mapas están en el commit `3e4192d` del 4 de octubre.
