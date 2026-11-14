@@ -2,7 +2,7 @@
 > Letras marfil talladas en una pared negra, con el oro del sello como única joya. Un titular condensado de hasta 153 px domina el espacio vacío y el logo aporta el color que la interfaz se niega a poner.
 
 **Tema:** oscuro
-**Origen:** adaptación de la referencia *Break Maiden* (galería negra, tipografía gigante, cero adornos) a los colores del logo [Imagenes/Logo920.jpg](Imagenes/Logo920.jpg). Se conservan la composición y las reglas; el monocromo blanco y gris se sustituye por la paleta del sello.
+**Origen:** adaptación de la referencia *Break Maiden* (galería negra, tipografía gigante, cero adornos) a los colores del logo ([web/assets/logo920.jpg](web/assets/logo920.jpg)). Se conservan la composición y las reglas; el monocromo blanco y gris se sustituye por la paleta del sello.
 
 Barber 920 se presenta como un sello de barbería clásico colgado en una pared negra. El lienzo es negro absoluto, igual que el fondo del logo, para que el sello se funda con la página sin marco. Un titular condensado (Anton) a escala de cartel hace todo el trabajo emocional; una grotesca sobria (Inter) se encarga de la navegación, los formularios y el texto. El oro del aro solar es el único acento y aparece en antetítulos, cifras, bordes de acción y estados de foco. El rojo y el azul del poste se reservan para señales pequeñas: la franja superior y los estados de las citas. No hay sombras, degradados, esquinas redondeadas ni fondos de tarjeta. La jerarquía sale del contraste entre espacio vacío y tipografía colosal.
 
@@ -105,7 +105,7 @@ Texto marfil seguido de una flecha → en oro, sin borde ni relleno. Al pasar el
 El precio en Anton 96 px oro ocupa el lugar de la fotografía. Debajo van el nombre (22 px marfil), la descripción (19 px plata) y la duración como etiqueta. Sin fondo, borde ni relleno: el negro de la página es la tarjeta.
 
 ### Pieza de sucursal
-De arriba abajo: número 01–03 en Anton 96 px oro, mapa de la sucursal, nombre en 22 px, horario y dirección en plata, nota "Información simulada" como etiqueta y dos enlaces fantasma: "Elegir esta sucursal →" y "Cómo llegar ↗".
+De arriba abajo: número 01–03 en Anton 96 px oro, mapa de la sucursal, nombre en 22 px, horario y dirección en plata, nota "Por validar con el cliente" como etiqueta y dos enlaces fantasma: "Elegir esta sucursal →" y "Cómo llegar ↗".
 
 ### Mapa de sucursal
 Mapa incrustado de Google Maps, cuadrado (1:1), a todo el ancho de la pieza, sin borde, radio ni filtros. Ocupa el lugar de la fotografía en la pieza, y su color claro contrasta con el lienzo igual que las fotos de producto de la referencia original. Se construye con la dirección del servidor sin la nota entre paréntesis y solo se carga al abrir la vista Sucursales. "Cómo llegar" abre la ruta en Google Maps (en el celular, en la app) y también aparece en la confirmación de la cita.
@@ -164,7 +164,7 @@ El sistema no tiene elevación. No hay sombras, capas translúcidas ni tarjetas 
 
 ## Imágenes
 
-El logo es la única imagen propia. Se sirve como `web/assets/logo920.jpg` (512 × 512, generado a partir de `Imagenes/Logo920.jpg`) y aparece en tres lugares: el sello de la navegación, el glifo del titular y el favicon. Su fondo negro coincide con el lienzo, así que nunca necesita marco ni recorte.
+El logo es la única imagen propia. Se sirve como `web/assets/logo920.jpg` (512 × 512, versión reducida del logotipo original) y aparece en tres lugares: el sello de la navegación, el glifo del titular y el favicon. Su fondo negro coincide con el lienzo, así que nunca necesita marco ni recorte.
 
 Los mapas de Google de cada sucursal funcionan como las fotografías de la referencia: cuadrados, de borde a borde, sin marco, y son la principal fuente de color en la vista Sucursales. Si en el futuro se agregan fotografías de cortes o sucursales, deben ser cuadradas o 3:4, ir de borde a borde, sin radio ni marco, y aportar el color igual que el precio en las piezas de servicio.
 
@@ -181,7 +181,7 @@ Lienzo negro a todo el ancho, sin contenedor centrado, con márgenes laterales d
 - `color-scheme: dark` para que los controles nativos (fecha, listas) se rendericen oscuros.
 - Con `prefers-reduced-motion` se desactivan transiciones y desplazamiento suave.
 
-## Guía para agentes
+## Guía rápida para implementar
 
 Referencia rápida de color:
 - texto: `#faf4d8`
