@@ -2,7 +2,7 @@
 
 Esta guía es para las actividades U y O. La idea es enseñarle a Miguel Solís la agenda por barbero, escuchar qué le cambiaría y pedirle los datos que faltan. Debe durar unos 30 minutos.
 
-**Estado: pendiente.** Falta acordar la fecha con el dueño.
+**Estado: terminada.** El 12 de noviembre de 2026 el cliente revisó la versión y firmó la entrega del proyecto. Con eso quedaron cerradas U y O. Esta guía se queda como la preparamos.
 
 ## Antes de la reunión
 
