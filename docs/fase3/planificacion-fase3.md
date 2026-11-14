@@ -4,23 +4,23 @@
 
 Aquí está cómo quedaron las actividades O a W que propusimos al cerrar la Fase 2, cómo cambió el calendario y cuánto costó el proyecto. Los costos usan la misma tarifa supuesta de $80 MXN por hora. Sirven para medir el esfuerzo, no son pagos ni cobros.
 
-**La Fase 3 quedó terminada el 12 de noviembre de 2026.** Ese día el cliente firmó la entrega del proyecto. También grabamos el video de entrega.
+**La Fase 3 quedó terminada el 11 de noviembre de 2026.** Ese día el cliente firmó la carta de cierre del proyecto. El 13 de noviembre publicamos el [video de entrega](https://www.youtube.com/watch?v=vJqg3n_dd30).
 
 ## Cómo quedaron las actividades O a W
 
 | ID | Actividad | Responsable en el plan | TE (jornadas) | Fechas del plan | Estado | Evidencia |
 |---|---|---|---:|---|---|---|
-| O | Completar acuerdos y datos | Alison | 1 | 5 oct. | Terminada el 12 de noviembre. El cliente firmó la entrega | Firma del cliente · [Guía de la revisión](revision-con-el-dueno.md) |
+| O | Completar acuerdos y datos | Alison | 1 | 5 oct. | Terminada el 11 de noviembre. El cliente firmó la entrega | Firma del cliente · [Guía de la revisión](revision-con-el-dueno.md) |
 | P | Completar catálogo y sucursales | Alison | 2 | 6 y 7 oct. | Terminada el 9 de noviembre. Están los precios de la entrevista y el administrador puede cambiarlos | [Servidor](../../server/index.js) |
 | Q | Definir personal y reglas | Dante | 3 | 6 al 8 oct. | Terminada el 9 de noviembre. El administrador da de alta a cada barbero con su sucursal y su descanso | [Servidor](../../server/index.js) |
 | R | Ajustar interfaz con datos confirmados | Carlos | 2 | 8 y 9 oct. | Terminada el 8 de noviembre | [Capturas](evidencias/) |
 | S | Adaptar API y disponibilidad | Jesús | 4 | 9 al 14 oct. | Terminada el 8 de noviembre | [Servidor](../../server/index.js) |
 | T | Ejecutar pruebas integrales | Jesús | 2 | 15 y 16 oct. | Terminada el 8 de noviembre. Pasan 5 de 5 | [Pruebas](pruebas-integrales.md) |
-| U | Revisar versión con cliente y equipo | Carlos | 1 | 19 oct. | Terminada el 12 de noviembre. El cliente revisó la versión y la firmó | Firma del cliente |
-| V | Corregir observaciones | Carlos | 2 | 20 y 21 oct. | Terminada el 12 de noviembre. Se cerró con la firma del cliente | Firma del cliente |
-| W | Preparar evidencia de la iteración | Luis | 2 | 19 y 20 oct. | Terminada. Capturas del 8 de noviembre y video de entrega | [Capturas](evidencias/) · Video de entrega |
+| U | Revisar versión con cliente y equipo | Carlos | 1 | 19 oct. | Terminada el 11 de noviembre. El cliente revisó la versión y la firmó | Firma del cliente |
+| V | Corregir observaciones | Carlos | 2 | 20 y 21 oct. | Terminada el 11 de noviembre. Se cerró con la firma del cliente | Firma del cliente |
+| W | Preparar evidencia de la iteración | Luis | 2 | 19 y 20 oct. | Terminada. Capturas del 8 de noviembre y video de entrega | [Capturas](evidencias/) · [Video de entrega](https://www.youtube.com/watch?v=vJqg3n_dd30) |
 
-Carlos hizo R, S, T y W el 8 de noviembre con ayuda de Claude, un asistente de IA de Anthropic. P y Q se terminaron el 9 de noviembre. O, U y V se cerraron el 12 de noviembre con la firma del cliente.
+Carlos hizo R, S, T y W el 8 de noviembre con ayuda de Claude, un asistente de IA de Anthropic. P y Q se terminaron el 9 de noviembre. O, U y V se cerraron el 11 de noviembre con la firma del cliente.
 
 Esto es lo que cambió en el sistema:
 
@@ -35,7 +35,7 @@ Esto es lo que cambió en el sistema:
 
 ## Cambios al calendario
 
-- **Fechas:** el plan ponía O a W del 5 al 21 de octubre. No se cumplió. Entre el 5 de octubre y el 7 de noviembre no subimos cambios al repositorio. Hicimos las actividades del 8 al 12 de noviembre.
+- **Fechas:** el plan ponía O a W del 5 al 21 de octubre. No se cumplió. Entre el 5 de octubre y el 7 de noviembre no subimos cambios al repositorio. Hicimos las actividades del 8 al 11 de noviembre.
 - **Orden:** hicimos R, S y T antes que O, P y Q. Usamos barberos de prueba para no esperar los datos del dueño. Después cambiamos eso por el alta de barberos desde el panel.
 - **Recursos:** no cambiaron. Somos los mismos cinco y usamos las computadoras e internet que ya teníamos.
 - **Costos:** no cambiaron. No gastamos nada.
@@ -46,9 +46,9 @@ Así quedó el calendario real comparado con el plan:
 |---|---|---|
 | R, S, T y W | 8 al 20 de octubre | 8 de noviembre |
 | P y Q | 6 al 8 de octubre | 8 y 9 de noviembre |
-| O, U y V | 5, 19, 20 y 21 de octubre | 12 de noviembre |
+| O, U y V | 5, 19, 20 y 21 de octubre | 11 de noviembre |
 
-La Fase 3 terminó 22 días después de lo que decía el plan (21 de octubre contra 12 de noviembre).
+La Fase 3 terminó 21 días después de lo que decía el plan (21 de octubre contra 11 de noviembre).
 
 ## Costos
 
@@ -71,7 +71,7 @@ Hay costos que podrían aparecer si el negocio decide publicar la página: domin
 - **Inicio:** 13 de agosto de 2026, cuando formalizamos el proyecto.
 - **Fase 2:** del 18 de agosto al 3 de octubre. La ruta crítica duró 21 jornadas.
 - **Fase 3 en el plan:** 13 jornadas, del 5 al 21 de octubre.
-- **Fase 3 real:** del 8 al 12 de noviembre.
-- **Total:** del 13 de agosto al 12 de noviembre fueron 91 días.
+- **Fase 3 real:** del 8 al 11 de noviembre.
+- **Total:** del 13 de agosto al 11 de noviembre fueron 90 días.
 
-El plan de Project con las fechas reales y la línea base del plan está en [Barber_920_Plan_Continuidad.xml](../Barber_920_Plan_Continuidad.xml). El seguimiento está en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
+El plan de Project con las fechas reales y la línea base del plan está en [Barber_920_Plan_Continuidad.xml](../Barber_920_Plan_Continuidad.xml). Para el documento de la Fase 3 armamos otro plan solo con las actividades de desarrollo de las Fases 2 y 3, con el rol y el tipo de cada recurso: [Barber_920_Plan_Desarrollo.xml](../Barber_920_Plan_Desarrollo.xml). El seguimiento está en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).

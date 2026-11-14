@@ -46,7 +46,7 @@ Abrimos la página en Chrome con el servidor corriendo y datos inventados. Las c
 
 ## Revisión del cliente
 
-El 12 de noviembre de 2026 el cliente revisó esta versión y firmó la entrega del proyecto. Esa fue la actividad U. La guía que usamos está en [revision-con-el-dueno.md](revision-con-el-dueno.md).
+El 11 de noviembre de 2026 el cliente revisó esta versión y firmó la entrega del proyecto. Esa fue la actividad U. La guía que usamos está en [revision-con-el-dueno.md](revision-con-el-dueno.md).
 
 ## Lo que no probamos
 

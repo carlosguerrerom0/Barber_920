@@ -56,6 +56,6 @@ No tienen días de cierre especiales. En el video responde "Ninguno" y en los ap
 | Pasar las respuestas a los requisitos | Equipo | Hecho en [requerimientos](requerimientos.md) |
 | Pasar a la página la tolerancia, ceja y diseños, el estado Realizada, el resumen y el cambio de precios | Equipo | Hecho el 9 de noviembre |
 | Cambiar horarios y bloquear horarios desde el panel | Equipo | Pendiente |
-| Enseñarle la versión conectada | Equipo y dueño | Hecho. El 12 de noviembre revisó la versión y firmó la entrega. Ver la [guía de la revisión](fase3/revision-con-el-dueno.md) |
+| Enseñarle la versión conectada | Equipo y dueño | Hecho. El 11 de noviembre revisó la versión y firmó la entrega. Ver la [guía de la revisión](fase3/revision-con-el-dueno.md) |
 
 Los responsables de esta tabla los propusimos nosotros. El dueño no se comprometió a fechas en el video.
