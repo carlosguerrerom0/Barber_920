@@ -8,7 +8,7 @@ Proyecto de la materia Administración y Evaluación de Proyectos de Tecnología
 
 - **Fase 1:** elegimos a Barber 920, definimos la idea y formalizamos el inicio el 13 de agosto.
 - **Fase 2:** del 18 de agosto al 3 de octubre hicimos los requisitos, el boceto, el servidor con base de datos, el panel y la entrevista con el dueño.
-- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero y cargamos los precios que nos dio el dueño. El 9 de noviembre agregamos el perfil de administrador de Junior Solis, que da de alta a los barberos, el resumen de citas del día, la semana y el mes, y el cambio de precios. El 12 de noviembre el cliente revisó la página y firmó la entrega. También grabamos el video de entrega.
+- **Fase 3:** el 8 de noviembre agregamos la agenda por barbero y cargamos los precios que nos dio el dueño. El 9 de noviembre agregamos el perfil de administrador de Junior Solis, que da de alta a los barberos, el resumen de citas del día, la semana y el mes, y el cambio de precios. El 11 de noviembre el cliente revisó la página y firmó la entrega. El 13 de noviembre publicamos el [video de entrega](https://www.youtube.com/watch?v=vJqg3n_dd30).
 
 **El proyecto está terminado.** Las actividades O a W de la Fase 3 quedaron cerradas. El detalle está en la [planificación de la Fase 3](docs/fase3/planificacion-fase3.md) y en el [Issue #18](https://github.com/carlosguerrerom0/Barber_920/issues/18).
 
@@ -20,8 +20,8 @@ Proyecto de la materia Administración y Evaluación de Proyectos de Tecnología
 | Entrevista con el dueño | Hecha el 3 de octubre | [Minuta](docs/minuta-entrevista-cliente-2026-10-03.md) |
 | Agenda por barbero | Hecha el 8 de noviembre | [Pruebas de la Fase 3](docs/fase3/pruebas-integrales.md) |
 | Administrador y trabajadores | Hecho el 9 de noviembre | [Servidor](server/index.js) |
-| Revisión y firma del cliente | Hecha el 12 de noviembre | [Guía de la revisión](docs/fase3/revision-con-el-dueno.md) |
-| Video de entrega | Hecho | — |
+| Revisión y firma del cliente | Hecha el 11 de noviembre | [Guía de la revisión](docs/fase3/revision-con-el-dueno.md) |
+| Video de entrega | Publicado el 13 de noviembre | [YouTube](https://www.youtube.com/watch?v=vJqg3n_dd30) |
 
 ## Cómo correrlo en tu computadora
 
@@ -56,7 +56,7 @@ La página necesita el servidor. Si abres `web/index.html` directo, no vas a pod
 
 ## Documentos
 
-- **Fase 3:** [planificación](docs/fase3/planificacion-fase3.md) · [pruebas integrales](docs/fase3/pruebas-integrales.md) · [riesgos y Pareto](docs/fase3/riesgos.md) · [guía de la revisión con el dueño](docs/fase3/revision-con-el-dueno.md)
+- **Fase 3:** [planificación](docs/fase3/planificacion-fase3.md) · [pruebas integrales](docs/fase3/pruebas-integrales.md) · [riesgos y Pareto](docs/fase3/riesgos.md) · [guía de la revisión con el dueño](docs/fase3/revision-con-el-dueno.md) · [plan de desarrollo para Project](docs/Barber_920_Plan_Desarrollo.xml)
 - **Fase 2:** [planificación](docs/planificacion-fase2-2026-10-04.md) · [red PERT del 29 de septiembre](docs/pert-fase2-pendiente.md) · [roles](docs/roles-fase2.md) · [FODA y Porter](docs/analisis-fase2.md)
 - **Cliente y requisitos:** [requerimientos](docs/requerimientos.md) · [guía de entrevista](docs/entrevista-cliente.md) · [minuta de la entrevista](docs/minuta-entrevista-cliente-2026-10-03.md) · [estado del boceto](docs/validacion-cliente-equipo.md) · [avance del 29 de septiembre](docs/avance-2026-09-29.md)
 - **Diseño técnico:** [arquitectura](docs/arquitectura-preliminar.md) · [tecnologías](docs/decision-tecnologica.md) · [casos de uso](docs/diagramas/casos-de-uso.md) · [modelo de datos](docs/diagramas/modelo-entidad-relacion.md) · [datos de prueba](docs/datos-simulados.md)

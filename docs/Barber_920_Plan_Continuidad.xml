@@ -9,7 +9,7 @@
   <CreationDate>2026-10-04T18:30:00</CreationDate>
   <ScheduleFromStart>1</ScheduleFromStart>
   <StartDate>2026-11-08T18:30:00</StartDate>
-  <FinishDate>2026-11-12T20:30:00</FinishDate>
+  <FinishDate>2026-11-11T20:30:00</FinishDate>
   <CurrencyDigits>2</CurrencyDigits>
   <CurrencySymbol>$</CurrencySymbol>
   <CurrencyCode>MXN</CurrencyCode>
@@ -138,8 +138,8 @@
       <OutlineNumber>1</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-11-12T18:30:00</Start>
-      <Finish>2026-11-12T20:30:00</Finish>
+      <Start>2026-11-11T18:30:00</Start>
+      <Finish>2026-11-11T20:30:00</Finish>
       <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT2H0M0S</Work>
@@ -155,8 +155,8 @@
       <PercentComplete>100</PercentComplete>
       <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>160</Cost>
-      <ActualStart>2026-11-12T18:30:00</ActualStart>
-      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualStart>2026-11-11T18:30:00</ActualStart>
+      <ActualFinish>2026-11-11T20:30:00</ActualFinish>
       <ActualDuration>PT2H0M0S</ActualDuration>
       <ActualCost>160</ActualCost>
       <ActualWork>PT2H0M0S</ActualWork>
@@ -165,7 +165,7 @@
       <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Terminada el 12 de noviembre de 2026: el cliente firmó la entrega del proyecto. Plan del 4 de octubre: TE de 1 jornada de 2 horas. Responsable en el plan: Alison Aguirre Hernández. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
+      <Notes>Terminada el 11 de noviembre de 2026: el cliente firmó la entrega del proyecto. Plan del 4 de octubre: TE de 1 jornada de 2 horas. Responsable en el plan: Alison Aguirre Hernández. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <Baseline>
         <Number>0</Number>
         <Start>2026-10-05T18:30:00</Start>
@@ -213,7 +213,7 @@
       <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Terminada el 9 de noviembre de 2026: precios de la entrevista y cambio de precios desde el panel. El cliente la aceptó con la firma del 12 de noviembre. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Alison Aguirre Hernández. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
+      <Notes>Terminada el 9 de noviembre de 2026: precios de la entrevista y cambio de precios desde el panel. El cliente la aceptó con la firma del 11 de noviembre. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Alison Aguirre Hernández. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>1</PredecessorUID>
         <Type>1</Type>
@@ -268,7 +268,7 @@
       <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Terminada el 9 de noviembre de 2026: reglas por barbero y alta de barberos con su sucursal y descanso desde el panel. El cliente la aceptó con la firma del 12 de noviembre. Plan del 4 de octubre: TE de 3 jornadas de 2 horas. Responsable en el plan: Dante Uriel Ramírez Márquez. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
+      <Notes>Terminada el 9 de noviembre de 2026: reglas por barbero y alta de barberos con su sucursal y descanso desde el panel. El cliente la aceptó con la firma del 11 de noviembre. Plan del 4 de octubre: TE de 3 jornadas de 2 horas. Responsable en el plan: Dante Uriel Ramírez Márquez. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>1</PredecessorUID>
         <Type>1</Type>
@@ -468,8 +468,8 @@
       <OutlineNumber>7</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-11-12T18:30:00</Start>
-      <Finish>2026-11-12T20:30:00</Finish>
+      <Start>2026-11-11T18:30:00</Start>
+      <Finish>2026-11-11T20:30:00</Finish>
       <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT2H0M0S</Work>
@@ -485,8 +485,8 @@
       <PercentComplete>100</PercentComplete>
       <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>160</Cost>
-      <ActualStart>2026-11-12T18:30:00</ActualStart>
-      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualStart>2026-11-11T18:30:00</ActualStart>
+      <ActualFinish>2026-11-11T20:30:00</ActualFinish>
       <ActualDuration>PT2H0M0S</ActualDuration>
       <ActualCost>160</ActualCost>
       <ActualWork>PT2H0M0S</ActualWork>
@@ -495,7 +495,7 @@
       <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Terminada el 12 de noviembre de 2026: el cliente revisó la versión y firmó la entrega. Plan del 4 de octubre: TE de 1 jornada de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
+      <Notes>Terminada el 11 de noviembre de 2026: el cliente revisó la versión y firmó la entrega. Plan del 4 de octubre: TE de 1 jornada de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>6</PredecessorUID>
         <Type>1</Type>
@@ -523,8 +523,8 @@
       <OutlineNumber>8</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2026-11-12T18:30:00</Start>
-      <Finish>2026-11-12T20:30:00</Finish>
+      <Start>2026-11-11T18:30:00</Start>
+      <Finish>2026-11-11T20:30:00</Finish>
       <Duration>PT2H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
       <Work>PT4H0M0S</Work>
@@ -540,8 +540,8 @@
       <PercentComplete>100</PercentComplete>
       <PercentWorkComplete>100</PercentWorkComplete>
       <Cost>320</Cost>
-      <ActualStart>2026-11-12T18:30:00</ActualStart>
-      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
+      <ActualStart>2026-11-11T18:30:00</ActualStart>
+      <ActualFinish>2026-11-11T20:30:00</ActualFinish>
       <ActualDuration>PT2H0M0S</ActualDuration>
       <ActualCost>320</ActualCost>
       <ActualWork>PT4H0M0S</ActualWork>
@@ -550,7 +550,7 @@
       <RemainingWork>PT0H0M0S</RemainingWork>
       <ConstraintType>0</ConstraintType>
       <CalendarUID>-1</CalendarUID>
-      <Notes>Terminada el 12 de noviembre de 2026: se cerró con la firma del cliente. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
+      <Notes>Terminada el 11 de noviembre de 2026: se cerró con la firma del cliente. Plan del 4 de octubre: TE de 2 jornadas de 2 horas. Responsable en el plan: Carlos Guerrero Morales. El trabajo se valúa con las horas del plan y la tarifa académica de $80 MXN por hora; no es un gasto real. La línea base guarda las fechas del plan.</Notes>
       <PredecessorLink>
         <PredecessorUID>7</PredecessorUID>
         <Type>1</Type>
@@ -713,14 +713,14 @@
       <ResourceUID>2</ResourceUID>
       <PercentWorkComplete>100</PercentWorkComplete>
       <ActualCost>160</ActualCost>
-      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
-      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualFinish>2026-11-11T20:30:00</ActualFinish>
+      <ActualStart>2026-11-11T18:30:00</ActualStart>
       <ActualWork>PT2H0M0S</ActualWork>
       <Cost>160</Cost>
-      <Finish>2026-11-12T20:30:00</Finish>
+      <Finish>2026-11-11T20:30:00</Finish>
       <RemainingCost>0</RemainingCost>
       <RemainingWork>PT0H0M0S</RemainingWork>
-      <Start>2026-11-12T18:30:00</Start>
+      <Start>2026-11-11T18:30:00</Start>
       <Units>1</Units>
       <Work>PT2H0M0S</Work>
       <Baseline>
@@ -851,14 +851,14 @@
       <ResourceUID>3</ResourceUID>
       <PercentWorkComplete>100</PercentWorkComplete>
       <ActualCost>160</ActualCost>
-      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
-      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualFinish>2026-11-11T20:30:00</ActualFinish>
+      <ActualStart>2026-11-11T18:30:00</ActualStart>
       <ActualWork>PT2H0M0S</ActualWork>
       <Cost>160</Cost>
-      <Finish>2026-11-12T20:30:00</Finish>
+      <Finish>2026-11-11T20:30:00</Finish>
       <RemainingCost>0</RemainingCost>
       <RemainingWork>PT0H0M0S</RemainingWork>
-      <Start>2026-11-12T18:30:00</Start>
+      <Start>2026-11-11T18:30:00</Start>
       <Units>1</Units>
       <Work>PT2H0M0S</Work>
       <Baseline>
@@ -874,14 +874,14 @@
       <ResourceUID>3</ResourceUID>
       <PercentWorkComplete>100</PercentWorkComplete>
       <ActualCost>320</ActualCost>
-      <ActualFinish>2026-11-12T20:30:00</ActualFinish>
-      <ActualStart>2026-11-12T18:30:00</ActualStart>
+      <ActualFinish>2026-11-11T20:30:00</ActualFinish>
+      <ActualStart>2026-11-11T18:30:00</ActualStart>
       <ActualWork>PT4H0M0S</ActualWork>
       <Cost>320</Cost>
-      <Finish>2026-11-12T20:30:00</Finish>
+      <Finish>2026-11-11T20:30:00</Finish>
       <RemainingCost>0</RemainingCost>
       <RemainingWork>PT0H0M0S</RemainingWork>
-      <Start>2026-11-12T18:30:00</Start>
+      <Start>2026-11-11T18:30:00</Start>
       <Units>2</Units>
       <Work>PT4H0M0S</Work>
       <Baseline>
