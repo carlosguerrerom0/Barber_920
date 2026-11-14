@@ -63,7 +63,7 @@ test('reservas, conflictos, sesión de administración y persistencia', async ()
     const sundaySlots = (await request(app.base, `/api/availability?branch=centro&service=combo&date=${sunday}`)).payload.slots;
     assert.equal(sundaySlots.includes('15:00'), true);
     assert.equal(sundaySlots.includes('16:00'), false);
-    assert.equal((await request(app.base, '/api/appointments', 'POST', { ...booking, date: sunday, time: '16:00' })).status, 400);
+    assert.equal((await request(app.base, '/api/appointments', 'POST', { ...booking, date: sunday, time: '16:00' })).status, 409);
     assert.equal((await request(app.base, '/api/appointments', 'POST', { ...booking, date: '2020-01-01' })).status, 400);
     const created = await request(app.base, '/api/appointments', 'POST', booking);
     assert.equal(created.status, 201);

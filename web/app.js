@@ -84,7 +84,7 @@ function populateContent(config) {
     const title = document.createElement('h2');
     title.textContent = branch.name;
     const list = document.createElement('ul');
-    for (const value of [branch.schedule, branch.address, 'Información simulada']) {
+    for (const value of [branch.schedule, branch.address, 'Por validar con el cliente']) {
       const item = document.createElement('li');
       item.textContent = value;
       list.append(item);
@@ -147,15 +147,16 @@ async function refreshAvailability() {
 
 async function submitBooking(event) {
   event.preventDefault();
-  const submit = event.currentTarget.querySelector('[type=submit]');
-  const data = Object.fromEntries(new FormData(event.currentTarget));
+  const form = event.currentTarget;
+  const submit = form.querySelector('[type=submit]');
+  const data = Object.fromEntries(new FormData(form));
   submit.disabled = true;
   $('#formMessage').textContent = '';
   try {
     await api('/api/appointments', { method: 'POST', body: JSON.stringify(data) });
     $('#confirmationText').textContent = `${data.clientName}: ${serviceName(data.service)} en ${branchName(data.branch)}, ${data.date} a las ${data.time}.`;
     directionsLink($('#confirmationDirections'), branches.find(item => item.id === data.branch));
-    event.currentTarget.reset();
+    form.reset();
     updateSummary();
     refreshAvailability();
     showView('confirmacion');
